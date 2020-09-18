@@ -2,34 +2,15 @@
 	<div class="hello">
     <el-row>
       <el-col :xs="24">
-        <div class="box1">
-          <Swiper />
-        </div>
+        <Swiper />
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :xs="24">
+        <Card />
       </el-col>
     </el-row>
 
-<!--		<el-row>-->
-<!--			<el-col :xs="24">-->
-<!--				<div class="box1">-->
-<!--					<el-row :gutter="20">-->
-<!--						<el-col :xs="24" :sm="16">-->
-<!--							<el-carousel indicator-position="outside" :interval="5000">-->
-<!--								<el-carousel-item v-for="item in box1" :key="item.title">-->
-<!--									<div class="bannerbox animated">-->
-<!--										<h3>{{ item.title }}</h3>-->
-<!--										<p>{{item.content}}</p>-->
-<!--										<el-button type="primary" round>-->
-<!--											<router-link :to="{path:'/solution',query: {id: 2}}">了解详情</router-link>-->
-<!--											</el-button>-->
-<!--									</div>-->
-<!--								</el-carousel-item>-->
-<!--							</el-carousel>-->
-<!--						</el-col>-->
-<!--						<el-col :xs="0" :sm="8"></el-col>-->
-<!--					</el-row>-->
-<!--				</div>-->
-<!--			</el-col>-->
-<!--		</el-row>-->
 		<el-row>
 			<div class="box2">
 				<el-col :span="20" :offset="2">
@@ -355,9 +336,11 @@
 
 <script>
   import Swiper from '@/components/swiper'
+  import Card from '@/components/Card'
 	export default {
     components: {
       Swiper,
+      Card
     },
 		data() {
 			return {

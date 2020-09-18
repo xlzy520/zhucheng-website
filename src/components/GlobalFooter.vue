@@ -2,7 +2,7 @@
   <el-footer style="height: auto;" class="footer">
     <el-row>
 
-      <template v-for="(value,key,index) in menulist">
+      <template v-for="(value,key,index) in menuList">
         <el-col v-if="value.ylist.length != 0" :key="value.yyid" :xs="12" :sm="12" :md="4" :lg="4" :xl="4">
           <ul>
             <h3>
@@ -65,7 +65,7 @@
 export default {
   name: 'GlobalFooter',
   props: {
-    menulist: {
+    menuList: {
       type: Array,
       default: ()=> []
     },

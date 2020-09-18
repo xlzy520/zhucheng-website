@@ -2,18 +2,15 @@
   <div class="container">
     <el-container direction="vertical">
       <!-- 顶部 -->
-      <GlobalHeader :menulist="menulist" />
+      <GlobalHeader :menu-list="menuList" />
       <!-- 中部 -->
       <el-main>
         <router-view />
       </el-main>
       <!-- 底部 -->
-      <GlobalFooter :menulist="menulist" />
+      <GlobalFooter :menu-list="menuList" />
     </el-container>
     <!-- 返回顶部 -->
-    <el-button size="mini" circle class="back-top" @click="backTop" v-show="backTopShow">
-      <i class="el-icon-upload2"></i>
-    </el-button>
 
   </div>
 </template>
@@ -26,9 +23,7 @@
     components: { GlobalHeader, GlobalFooter },
     data() {
       return {
-        backTopShow: false,
-        navshow: false,
-        menulist: [
+        menuList: [
           {
           yid: 1,
           yyid: '1',
@@ -180,57 +175,16 @@
       }
     },
     methods: {
-      backTop() {
-        let back = setInterval(() => {
-          if (document.body.scrollTop || document.documentElement.scrollTop) {
-            document.body.scrollTop -= 100;
-            document.documentElement.scrollTop -= 100;
-          } else {
-            clearInterval(back)
-          }
-        });
-      },
-      handleScroll() {
-        if (document.documentElement.scrollTop + document.body.scrollTop > 100) {
-          this.backTopShow = true;
-        } else {
-          this.backTopShow = false;
-        }
-      }
-    },
-    watch: {
-      $route: {
-        handler: function() {
-          this.navshow = false;
-        },
-        // 深度观察监听
-        deep: true
-      }
-    },
-    mounted: function() { //挂载结束状态
 
-      window.addEventListener('scroll', this.handleScroll);
-      /* 加载完成在页面顶部 */
-      this.$router.afterEach((to, from, next) => {
-        window.scrollTo(0, 0)
-      })
-    }
+    },
   }
 </script>
 
 <style lang="less">
   .container{
     .el-main {
-      color: #EDF2FC;
       text-align: center;
       padding: 0;
     }
-
-  }
-
-  .back-top {
-    position: fixed;
-    right: 50px;
-    bottom: 50px;
   }
 </style>

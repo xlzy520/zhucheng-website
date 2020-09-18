@@ -1,5 +1,5 @@
 <template>
-  <el-header class="header-main">
+  <el-header :class="['header-main',isScrollToMain ? 'deep-bg': '']">
     <el-row>
       <el-col :span="24">
         <el-row>
@@ -10,12 +10,13 @@
           </el-col>
           <el-col :xs="16" :sm="18" :md="20" :lg="20" :xl="20">
             <div class="header_nav">
-              <div class="hidden-sm-and-down fl-r phone-number">
+              <div class="hidden-sm-and-down fr phone-number">
                 <i class="el-icon-phone-outline">0574-88888888</i>
               </div>
-              <el-menu class="hidden-sm-and-down" mode="horizontal" background-color="transparent"
+              <el-menu class="hidden-sm-and-down" default-active="1" mode="horizontal"
+                       background-color="transparent"
                        text-color="#fff">
-                <template v-for="yylist in menulist">
+                <template v-for="yylist in menuList">
                   <el-submenu v-if="yylist.ylist && yylist.ylist.length > 0"
                               :index="yylist.yyid"
                               background-color="#545c64"
@@ -23,88 +24,22 @@
                     <template slot="title">
                       <router-link :data-hover="yylist.name" :to="{path:yylist.yrouterul,query: yylist.yid}">{{yylist.yname}}</router-link>
                     </template>
-                    <template v-for="eelist in yylist.ylist">
-                      <!-- <el-menu-item  v-if="yylist.ylist && yylist.ylist.length > 0" :key="eelist.eid" :index="eelist.eeid">
+                    <div v-for="eelist in yylist.ylist" :key="eelist.eeid">
+                      <el-menu-item v-if="yylist.ylist && yylist.ylist.length > 0" :key="eelist.eid" :index="eelist.eeid">
                         <router-link :to="{path:'/three',query:{id: eelist.eid}}">{{eelist.ename}}</router-link>
-													</el-menu-item> -->
-
-                      <!--  -->
-                      <template v-if="eelist.elist.length > 0">
-                        <el-submenu :index="eelist.eeid" background-color="#545c64">
-                          <template slot="title">{{eelist.ename}}</template>
-                          <el-menu-item v-for="sslist in eelist.elist" :index="sslist.ssid" :key="sslist.sid">
-                            <router-link :to="{path:'/three',query:{id: eelist.eid}}">{{sslist.sname}}</router-link>
-                          </el-menu-item>
-                        </el-submenu>
-                      </template>
-                      <template v-else>
-                        <el-menu-item v-if="yylist.ylist && yylist.ylist.length > 0" :key="eelist.eid" :index="eelist.eeid">
-                          <router-link :to="{path:'/three',query:{id: eelist.eid}}">{{eelist.ename}}</router-link>
-                        </el-menu-item>
-                      </template>
-                      <!--  -->
-
-                    </template>
+                      </el-menu-item>
+                    </div>
                   </el-submenu>
 
-                  <el-menu-item v-else="yylist.ylist && yylist.ylist.length ==  0" :key="yylist.yid" :index="yylist.yyid">
-                    <router-link :data-hover="yylist.yname" v-if="yylist.yid != 1" :to="{path:yylist.yrouterul,query: yylist.yid}">{{yylist.yname}}</router-link>
-                    <router-link :data-hover="yylist.yname" v-if="yylist.yid == 1" to="/">{{yylist.yname}}</router-link>
+                  <el-menu-item v-else :key="yylist.yid" :index="yylist.yyid">
+                    <router-link :data-hover="yylist.yname" v-if="yylist.yid !== 1" :to="{path:yylist.yrouterul,query: yylist.yid}">{{yylist.yname}}</router-link>
+                    <router-link :data-hover="yylist.yname" v-else to="/">{{yylist.yname}}</router-link>
                   </el-menu-item>
                 </template>
-
-                <!-- <el-menu-item index="6">
-                  <router-link :to="{path:'/contactus',query: {id: 5}}">联系我们</router-link>
-                </el-menu-item>
-                <el-menu-item index="5">
-                  <router-link :to="{path:'/newsandinformation',query: {id: 4}}">新闻资讯</router-link>
-                </el-menu-item>
-                <el-menu-item index="4">
-                  <router-link :to="{path:'/customercase',query: {id: 3}}">客户案例</router-link>
-                </el-menu-item>
-                <el-submenu index="3">
-                  <template slot="title">
-                    <router-link :to="{path:'/solution',query: {id: 2}}">解决方案</router-link>
-                  </template>
-
-                  <el-submenu index="3-1">
-                    <template slot="title">数据中心迁移解决方案</template>
-                    <el-menu-item index="3-1-1">数据中心迁移解决方案一</el-menu-item>
-                    <el-menu-item index="3-1-2">数据中心迁移解决方案二</el-menu-item>
-                  </el-submenu>
-
-                  <el-menu-item index="3-2">
-                    <router-link :to="{path:'/three',query: {id: 32}}">Microsoft企业应用</router-link>
-                  </el-menu-item>
-                  <el-menu-item index="3-3">
-                    <router-link :to="{path:'/three',query: {id: 33}}">储存备份</router-link>
-                  </el-menu-item>
-                  <el-menu-item index="3-4">
-                    <router-link :to="{path:'/three',query: {id: 34}}">区块链部署</router-link>
-                  </el-menu-item>
-                  <el-menu-item index="3-5">
-                    <router-link :to="{path:'/three',query: {id: 35}}">游戏解决方案</router-link>
-                  </el-menu-item>
-                  <el-menu-item index="3-6">
-                    <router-link :to="{path:'/three',query: {id: 36}}">医疗解决方案</router-link>
-                  </el-menu-item>
-                  <el-menu-item index="3-7">
-                    <router-link :to="{path:'/three',query: {id: 37}}">音视频解决方案</router-link>
-                  </el-menu-item>
-                  <el-menu-item index="3-8">
-                    <router-link :to="{path:'/three',query: {id: 38}}">网站建设解决方案</router-link>
-                  </el-menu-item>
-                </el-submenu>
-                <el-menu-item index="2">
-                  <router-link :to="{path:'/about',query: {id: 1}}">关于我们</router-link>
-                </el-menu-item>
-                <el-menu-item index="1">
-                  <router-link to="/">首页</router-link>
-                </el-menu-item> -->
               </el-menu>
               <el-menu class="hidden-md-and-up" mode="horizontal">
                 <el-menu-item index="1">
-                  <i class="el-icon-menu" @click="navshow = !navshow"></i>
+                  <i class="el-icon-menu" @click="navShow = !navShow"></i>
                 </el-menu-item>
               </el-menu>
             </div>
@@ -112,12 +47,10 @@
         </el-row>
         <transition name="el-zoom-in-top">
           <!-- 移动端 -->
-          <el-row v-show="navshow" class="mobile hidden-md-and-up transition-box">
+          <el-row v-show="navShow" class="mobile hidden-md-and-up transition-box">
             <el-col :xs="24" class="transition-box">
-              <el-menu default-active="2" class="el-menu-vertical-demo transition-box">
-
-
-                <template v-for="yylist in menulist">
+              <el-menu default-active="1" router class="el-menu-vertical-demo transition-box">
+                <template v-for="yylist in menuList">
                   <!-- 一级  有二级 -->
                   <el-submenu class="transition-box" v-if="yylist.ylist && yylist.ylist.length > 0" :index="yylist.yyid" :key="yylist.yyid">
                     <template slot="title">
@@ -154,58 +87,15 @@
 												</span>
                   </el-menu-item>
                 </template>
-
-
-
-
-                <!-- <el-menu-item class="transition-box" index="1">
-                  <i class="el-icon-menu"></i>
-                  <span slot="title">首页</span>
-                </el-menu-item>
-                <el-menu-item class="transition-box" index="2">
-                  <i class="el-icon-document"></i>
-                  <span slot="title">关于我们</span>
-                </el-menu-item>
-
-                <el-submenu class="transition-box" index="3">
-                  <template slot="title">
-                    <i class="el-icon-location"></i>
-                    <span>解决方案</span>
-                  </template>
-                  <el-menu-item-group>
-                    <el-menu-item index="1-1">数据中心迁移解决方案</el-menu-item>
-                    <el-menu-item index="1-2">Microsoft企业应用</el-menu-item>
-                    <el-menu-item index="1-3">储存备份</el-menu-item>
-                    <el-menu-item index="1-4">区块链部署</el-menu-item>
-                    <el-menu-item index="1-5">游戏解决方案</el-menu-item>
-                    <el-menu-item index="1-6">医疗解决方案</el-menu-item>
-                    <el-menu-item index="1-7">音视频解决方案</el-menu-item>
-                    <el-submenu index="1-8">
-                      <template slot="title">网站建设解决方案</template>
-                      <el-menu-item index="1-8-1">选项1</el-menu-item>
-                    </el-submenu>
-                  </el-menu-item-group>
-                </el-submenu>
-
-                <el-menu-item class="transition-box" index="4">
-                  <i class="el-icon-setting"></i>
-                  <span slot="title">客户案例</span>
-                </el-menu-item>
-                <el-menu-item class="transition-box" index="5">
-                  <i class="el-icon-document"></i>
-                  <span slot="title">新闻资讯</span>
-                </el-menu-item>
-                <el-menu-item class="transition-box" index="6">
-                  <i class="el-icon-document"></i>
-                  <span slot="title">联系我们</span>
-                </el-menu-item> -->
               </el-menu>
             </el-col>
           </el-row>
         </transition>
       </el-col>
     </el-row>
-
+    <el-button circle class="back-top" @click="backTop" v-show="backTopShow">
+      <i class="el-icon-upload2"></i>
+    </el-button>
   </el-header>
 </template>
 
@@ -213,16 +103,50 @@
 export default {
   name: 'GlobalHeader',
   props: {
-    menulist: {
+    menuList: {
       type: Array,
       default: ()=> []
     },
   },
+  computed: {
+
+  },
   data() {
     return {
-      navshow: false,
+      navShow: false,
       logo: '/static/img/3917_jdbaq5ph(2).png',
+      isScrollToMain: false,
+      backTopShow: false,
     }
+  },
+  methods: {
+    handleScroll() {
+      const scrollY = window.scrollY
+      const boolBackTop= scrollY > 100;
+      const bool = scrollY > 60
+      if (boolBackTop !== this.backTopShow) {
+        this.backTopShow = boolBackTop
+      }
+      if (bool !== this.isScrollToMain) {
+        this.isScrollToMain = bool
+      }
+    },
+    backTop() {
+      let back = setInterval(() => {
+        if (document.body.scrollTop || document.documentElement.scrollTop) {
+          document.body.scrollTop -= 100;
+          document.documentElement.scrollTop -= 100;
+        } else {
+          clearInterval(back)
+        }
+      });
+    },
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy(){
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
@@ -238,6 +162,9 @@ export default {
     box-sizing: border-box;
     overflow: hidden;
     padding: 0 100px;
+    &.deep-bg{
+      background: #b22f6f;
+    }
     .el-menu {
       padding-left: 50px;
       background: transparent;
@@ -346,5 +273,10 @@ export default {
 
   .mobile .el-menu>li {
     border-bottom: 1px solid #8CC5FF;
+  }
+  .back-top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
   }
 </style>

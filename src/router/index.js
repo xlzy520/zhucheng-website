@@ -14,13 +14,14 @@ import newsandinformation from '@/pages/newsandinformation'
 import contactus from '@/pages/contactus'
 import three from '@/pages/three'
 
-import TE from '@/components/swiper'
+import TE from '@/components/Card'
 
 
 Vue.use(Router)
 
 export default new Router({
-	routes: [
+  scrollBehavior: () => ({ y: 0 }),
+  routes: [
     {path: '/test', component: TE},
 	  {
 			path: '/',
