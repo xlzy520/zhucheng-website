@@ -20,7 +20,7 @@
         <our-strength />
       </el-col>
     </el-row>
-    <el-row>
+    <el-row class="last">
       <el-col :xs="24">
         <news />
       </el-col>
@@ -433,6 +433,9 @@
 </script>
 
 <style lang="less" scoped>
+  .last{
+    margin-bottom: 110px;
+  }
 	/* box1 */
 	.box1 {
 		margin: 0;

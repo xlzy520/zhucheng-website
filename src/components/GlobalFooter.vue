@@ -110,7 +110,7 @@ export default {
     background-color: #464854;
     color: #fff;
     padding: 120px 130px 23px;
-    margin-top: 110px;
+    /*margin-top: 110px;*/
     .logo{
       width: 45px;
       height: 45px;

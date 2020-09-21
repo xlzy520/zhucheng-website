@@ -8,6 +8,7 @@ import BasicLayoutWhite from '@/layout/basicLayoutWhite'
 import Home from '@/pages/Home'
 import About from '@/pages/About'
 import Query from '@/pages/Query'
+import ContactUs from '@/pages/ContactUs/index'
 
 
 
@@ -16,7 +17,6 @@ import secondpage from '@/pages/secondpage'
 import solution from '@/pages/solution'
 import customercase from '@/pages/customercase'
 import newsandinformation from '@/pages/newsandinformation'
-import contactus from '@/pages/contactus'
 import three from '@/pages/three'
 
 import TE from '@/pages/About/components/ChooseUs'
@@ -60,7 +60,7 @@ export default new Router({
         {
           path: '/contactus',
           name: 'contactus',
-          component: contactus
+          component: ContactUs
         },
         {
           path: '/three',
