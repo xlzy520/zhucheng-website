@@ -183,8 +183,9 @@
 <style lang="less">
   .container{
     .el-main {
-      text-align: center;
+      /*text-align: center;*/
       padding: 0;
+      background: #F7FAFC;
     }
   }
 </style>

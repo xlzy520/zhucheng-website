@@ -1,14 +1,12 @@
 import axios from 'axios'
-import { MessageBox, Message } from 'element-ui'
+import { Message } from 'element-ui'
 import router from '@/router'
-import { resetRouter } from '@/router'
 
 const baseRequest = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
   withCredentials: true,
-  timeout: 20 * 1000
+  timeout: 40 * 1000
 })
-let expire = 0
 
 // response interceptor
 baseRequest.interceptors.response.use(
@@ -22,14 +20,7 @@ baseRequest.interceptors.response.use(
       })
       // token已过期
       if (res.code === 1027) {
-        expire++
-        if (expire < 2) {
-          expire = true
-          // Message.error('token凭证过期了，需要重新登录')
-          resetRouter()
-          router.push('/login')
-          expire = 0
-        }
+        router.push('/login')
       }
       return Promise.reject(res)
     } else {

@@ -1,97 +1,95 @@
 <template>
   <el-header :class="['header-main',isScrollToMain ? 'deep-bg': '']">
     <el-row>
-      <el-col :span="24">
-        <el-row>
-          <el-col :xs="8" :sm="6" :md="4" :lg="4" :xl="4">
-            <div class="logo">
-              <img src="../assets/3917_jdbaq5ph(2).png" alt="">
+      <el-row>
+        <el-col :xs="8" :sm="6" :md="4" :lg="4" :xl="4">
+          <div class="logo">
+            <img src="../assets/3917_jdbaq5ph(2).png" alt="">
+          </div>
+        </el-col>
+        <el-col :xs="16" :sm="18" :md="20" :lg="20" :xl="20">
+          <div class="header_nav">
+            <div class="hidden-sm-and-down fr phone-number">
+              <i class="el-icon-phone-outline">0574-88888888</i>
             </div>
-          </el-col>
-          <el-col :xs="16" :sm="18" :md="20" :lg="20" :xl="20">
-            <div class="header_nav">
-              <div class="hidden-sm-and-down fr phone-number">
-                <i class="el-icon-phone-outline">0574-88888888</i>
-              </div>
-              <el-menu class="hidden-sm-and-down" default-active="1" mode="horizontal"
-                       background-color="transparent"
-                       text-color="#fff">
-                <template v-for="yylist in menuList">
-                  <el-submenu v-if="yylist.ylist && yylist.ylist.length > 0"
-                              :index="yylist.yyid"
-                              background-color="#545c64"
-                              :key="yylist.yyid">
-                    <template slot="title">
-                      <router-link :data-hover="yylist.name" :to="{path:yylist.yrouterul,query: yylist.yid}">{{yylist.yname}}</router-link>
-                    </template>
-                    <div v-for="eelist in yylist.ylist" :key="eelist.eeid">
-                      <el-menu-item v-if="yylist.ylist && yylist.ylist.length > 0" :key="eelist.eid" :index="eelist.eeid">
-                        <router-link :to="{path:'/three',query:{id: eelist.eid}}">{{eelist.ename}}</router-link>
-                      </el-menu-item>
-                    </div>
-                  </el-submenu>
+            <el-menu class="hidden-sm-and-down" default-active="1" mode="horizontal"
+                     background-color="transparent"
+                     text-color="#fff">
+              <template v-for="yylist in menuList">
+                <el-submenu v-if="yylist.ylist && yylist.ylist.length > 0"
+                            :index="yylist.yyid"
+                            background-color="#545c64"
+                            :key="yylist.yyid">
+                  <template slot="title">
+                    <router-link :data-hover="yylist.name" :to="{path:yylist.yrouterul,query: yylist.yid}">{{yylist.yname}}</router-link>
+                  </template>
+                  <div v-for="eelist in yylist.ylist" :key="eelist.eeid">
+                    <el-menu-item v-if="yylist.ylist && yylist.ylist.length > 0" :key="eelist.eid" :index="eelist.eeid">
+                      <router-link :to="{path:'/three',query:{id: eelist.eid}}">{{eelist.ename}}</router-link>
+                    </el-menu-item>
+                  </div>
+                </el-submenu>
 
-                  <el-menu-item v-else :key="yylist.yid" :index="yylist.yyid">
-                    <router-link :data-hover="yylist.yname" v-if="yylist.yid !== 1" :to="{path:yylist.yrouterul,query: yylist.yid}">{{yylist.yname}}</router-link>
-                    <router-link :data-hover="yylist.yname" v-else to="/">{{yylist.yname}}</router-link>
-                  </el-menu-item>
-                </template>
-              </el-menu>
-              <el-menu class="hidden-md-and-up" mode="horizontal">
-                <el-menu-item index="1">
-                  <i class="el-icon-menu" @click="navShow = !navShow"></i>
+                <el-menu-item v-else :key="yylist.yid" :index="yylist.yyid">
+                  <router-link :data-hover="yylist.yname" v-if="yylist.yid !== 1" :to="{path:yylist.yrouterul,query: yylist.yid}">{{yylist.yname}}</router-link>
+                  <router-link :data-hover="yylist.yname" v-else to="/">{{yylist.yname}}</router-link>
                 </el-menu-item>
-              </el-menu>
-            </div>
-          </el-col>
-        </el-row>
-        <transition name="el-zoom-in-top">
-          <!-- 移动端 -->
-          <el-row v-show="navShow" class="mobile hidden-md-and-up transition-box">
-            <el-col :xs="24" class="transition-box">
-              <el-menu default-active="1" router class="el-menu-vertical-demo transition-box">
-                <template v-for="yylist in menuList">
-                  <!-- 一级  有二级 -->
-                  <el-submenu class="transition-box" v-if="yylist.ylist && yylist.ylist.length > 0" :index="yylist.yyid" :key="yylist.yyid">
-                    <template slot="title">
-                      <i class="el-icon-location"></i>
-                      <router-link :to="{path:yylist.yrouterul,query: yylist.yid}">{{yylist.yname}}</router-link>
-                    </template>
-                    <el-menu-item-group>
-                      <template v-for="eelist in yylist.ylist">
-                        <!-- 二级 有三级 -->
-                        <template v-if="eelist.elist.length > 0">
-                          <el-submenu :index="eelist.eeid">
-                            <template slot="title">{{eelist.ename}}</template>
-                            <el-menu-item v-for="sslist in eelist.elist" :index="sslist.ssid" :key="sslist.sid">
-                              <router-link :to="{path:'/three',query:{id: eelist.eid}}">{{sslist.sname}}</router-link>
-                            </el-menu-item>
-                          </el-submenu>
-                        </template>
-                        <!-- 二级 没有三级 -->
-                        <template v-if="eelist.elist.length == 0">
-                          <el-menu-item v-if="yylist.ylist && yylist.ylist.length > 0" :key="eelist.eid" :index="eelist.eeid">
-                            <router-link :to="{path:'/three',query:{id: eelist.eid}}">{{eelist.ename}}</router-link>
+              </template>
+            </el-menu>
+            <el-menu class="hidden-md-and-up" mode="horizontal">
+              <el-menu-item index="1">
+                <i class="el-icon-menu" @click="navShow = !navShow"></i>
+              </el-menu-item>
+            </el-menu>
+          </div>
+        </el-col>
+      </el-row>
+      <transition name="el-zoom-in-top">
+        <!-- 移动端 -->
+        <el-row v-show="navShow" class="mobile hidden-md-and-up transition-box">
+          <el-col :xs="24" class="transition-box">
+            <el-menu default-active="1" router class="el-menu-vertical-demo transition-box">
+              <template v-for="yylist in menuList">
+                <!-- 一级  有二级 -->
+                <el-submenu class="transition-box" v-if="yylist.ylist && yylist.ylist.length > 0" :index="yylist.yyid" :key="yylist.yyid">
+                  <template slot="title">
+                    <i class="el-icon-location"></i>
+                    <router-link :to="{path:yylist.yrouterul,query: yylist.yid}">{{yylist.yname}}</router-link>
+                  </template>
+                  <el-menu-item-group>
+                    <template v-for="eelist in yylist.ylist">
+                      <!-- 二级 有三级 -->
+                      <template v-if="eelist.elist.length > 0">
+                        <el-submenu :index="eelist.eeid">
+                          <template slot="title">{{eelist.ename}}</template>
+                          <el-menu-item v-for="sslist in eelist.elist" :index="sslist.ssid" :key="sslist.sid">
+                            <router-link :to="{path:'/three',query:{id: eelist.eid}}">{{sslist.sname}}</router-link>
                           </el-menu-item>
-                        </template>
+                        </el-submenu>
                       </template>
-                    </el-menu-item-group>
-                  </el-submenu>
-                  <!-- 一级 没有二级 -->
-                  <el-menu-item class="transition-box" v-else="yylist.ylist && yylist.ylist.length ==  0" :key="yylist.yid"
-                                :index="yylist.yyid">
-                    <i class="el-icon-document"></i>
-                    <span slot="title">
+                      <!-- 二级 没有三级 -->
+                      <template v-if="eelist.elist.length == 0">
+                        <el-menu-item v-if="yylist.ylist && yylist.ylist.length > 0" :key="eelist.eid" :index="eelist.eeid">
+                          <router-link :to="{path:'/three',query:{id: eelist.eid}}">{{eelist.ename}}</router-link>
+                        </el-menu-item>
+                      </template>
+                    </template>
+                  </el-menu-item-group>
+                </el-submenu>
+                <!-- 一级 没有二级 -->
+                <el-menu-item class="transition-box" v-else="yylist.ylist && yylist.ylist.length ==  0" :key="yylist.yid"
+                              :index="yylist.yyid">
+                  <i class="el-icon-document"></i>
+                  <span slot="title">
 													<router-link v-if="yylist.yid != 1" :to="{path:yylist.yrouterul,query: yylist.yid}">{{yylist.yname}}</router-link>
 													<router-link v-if="yylist.yid == 1" to="/">{{yylist.yname}}</router-link>
 												</span>
-                  </el-menu-item>
-                </template>
-              </el-menu>
-            </el-col>
-          </el-row>
-        </transition>
-      </el-col>
+                </el-menu-item>
+              </template>
+            </el-menu>
+          </el-col>
+        </el-row>
+      </transition>
     </el-row>
     <el-button circle class="back-top" @click="backTop" v-show="backTopShow">
       <i class="el-icon-upload2"></i>
@@ -154,7 +152,7 @@ export default {
 <style lang="less">
   .el-header.header-main {
     position: fixed;
-    z-index: 9999;
+    z-index: 9999999;
     width: 100%;
     color: #fff;
     text-align: center;
@@ -162,6 +160,9 @@ export default {
     box-sizing: border-box;
     overflow: hidden;
     padding: 0 100px;
+    a{
+      color: #fff;
+    }
     &.deep-bg{
       background: #b22f6f;
     }

@@ -10,8 +10,23 @@
         <Card />
       </el-col>
     </el-row>
+    <el-row>
+      <el-col :xs="24">
+        <our-service />
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :xs="24">
+        <our-strength />
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :xs="24">
+        <news />
+      </el-col>
+    </el-row>
 
-		<el-row>
+		<el-row v-if="false">
 			<div class="box2">
 				<el-col :span="20" :offset="2">
 					<el-row class="box2_row">
@@ -24,14 +39,14 @@
 						</el-col>
 						<el-col :xs="24" :sm="12">
 							<div class="box2_contentright animated">
-								<img src="../assets/3917_jdbbi4ow.png" alt="">
+								<img src="../../assets/3917_jdbbi4ow.png" alt="">
 							</div>
 						</el-col>
 					</el-row>
 					<el-row class="box2_row">
 						<el-col :xs="24" :sm="12">
 							<div class="box2_contentleft1 animated">
-								<img src="../assets/3917_jdbbkb3z.png" alt="">
+								<img src="../../assets/3917_jdbbkb3z.png" alt="">
 							</div>
 						</el-col>
 						<el-col :xs="24" :sm="12">
@@ -41,29 +56,29 @@
 								<div class="box2_contentleft1_down animated">
 									<el-row type="flex" justify="space-around">
 										<el-col :span="4">
-											<img style="width: 50px;" src="../assets/3917_jdbbqs8p.png" alt="">
+											<img style="width: 50px;" src="../../assets/3917_jdbbqs8p.png" alt="">
 											<p class="pic_title">云物联</p>
 										</el-col>
 										<el-col :span="4">
-											<img style="width: 50px;" src="../assets/3917_jdbbqzdp.png" alt="">
+											<img style="width: 50px;" src="../../assets/3917_jdbbqzdp.png" alt="">
 											<p class="pic_title">云安全</p>
 										</el-col>
 										<el-col :span="4">
-											<img style="width: 50px;" src="../assets/3917_jdbbr3wu.png" alt="">
+											<img style="width: 50px;" src="../../assets/3917_jdbbr3wu.png" alt="">
 											<p class="pic_title">云存储</p>
 										</el-col>
 									</el-row>
 									<el-row type="flex" justify="space-around">
 										<el-col :span="4">
-											<img style="width: 50px;" src="../assets/3917_jdbbr8l9.png" alt="">
+											<img style="width: 50px;" src="../../assets/3917_jdbbr8l9.png" alt="">
 											<p class="pic_title">云游戏</p>
 										</el-col>
 										<el-col :span="4">
-											<img style="width: 50px;" src="../assets/3917_jdbbrdgr.png" alt="">
+											<img style="width: 50px;" src="../../assets/3917_jdbbrdgr.png" alt="">
 											<p class="pic_title">云计算</p>
 										</el-col>
 										<el-col :span="4">
-											<img style="width: 50px;" src="../assets/3917_jdbbrify.png" alt="">
+											<img style="width: 50px;" src="../../assets/3917_jdbbrify.png" alt="">
 											<p class="pic_title">云软件</p>
 										</el-col>
 									</el-row>
@@ -96,14 +111,14 @@
 						</el-col>
 						<el-col :xs="24" :sm="12">
 							<div class="box2_contentright2 animated">
-								<img src="../assets/3917_jdbbt5g0.png" alt="">
+								<img src="../../assets/3917_jdbbt5g0.png" alt="">
 							</div>
 						</el-col>
 					</el-row>
 				</el-col>
 			</div>
 		</el-row>
-		<el-row>
+		<el-row v-if="false">
 			<el-col :xs="24">
 				<div class="box3">
 					<el-row>
@@ -118,7 +133,7 @@
 							<div class="animated elcarouselbox">
 								<el-carousel autoplay class="box3_carousel" :interval="50000" type="card" height="500px">
 									<el-carousel-item>
-										<el-row><img width="30%" src="../assets/1587_jgzw6p39.png" alt=""></el-row>
+										<el-row><img width="30%" src="../../assets/1587_jgzw6p39.png" alt=""></el-row>
 										<el-row>
 											<p><span>何淼</span><span>/工程师</span></p>
 											<p>2010年获得一系列的荣誉证书，担任协会的会长，2010年获得一系列的荣誉证书</p>
@@ -130,7 +145,7 @@
 										</el-row>
 									</el-carousel-item>
 									<el-carousel-item>
-										<el-row><img width="30%" src="../assets/1587_jgzw6p39.png" alt=""></el-row>
+										<el-row><img width="30%" src="../../assets/1587_jgzw6p39.png" alt=""></el-row>
 										<el-row>
 											<p><span>何淼</span><span>/工程师</span></p>
 											<p>2010年获得一系列的荣誉证书，担任协会的会长，2010年获得一系列的荣誉证书</p>
@@ -142,7 +157,7 @@
 										</el-row>
 									</el-carousel-item>
 									<el-carousel-item>
-										<el-row><img width="30%" src="../assets/1587_jgzw6p39.png" alt=""></el-row>
+										<el-row><img width="30%" src="../../assets/1587_jgzw6p39.png" alt=""></el-row>
 										<el-row>
 											<p><span>何淼</span><span>/工程师</span></p>
 											<p>2010年获得一系列的荣誉证书，担任协会的会长，2010年获得一系列的荣誉证书</p>
@@ -154,7 +169,7 @@
 										</el-row>
 									</el-carousel-item>
 									<el-carousel-item>
-										<el-row><img width="30%" src="../assets/1587_jgzw6p39.png" alt=""></el-row>
+										<el-row><img width="30%" src="../../assets/1587_jgzw6p39.png" alt=""></el-row>
 										<el-row>
 											<p><span>何淼</span><span>/工程师</span></p>
 											<p>2010年获得一系列的荣誉证书，担任协会的会长，2010年获得一系列的荣誉证书</p>
@@ -166,7 +181,7 @@
 										</el-row>
 									</el-carousel-item>
 									<el-carousel-item>
-										<el-row><img width="30%" src="../assets/1587_jgzw6p39.png" alt=""></el-row>
+										<el-row><img width="30%" src="../../assets/1587_jgzw6p39.png" alt=""></el-row>
 										<el-row>
 											<p><span>何淼</span><span>/工程师</span></p>
 											<p>2010年获得一系列的荣誉证书，担任协会的会长，2010年获得一系列的荣誉证书</p>
@@ -185,7 +200,7 @@
 							<div class="animated elcarouselbox">
 								<el-carousel autoplay class="box3_carousel" :interval="50000" type="card" height="350px">
 									<el-carousel-item>
-										<el-row><img width="30%" src="../assets/1587_jgzw6p39.png" alt=""></el-row>
+										<el-row><img width="30%" src="../../assets/1587_jgzw6p39.png" alt=""></el-row>
 										<el-row>
 											<p><span>何淼</span><span>/工程师</span></p>
 											<p>2010年获得一系列的荣誉证书，担任协会的会长，2010年获得一系列的荣誉证书</p>
@@ -197,7 +212,7 @@
 										</el-row>
 									</el-carousel-item>
 									<el-carousel-item>
-										<el-row><img width="30%" src="../assets/1587_jgzw6p39.png" alt=""></el-row>
+										<el-row><img width="30%" src="../../assets/1587_jgzw6p39.png" alt=""></el-row>
 										<el-row>
 											<p><span>何淼</span><span>/工程师</span></p>
 											<p>2010年获得一系列的荣誉证书，担任协会的会长，2010年获得一系列的荣誉证书</p>
@@ -209,7 +224,7 @@
 										</el-row>
 									</el-carousel-item>
 									<el-carousel-item>
-										<el-row><img width="30%" src="../assets/1587_jgzw6p39.png" alt=""></el-row>
+										<el-row><img width="30%" src="../../assets/1587_jgzw6p39.png" alt=""></el-row>
 										<el-row>
 											<p><span>何淼</span><span>/工程师</span></p>
 											<p>2010年获得一系列的荣誉证书，担任协会的会长，2010年获得一系列的荣誉证书</p>
@@ -221,7 +236,7 @@
 										</el-row>
 									</el-carousel-item>
 									<el-carousel-item>
-										<el-row><img width="30%" src="../assets/1587_jgzw6p39.png" alt=""></el-row>
+										<el-row><img width="30%" src="../../assets/1587_jgzw6p39.png" alt=""></el-row>
 										<el-row>
 											<p><span>何淼</span><span>/工程师</span></p>
 											<p>2010年获得一系列的荣誉证书，担任协会的会长，2010年获得一系列的荣誉证书</p>
@@ -233,7 +248,7 @@
 										</el-row>
 									</el-carousel-item>
 									<el-carousel-item>
-										<el-row><img width="30%" src="../assets/1587_jgzw6p39.png" alt=""></el-row>
+										<el-row><img width="30%" src="../../assets/1587_jgzw6p39.png" alt=""></el-row>
 										<el-row>
 											<p><span>何淼</span><span>/工程师</span></p>
 											<p>2010年获得一系列的荣誉证书，担任协会的会长，2010年获得一系列的荣誉证书</p>
@@ -251,7 +266,7 @@
 				</div>
 			</el-col>
 		</el-row>
-		<el-row>
+		<el-row v-if="false">
 			<el-col :span="20" :offset="2">
 				<div calss="box4">
 					<el-row>
@@ -304,26 +319,26 @@
 				</div>
 			</el-col>
 		</el-row>
-		<el-row>
+		<el-row v-if="false">
 			<div class="box5">
 				<el-col :span="20" :offset="2">
 					<el-row type="flex" justify="space-around" class="hidden-sm-and-down">
-						<el-col :span="6"><img class="animated" src="../assets/1587_jh5ppf5t.png" alt=""></el-col>
-						<el-col :span="6"><img class="animated" src="../assets/1587_jh5ppf5t.png" alt=""></el-col>
-						<el-col :span="6"><img class="animated" src="../assets/1587_jh5ppf5t.png" alt=""></el-col>
-						<el-col :span="6"><img class="animated" src="../assets/1587_jh5ppf5t.png" alt=""></el-col>
-						<el-col :span="6"><img class="animated" src="../assets/1587_jh5ppf5t.png" alt=""></el-col>
-						<el-col :span="6"><img class="animated" src="../assets/1587_jh5ppf5t.png" alt=""></el-col>
-						<el-col :span="6"><img class="animated" src="../assets/1587_jh5ppf5t.png" alt=""></el-col>
+						<el-col :span="6"><img class="animated" src="../../assets/1587_jh5ppf5t.png" alt=""></el-col>
+						<el-col :span="6"><img class="animated" src="../../assets/1587_jh5ppf5t.png" alt=""></el-col>
+						<el-col :span="6"><img class="animated" src="../../assets/1587_jh5ppf5t.png" alt=""></el-col>
+						<el-col :span="6"><img class="animated" src="../../assets/1587_jh5ppf5t.png" alt=""></el-col>
+						<el-col :span="6"><img class="animated" src="../../assets/1587_jh5ppf5t.png" alt=""></el-col>
+						<el-col :span="6"><img class="animated" src="../../assets/1587_jh5ppf5t.png" alt=""></el-col>
+						<el-col :span="6"><img class="animated" src="../../assets/1587_jh5ppf5t.png" alt=""></el-col>
 					</el-row>
 					<el-row class="hidden-md-and-up">
-						<el-col :xs="12"><img class="animated" src="../assets/1587_jh5ppf5t.png" alt=""></el-col>
-						<el-col :xs="12"><img class="animated" src="../assets/1587_jh5ppf5t.png" alt=""></el-col>
-						<el-col :xs="12"><img class="animated" src="../assets/1587_jh5ppf5t.png" alt=""></el-col>
-						<el-col :xs="12"><img class="animated" src="../assets/1587_jh5ppf5t.png" alt=""></el-col>
-						<el-col :xs="12"><img class="animated" src="../assets/1587_jh5ppf5t.png" alt=""></el-col>
-						<el-col :xs="12"><img class="animated" src="../assets/1587_jh5ppf5t.png" alt=""></el-col>
-						<el-col :xs="12"><img class="animated" src="../assets/1587_jh5ppf5t.png" alt=""></el-col>
+						<el-col :xs="12"><img class="animated" src="../../assets/1587_jh5ppf5t.png" alt=""></el-col>
+						<el-col :xs="12"><img class="animated" src="../../assets/1587_jh5ppf5t.png" alt=""></el-col>
+						<el-col :xs="12"><img class="animated" src="../../assets/1587_jh5ppf5t.png" alt=""></el-col>
+						<el-col :xs="12"><img class="animated" src="../../assets/1587_jh5ppf5t.png" alt=""></el-col>
+						<el-col :xs="12"><img class="animated" src="../../assets/1587_jh5ppf5t.png" alt=""></el-col>
+						<el-col :xs="12"><img class="animated" src="../../assets/1587_jh5ppf5t.png" alt=""></el-col>
+						<el-col :xs="12"><img class="animated" src="../../assets/1587_jh5ppf5t.png" alt=""></el-col>
 					</el-row>
 				</el-col>
 			</div>
@@ -335,12 +350,18 @@
 </template>
 
 <script>
-  import Swiper from '@/components/swiper'
-  import Card from '@/components/Card'
+  import Swiper from '@/components/swiper/index'
+  import Card from '@/components/ImageAndTextCard'
+  import ourService from "./components/ourService";
+  import ourStrength from "./components/ourStrength";
+  import news from "@/pages/Index/components/news";
 	export default {
     components: {
       Swiper,
-      Card
+      Card,
+      ourService,
+      ourStrength,
+      news
     },
 		data() {
 			return {
@@ -417,7 +438,7 @@
 		margin: 0;
 		height: 800px;
 		width: 100%;
-		background: url(../assets/3917_jdbaxb26.jpg) no-repeat center center;
+		background: url(../../assets/3917_jdbaxb26.jpg) no-repeat center center;
 		overflow: hidden;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
@@ -439,7 +460,7 @@
 		overflow: hidden;
 		margin: 0;
 		color: #000000;
-		background: url(../assets/3917_jdbbe20e.png) no-repeat center center;
+		background: url(../../assets/3917_jdbbe20e.png) no-repeat center center;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -495,7 +516,7 @@
 		overflow: hidden;
 		margin: 0;
 		color: #FFFFFF;
-		background: url(../assets/1587_jgzx3s67.png) no-repeat center center;
+		background: url(../../assets/1587_jgzx3s67.png) no-repeat center center;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -568,7 +589,7 @@
 		overflow: hidden;
 		margin: 0;
 		color: #FFFFFF;
-		background: url(../assets/1587_jgzx3s67.png) 100% 100% no-repeat;
+		background: url(../../assets/1587_jgzx3s67.png) 100% 100% no-repeat;
 		background-position: 0 -10%;
 	}
 

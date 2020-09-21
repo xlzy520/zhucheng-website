@@ -4,7 +4,7 @@ import Router from 'vue-router'
 import BasicLayout from '@/layout/basicLayout'
 
 
-import Index from '@/pages/index'
+import Index from '@/pages/Index/index'
 import firstcompontents from '@/pages/firstcompontents'
 import secondpage from '@/pages/secondpage'
 import about from '@/pages/about'
@@ -14,7 +14,7 @@ import newsandinformation from '@/pages/newsandinformation'
 import contactus from '@/pages/contactus'
 import three from '@/pages/three'
 
-import TE from '@/components/Card'
+import TE from '@/components/ImageAndTextCard'
 
 
 Vue.use(Router)

@@ -1,4 +1,5 @@
 @import "var";
+@import "media";
 
 h1,
 h2 {
@@ -16,7 +17,6 @@ ol {
 }
 
 a {
-  color: #fff;
   outline: none;
   text-decoration: none;
 }
@@ -25,6 +25,13 @@ img {
   max-width: 100%;
   max-height: 100%;
   border: none;
+}
+.df{
+  display: flex;
+}
+.flex-column{
+  .df;
+  flex-direction: column;
 }
 
 .fl{

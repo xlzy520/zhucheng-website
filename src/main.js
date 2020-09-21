@@ -15,7 +15,11 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 
 import './styles/index.less'
+import '@/icons' // icon
 
+import LzBadge from "@/components/LzBadge";
+
+Vue.component('LzBadge', LzBadge)
 
 
 Vue.config.productionTip = false
