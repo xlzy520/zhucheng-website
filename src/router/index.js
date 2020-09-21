@@ -7,7 +7,7 @@ import BasicLayout from '@/layout/basicLayout'
 import Home from '@/pages/Home'
 import firstcompontents from '@/pages/firstcompontents'
 import secondpage from '@/pages/secondpage'
-import about from '@/pages/about'
+import About from '@/pages/About'
 import solution from '@/pages/solution'
 import customercase from '@/pages/customercase'
 import newsandinformation from '@/pages/newsandinformation'
@@ -35,7 +35,7 @@ export default new Router({
         {
           path: '/about',
           name: 'about',
-          component: about
+          component: About
         },
         {
           path: '/solution',

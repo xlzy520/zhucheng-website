@@ -1,9 +1,10 @@
 <template>
-	<div class="secondpage">
+	<div class="about">
+
 		<div class="title_top">
 			<el-row :gutter="20">
 				<el-col :span="16" :offset="4">
-					<div class="secondpage_con">
+					<div class="about_con">
 						<h2>关于我们</h2>
 						<p>拥有全球领先，安全的云计算产品</p>
 					</div>
@@ -40,7 +41,7 @@
 			<el-col :span="16" :offset="4">
 				<el-row>
 					<el-col :xs="24">
-						<img src="../assets/1587_jgzzz5qq.png" alt="" style="display:inline-block;width: 100%;max-height: 600px;">
+						<img src="../../assets/1587_jgzzz5qq.png" alt="" style="display:inline-block;width: 100%;max-height: 600px;">
 					</el-col>
 				</el-row>
 			</el-col>
@@ -68,7 +69,7 @@
 			<el-col :span="16" :offset="4">
 				<el-carousel arrow="never" class="box3_carousel" :interval="50000" type="card" height="520px">
 					<el-carousel-item>
-						<el-row><img width="30%" src="../assets/1587_jgzw6p39.png" alt=""></el-row>
+						<el-row><img width="30%" src="../../assets/1587_jgzw6p39.png" alt=""></el-row>
 						<el-row>
 							<p><span>何淼</span><span>/工程师</span></p>
 							<p>2010年获得一系列的荣誉证书，担任协会的会长，2010年获得一系列的荣誉证书</p>
@@ -78,7 +79,7 @@
 						</el-row>
 					</el-carousel-item>
 					<el-carousel-item>
-						<el-row><img width="30%" src="../assets/1587_jgzw6p39.png" alt=""></el-row>
+						<el-row><img width="30%" src="../../assets/1587_jgzw6p39.png" alt=""></el-row>
 						<el-row>
 							<p><span>何淼</span><span>/工程师</span></p>
 							<p>2010年获得一系列的荣誉证书，担任协会的会长，2010年获得一系列的荣誉证书</p>
@@ -88,7 +89,7 @@
 						</el-row>
 					</el-carousel-item>
 					<el-carousel-item>
-						<el-row><img width="30%" src="../assets/1587_jgzw6p39.png" alt=""></el-row>
+						<el-row><img width="30%" src="../../assets/1587_jgzw6p39.png" alt=""></el-row>
 						<el-row>
 							<p><span>何淼</span><span>/工程师</span></p>
 							<p>2010年获得一系列的荣誉证书，担任协会的会长，2010年获得一系列的荣誉证书</p>
@@ -112,19 +113,19 @@
 				</el-row>
 				<el-row type="flex" justify="space-around">
 					<el-col :span="4">
-						 <img src="../assets/1587_jh5ps5j6.png" alt="">
+						 <img src="../../assets/1587_jh5ps5j6.png" alt="">
 					</el-col>
 					<el-col :span="4">
-						<img src="../assets/1587_jh5ps5j6.png" alt="">
+						<img src="../../assets/1587_jh5ps5j6.png" alt="">
 					</el-col>
 					<el-col :span="4">
-						<img src="../assets/1587_jh5ps5j6.png" alt="">
+						<img src="../../assets/1587_jh5ps5j6.png" alt="">
 					</el-col>
 					<el-col :span="4">
-						<img src="../assets/1587_jh5ps5j6.png" alt="">
+						<img src="../../assets/1587_jh5ps5j6.png" alt="">
 					</el-col>
 					<el-col :span="4">
-						<img src="../assets/1587_jh5ps5j6.png" alt="">
+						<img src="../../assets/1587_jh5ps5j6.png" alt="">
 					</el-col>
 				</el-row>
 			</el-col>
@@ -146,7 +147,7 @@
 			console.log(this.workTask)
 		},
 		beforeMount: function() { //挂载前状态
-			
+
 		}
 
 	}
@@ -165,20 +166,20 @@
 		overflow: hidden;
 		margin: 0;
 		color: #000000;
-		background: url(../assets/1587_jgzynhtp.jpg) no-repeat center center;
+		background: url(../../assets/1587_jgzynhtp.jpg) no-repeat center center;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
 	}
 
-	.secondpage_con {
+	.about_con {
 		margin: 150px auto;
-		
+
 	}
 
-	.secondpage_con h1,
-	.secondpage_con p,.secondpage_con h2{
+	.about_con h1,
+	.about_con p,.about_con h2{
 		color: #FFFFFF;
 	}
 
@@ -197,7 +198,7 @@
 		padding-top: 50px;
 		padding-bottom: 50px;
 		color: #FFFFFF;
-		background: url(../assets/1587_jh5pkdw8.jpg) no-repeat center center;
+		background: url(../../assets/1587_jh5pkdw8.jpg) no-repeat center center;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
