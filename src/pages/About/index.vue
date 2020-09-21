@@ -1,20 +1,35 @@
 <template>
 	<div class="about">
+    <div class="about-bg">
+      <div class="bg-desc">
+        <div class="title">走进竹成</div>
+        <div class="slogan">你们的信任</div>
+        <div class="slogan">都是我们前进的最大动力</div>
+        <div class="lz"></div>
+      </div>
+      <div class="about-breadcrumb">
+        <img src="assets/icons/address.png" class="icon" />
+        <span class="content">首页>关于我们</span>
+      </div>
+      <img src="assets/image/about.png" alt="">
+    </div>
+    <el-row>
+      <el-col :xs="24">
+        <AboutUsCard />
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :xs="24">
+        <our-strength />
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :xs="24">
+        <choose-us />
+      </el-col>
+    </el-row>
 
-		<div class="title_top">
-			<el-row :gutter="20">
-				<el-col :span="16" :offset="4">
-					<div class="about_con">
-						<h2>关于我们</h2>
-						<p>拥有全球领先，安全的云计算产品</p>
-					</div>
-				</el-col>
-			</el-row>
-		</div>
-		<!-- 内容 -->
-		<!-- 布局 -->
-
-		<el-row>
+		<el-row v-if="false">
 			<el-col :span="16" :offset="4">
 				<el-row>
 					<el-col :xs="24" :sm="8">
@@ -37,7 +52,7 @@
 			</el-col>
 		</el-row>
 
-		<el-row>
+		<el-row v-if="false">
 			<el-col :span="16" :offset="4">
 				<el-row>
 					<el-col :xs="24">
@@ -48,7 +63,7 @@
 		</el-row>
 
 
-		<el-row>
+		<el-row v-if="false">
 			<div class="yunduanfuwu">
 				<el-col :span="16" :offset="4">
 					<el-row>
@@ -65,7 +80,7 @@
 			</div>
 		</el-row>
 
-		<el-row>
+		<el-row v-if="false">
 			<el-col :span="16" :offset="4">
 				<el-carousel arrow="never" class="box3_carousel" :interval="50000" type="card" height="520px">
 					<el-carousel-item>
@@ -102,7 +117,7 @@
 			</el-col>
 		</el-row>
 
-		<el-row class="hezuohuoban">
+		<el-row class="hezuohuoban" v-if="false">
 			<div >
 			<el-col :span="16" :offset="4">
 				<el-row>
@@ -136,7 +151,15 @@
 </template>
 
 <script>
+  import ourStrength from "@/pages/Home/components/ourStrength";
+  import AboutUsCard from "@/components/AboutUsCard";
+  import ChooseUs from "@/pages/About/components/ChooseUs";
 	export default {
+    components: {
+      ourStrength,
+      AboutUsCard,
+      ChooseUs
+    },
 		data() {
 			return {
 				workTask: []
@@ -154,24 +177,48 @@
 
 </script>
 
-<style scoped>
-	* {
-
-		color: #000000;
-	}
-
-	.title_top {
-
-		width: 100%;
-		overflow: hidden;
-		margin: 0;
-		color: #000000;
-		background: url(../../assets/1587_jgzynhtp.jpg) no-repeat center center;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-	}
+<style lang="less" scoped>
+  .about{
+    .about-bg{
+      font-family: Microsoft YaHei;
+      color: #fff;
+      img{
+        width: 100%;
+      }
+    }
+    .bg-desc{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      left: 175px;
+      bottom: 218px;
+      .title{
+        font-size: 24px;
+        margin-bottom: 38px;
+      }
+      .slogan{
+        font-size: 36px;
+        margin-bottom: 25px;
+      }
+      .lz{
+        margin-top: 25px;
+        width: 44px;
+        height: 1px;
+        background: #fff;
+      }
+    }
+    .about-breadcrumb{
+      position: absolute;
+      right: 176px;
+      bottom: 219px;
+      display: flex;
+      font-size: 16px;
+      .icon{
+        width: 14px;
+        height: 18px;
+      }
+    }
+  }
 
 	.about_con {
 		margin: 150px auto;

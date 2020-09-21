@@ -58,7 +58,7 @@
     font-family: PingFang SC;
 
     .syabout {
-      margin-top: -90px;
+      margin-top: -182px;
       position: relative;
       z-index: 99999;
       background-color: #fff;
@@ -100,7 +100,7 @@
     .card-header{
       display: flex;
       align-items: center;
-      height: 90px;
+      height: 122px;
     }
     .footer{
       margin-top: 50px;

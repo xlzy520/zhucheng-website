@@ -14,16 +14,16 @@
         <div class="right-desc-item" v-for="item in descs" :key="item.title">
           <div class="title">{{item.title}}</div>
           <div class="address">
-            <img class="icon" src="@/assets/icons/address.png" />
+            <img class="icon" src="assets/icons/address.png" />
             <span>{{item.address}}</span>
           </div>
           <div class="phone">
-            <img class="icon" src="@/assets/icons/phone.png" />
+            <img class="icon" src="assets/icons/phone.png" />
             <span>{{item.phone}}</span>
           </div>
         </div>
       </div>
-      <img src="../../../assets/icons/strength/map.png" alt="我们的实力">
+      <img src="assets/icons/strength/map.png" alt="我们的实力">
     </div>
   </div>
 </template>
@@ -34,10 +34,10 @@ export default {
   data() {
     return {
       list: [
-        {text: '全国200+直营服务网点', url: '../../../assets/icons/strength/1.png'},
-        {text: '全国14家省级分公司', url: '../../../assets/icons/strength/2.png'},
-        {text: '70000+全职城市服务力', url: '../../../assets/icons/strength/3.png'},
-        {text: '400+TOP客户信赖', url: '../../../assets/icons/strength/4.png'},
+        {text: '全国200+直营服务网点', url: 'assets/icons/strength/1.png'},
+        {text: '全国14家省级分公司', url: 'assets/icons/strength/2.png'},
+        {text: '70000+全职城市服务力', url: 'assets/icons/strength/3.png'},
+        {text: '400+TOP客户信赖', url: 'assets/icons/strength/4.png'},
       ],
       descs: [
         {title: '竹成集团（宁波）总公司', address: '浙江省宁波市江北区前洋E商小镇1幢1号楼512', phone: '0574-888888888'},

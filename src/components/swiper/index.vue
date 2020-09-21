@@ -39,7 +39,7 @@
         },
         banners: [
           {
-            url: './banner.png',
+            url: './assets/image/banner.png',
           },
           {
             url: 'http://www.bridgehr.com/template/default/images/banner05.jpg',
@@ -89,7 +89,6 @@
     .swiper-button-prev, .swiper-button-next{
       width: 60px;
       height: 60px;
-      -webkit-transition: all .4s ease;
       transition: all .4s ease;
       border-radius: 100%;
       background: rgba(178,47,111,0);
@@ -104,7 +103,6 @@
         height: 100%;
         background-size: 15px auto;
         transition: all .4s ease;
-
       }
 
       &:hover{
@@ -114,17 +112,16 @@
     }
     .swiper-button-prev{
       &::after{
-        background: url(../../assets/icons/bannerbtn_left.png) no-repeat center center;
+        background: url(/assets/icons/bannerbtn_left.png) no-repeat center center;
       }
     }
     .swiper-button-next{
       &::after{
         content: "";
-        background: url(../../assets/icons/bannerbtn_right.png) no-repeat center center;
+        background: url(/assets/icons/bannerbtn_right.png) no-repeat center center;
       }
     }
     .bannerbj {
-      -webkit-transition: all .4s ease;
       transition: all .4s ease;
       opacity: 0;
     }
@@ -136,9 +133,6 @@
       top: 0px;
       background-repeat: no-repeat;
       background-position: center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
       background-size: cover;
     }
     /deep/ .swiper-pagination-bullet{

@@ -7,7 +7,7 @@
       <OurServicesCard v-for="item in list" :key="item.id" :title="item.title" :desc="item.desc"
       @click.native="handleClick(item)">
         <template slot="icon">
-          <img class="card-icon" src="../../../assets/icons/jisuwuliu.png" />
+          <img class="card-icon" src="assets/icons/jisuwuliu.png" />
         </template>
       </OurServicesCard>
     </div>

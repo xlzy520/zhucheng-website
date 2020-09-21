@@ -1,7 +1,7 @@
 <template>
   <el-footer class="footer" style="height: auto">
     <el-row>
-      <el-col :xs="12" :sm="12" :md="8" :lg="8" :xl="4">
+      <el-col :xs="12" :sm="12" :md="8" :lg="8" :xl="8">
         <div class="info">
           <div class="info-main">
             <img src="" alt="" class="logo">
@@ -18,7 +18,7 @@
           <div class="lz"></div>
         </div>
      </el-col>
-      <el-col :xs="12" :sm="12" :md="8" :lg="8" :xl="4" class="contact-us">
+      <el-col :xs="12" :sm="12" :md="8" :lg="8" :xl="8" class="contact-us">
        <div class="header">
          <div class="header-title">联系我们</div>
          <div class="header-title-en">CONTACT US</div>
@@ -30,7 +30,7 @@
          <span>电子邮箱：XXXXXXX@zc-corp.cn</span>
        </div>
      </el-col>
-     <el-col :xs="12" :sm="12" :md="4" :lg="4" :xl="4">
+      <el-col :xs="12" :sm="12" :md="8" :lg="8" :xl="8">
        <div class="header">
          <div class="header-title">关注我们</div>
          <div class="header-title-en">FOCUS ON US</div>

@@ -7,7 +7,7 @@
     </el-row>
     <el-row>
       <el-col :xs="24">
-        <Card />
+        <AboutUsCard />
       </el-col>
     </el-row>
     <el-row>
@@ -351,14 +351,14 @@
 
 <script>
   import Swiper from '@/components/swiper'
-  import Card from '@/components/ImageAndTextCard'
+  import AboutUsCard from '@/components/AboutUsCard'
   import ourService from "./components/ourService";
   import ourStrength from "./components/ourStrength";
   import news from "./components/news";
 	export default {
     components: {
       Swiper,
-      Card,
+      AboutUsCard,
       ourService,
       ourStrength,
       news

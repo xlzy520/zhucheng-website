@@ -14,7 +14,7 @@ import newsandinformation from '@/pages/newsandinformation'
 import contactus from '@/pages/contactus'
 import three from '@/pages/three'
 
-import TE from '@/components/ImageAndTextCard'
+import TE from '@/pages/About/components/ChooseUs'
 
 
 Vue.use(Router)
