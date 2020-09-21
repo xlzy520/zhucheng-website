@@ -1,5 +1,5 @@
 <template>
-  <el-header :class="['header-main',isScrollToMain ? 'deep-bg': '']">
+  <el-header :class="['header-main white',isScrollToMain ? 'deep-bg': '']" style="height: auto">
     <el-row>
       <el-row>
         <el-col :xs="8" :sm="6" :md="4" :lg="4" :xl="4">
@@ -14,7 +14,7 @@
             </div>
             <el-menu class="hidden-sm-and-down" default-active="1" mode="horizontal"
                      background-color="transparent"
-                     text-color="#fff">
+                     text-color="#5AA572">
               <template v-for="yylist in menuList">
                 <el-submenu v-if="yylist.ylist && yylist.ylist.length > 0"
                             :index="yylist.yyid"
@@ -150,76 +150,66 @@ export default {
 </script>
 
 <style lang="less">
-  .el-header.header-main {
+  .el-header.header-main.white {
     position: fixed;
     z-index: 9999999;
     width: 100%;
-    color: #fff;
+    color: #343434;
     text-align: center;
     line-height: 60px;
     box-sizing: border-box;
     overflow: hidden;
     padding: 0 100px;
     a{
-      color: #fff;
+      color: #343434;
     }
     &.deep-bg{
       background: #b22f6f;
     }
     .el-menu {
       padding-left: 50px;
-      background: transparent;
+      /*background: transparent;*/
     }
     .el-menu-item{
       font-size: 14px;
       transition: none;
       padding: 0 30px;
-      /*a:after {*/
-      /*  content: attr(data-hover);*/
-      /*  color: #b22f6f;*/
-      /*  opacity: 1;*/
-      /*  display: block;*/
-      /*  font-weight: 700;*/
-      /*  text-transform: uppercase;*/
-      /*  -webkit-transition: opacity .3s;*/
-      /*  transition: opacity .3s;*/
-      /*}*/
     }
     .el-menu--horizontal{
       .el-menu-item{
         border-top: 3px solid transparent;
         &>a{
-          color: #fff9;
+          color: #343434;
           transition: transform .5s;
         }
         &.is-active{
           font-size: 16px;
           border-bottom: none;
-          border-top: 3px solid #fff;
+          border-top: 3px solid #5AA572!important;
           &>a{
-            color: #fff;
+            color: #5AA572;
           }
         }
         &:hover{
-          background: transparent!important;
-          color: #fff!important;
+          /*background: transparent!important;*/
+          color: #5AA572!important;
           &>a{
-            color: #fff;
+            color: #5AA572!important;
             transform: translate3d(0,-100%,0);
           }
         }
       }
       .el-submenu{
         .el-submenu__title{
-          color: #fff9;
+          color: #343434;
           margin-top: 2px;
           i,a{
-            color: #fff9;
+            color: #343434!important;
           }
           &:hover{
-            color: #fff;
+            color: #5AA572!important;
             i,a{
-              color: #fff;
+              color: #5AA572!important;
             }
           }
         }
@@ -229,7 +219,7 @@ export default {
 
     .el-menu--horizontal>.el-menu-item,
     .el-menu--horizontal>.el-submenu .el-submenu__title {
-      background: transparent!important;
+      /*background: transparent!important;*/
     }
 
     .el-menu.el-menu--horizontal {

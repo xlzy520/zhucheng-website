@@ -2,12 +2,17 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import BasicLayout from '@/layout/basicLayout'
+import BasicLayoutWhite from '@/layout/basicLayoutWhite'
 
 
 import Home from '@/pages/Home'
+import About from '@/pages/About'
+import Query from '@/pages/Query'
+
+
+
 import firstcompontents from '@/pages/firstcompontents'
 import secondpage from '@/pages/secondpage'
-import About from '@/pages/About'
 import solution from '@/pages/solution'
 import customercase from '@/pages/customercase'
 import newsandinformation from '@/pages/newsandinformation'
@@ -23,7 +28,7 @@ export default new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes: [
     {path: '/test', component: TE},
-	  {
+    {
 			path: '/',
 			component: BasicLayout,
       children: [
@@ -76,5 +81,16 @@ export default new Router({
         },
       ]
 		},
+    {
+      path: '/query',
+      component: BasicLayoutWhite,
+      children: [
+        {
+          path: '',
+          name: 'query',
+          component: Query
+        },
+      ]
+    }
 	]
 })

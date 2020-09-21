@@ -8,4 +8,7 @@ export default {
   getBanners(data) {
     return fetch('list', data)
   },
+  getList(data) {
+    return fetch('list', data)
+  },
 }

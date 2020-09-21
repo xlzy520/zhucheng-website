@@ -18,7 +18,7 @@
         <AboutUsCard />
       </el-col>
     </el-row>
-    <el-row>
+    <el-row style="margin-top: 150px">
       <el-col :xs="24">
         <our-strength />
       </el-col>
