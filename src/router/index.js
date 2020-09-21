@@ -4,7 +4,7 @@ import Router from 'vue-router'
 import BasicLayout from '@/layout/basicLayout'
 
 
-import Index from '@/pages/Index/index'
+import Home from '@/pages/Home'
 import firstcompontents from '@/pages/firstcompontents'
 import secondpage from '@/pages/secondpage'
 import about from '@/pages/about'
@@ -29,8 +29,8 @@ export default new Router({
       children: [
         {
           path: '',
-          name: 'index',
-          component: Index
+          name: 'home',
+          component: Home
         },
         {
           path: '/about',

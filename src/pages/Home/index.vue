@@ -350,11 +350,11 @@
 </template>
 
 <script>
-  import Swiper from '@/components/swiper/index'
+  import Swiper from '@/components/swiper'
   import Card from '@/components/ImageAndTextCard'
   import ourService from "./components/ourService";
   import ourStrength from "./components/ourStrength";
-  import news from "@/pages/Index/components/news";
+  import news from "./components/news";
 	export default {
     components: {
       Swiper,
