@@ -23,7 +23,7 @@
             </div>
             <div class="content">{{news.content}}</div>
             <div class="btn">
-              <a href="/#/aboutus" class="more">了解更多>></a>
+              <a :href="'/#/news/'+'a'" class="more">了解更多>></a>
             </div>
           </div>
         </div>
@@ -109,6 +109,7 @@ export default {
       border-radius: 10px;
       margin: auto;
       margin-top: -152px;
+      margin-bottom: 134px;
       .header{
         display: flex;
         justify-content: space-between;

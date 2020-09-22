@@ -10,6 +10,7 @@ import About from '@/pages/About'
 import Query from '@/pages/Query'
 import ContactUs from '@/pages/ContactUs/index'
 import News from '@/pages/News'
+import NewsDetail from '@/pages/NewsDetail'
 
 
 
@@ -47,6 +48,11 @@ export default new Router({
           path: '/news',
           name: 'news',
           component: News
+        },
+        {
+          path: '/news/:id',
+          name: 'newsDetail',
+          component: NewsDetail
         },
         {
           path: '/solution',
