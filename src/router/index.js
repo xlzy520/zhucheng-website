@@ -11,12 +11,13 @@ import Query from '@/pages/Query'
 import ContactUs from '@/pages/ContactUs/index'
 import News from '@/pages/News'
 import NewsDetail from '@/pages/NewsDetail'
+import Solution from '@/pages/Solution'
 
 
 
 import firstcompontents from '@/pages/firstcompontents'
 import secondpage from '@/pages/secondpage'
-import solution from '@/pages/solution'
+// import solution from '@/pages/solution1'
 import customercase from '@/pages/customercase'
 import newsandinformation from '@/pages/newsandinformation'
 import three from '@/pages/three'
@@ -57,7 +58,7 @@ export default new Router({
         {
           path: '/solution',
           name: 'solution',
-          component: solution
+          component: Solution
         },
         {
           path: '/customercase',
