@@ -11,4 +11,7 @@ export default {
   getList(data) {
     return fetch('list', data)
   },
+  contactUs(data) {
+    return fetch('contactUs', data)
+  },
 }

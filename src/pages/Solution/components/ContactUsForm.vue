@@ -1,17 +1,123 @@
 <template>
-
+  <div class="contact-us-form-card flex-column">
+    <div class="contact-us-form">
+      <lz-badge title="联系我们" title_en="CONTACT US" />
+      <div class="content">
+        <div class="left flex-column">
+          <el-input placeholder="您的称呼" v-model="formData.name"/>
+          <el-input placeholder="您的联系方式" v-model="formData.phone"/>
+          <el-input placeholder="你在哪里" v-model="formData.address"/>
+        </div>
+        <div class="right">
+          <el-input type="textarea" rows="4" placeholder="您的需求" v-model="formData.requirement"/>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="submit" @click="submit" v-loading="loading">提交</div>
+    </div>
+  </div>
 </template>
 
 <script>
+  import service from "@/api/service";
 export default {
   name: 'ContactUsForm',
   data() {
     return {
+      formData: {
+        name: '',
+        phone: '',
+        address: '',
+        requirement: ''
+      },
+      loading: false
     }
-  }
+  },
+  methods: {
+    check(){
+      let allTrue = true
+      for (const item in this.formData) {
+        if (!this.formData[item]) {
+          this.$message.error('请检查必填项')
+          allTrue = false
+          break;
+        }
+      }
+      return allTrue
+    },
+    submit() {
+      let isTrue = this.check();
+      if (isTrue) {
+        this.loading = true
+        service.contactUs(this.formData).then(res => {
+          this.$message.success('提交成功')
+          this.clear()
+        }).finally(() => {
+          this.loading = false
+        })
+      }
+
+    },
+    clear(){
+      this.formData = {
+        name: '',
+        phone: '',
+        address: '',
+        requirement: ''
+      }
+    }
+  },
 }
 </script>
 
 <style lang="less" scoped>
+.contact-us-form-card{
+  margin-top: 150px;
+  padding: 125px 175px 105px;
+  background-color: #272121;
+  .contact-us-form{
+    display: flex;
+  }
+  /deep/ .lz-badge {
+    .lz-badge-header, .lz-badge-footer{
+      color: #F7FAFC;
+    }
+  }
+  /deep/.left{
+    .el-input, input{
+      width: 304px;
+      height: 40px;
+      margin-bottom: 6px;
+      background-color: inherit;
 
+    }
+  }
+  /deep/.right{
+    margin-left: 14px;
+    .el-textarea, textarea{
+      width: 667px;
+      height: 132px;
+      background-color: inherit;
+    }
+
+  }
+  .content{
+    margin-left: 137px;
+    display: flex;
+  }
+  .footer{
+    padding: 30px 0;
+    text-align: center;
+    .submit{
+      display: inline-block;
+      background: #5AA572;
+      font-size: 18px;
+      font-weight: 500;
+      color: #F7FAFC;
+      padding: 14px 93px;
+      cursor: pointer;
+    }
+  }
+}
 </style>

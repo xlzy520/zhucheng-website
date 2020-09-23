@@ -84,6 +84,7 @@
       /*text-align: center;*/
       padding: 0;
       background: #F7FAFC;
+      overflow: hidden;
     }
   }
 </style>
