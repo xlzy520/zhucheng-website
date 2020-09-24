@@ -47,6 +47,8 @@ export default {
       return allTrue
     },
     submit() {
+      this.loading = true
+
       let isTrue = this.check();
       if (isTrue) {
         this.loading = true
@@ -106,17 +108,27 @@ export default {
     margin-left: 137px;
     display: flex;
   }
-  .footer{
+  /deep/.footer{
     padding: 30px 0;
     text-align: center;
     .submit{
       display: inline-block;
-      background: #5AA572;
+      background: #5aa572;
       font-size: 18px;
       font-weight: 500;
       color: #F7FAFC;
       padding: 14px 93px;
       cursor: pointer;
+      &.el-loading-parent--relative{
+        pointer-events: none;
+        cursor: not-allowed;
+      }
+    }
+    .el-loading-mask{
+      /*background-color: rgba(227, 229, 228, 0.5);*/
+    }
+    .el-loading-spinner .path{
+      stroke: #5AA572;
     }
   }
 }

@@ -9,17 +9,50 @@
         <el-input placeholder="服务公司直接输入公司名称，员工请输入姓名+工号（李某某 008）"
                   v-model="keyword">
           <div slot="suffix" class="search-btn">
-            <div class="btn" @click="query">
+            <div class="btn" @click="query" v-loading="loading">
               <span>搜索</span>
             </div>
 
           </div>
         </el-input>
       </div>
-      <div class="result">
-        <el-table :data="list" v-show="list.length">
-          <el-table-column prop="id"></el-table-column>
-        </el-table>
+      <div v-if="type ==='company'" class="result">
+        <div class="result-table">
+          <div class="result-table-header">
+            <div>信息项</div>
+            <div>信息内容</div>
+          </div>
+          <div class="result-table-content">
+            <div class="result-table-row" v-for="item in list" :key="item.name">
+              <div>{{item.name}}</div>
+              <div>{{item.value}}</div>
+            </div>
+          </div>
+        </div>
+<!--        <el-table :data="list" v-show="list.length">-->
+<!--          <el-table-column prop="id"></el-table-column>-->
+<!--        </el-table>-->
+        <div v-show="!list.length" class="empty">
+          未能查询到您需要的结果，请重新输入
+        </div>
+      </div>
+      <div v-if="type ==='staff'" class="result">
+        <div class="result-table staff">
+          <div class="result-table-header">人员信息</div>
+          <div class="df">
+            <div class="left">
+              <img src="" />
+            </div>
+            <div class="right flex-column">
+              <span>员工姓名：{{staffInfo.name}}</span>
+              <span>工号：{{staffInfo.num}}</span>
+              <span>所在机构：{{staffInfo.location}}</span>
+            </div>
+          </div>
+        </div>
+<!--        <el-table :data="list" v-show="list.length">-->
+<!--          <el-table-column prop="id"></el-table-column>-->
+<!--        </el-table>-->
         <div v-show="!list.length" class="empty">
           未能查询到您需要的结果，请重新输入
         </div>
@@ -36,8 +69,19 @@ export default {
     return {
       desc: '服务公司  竹成员工，一键验真假',
       keyword: '',
-      list: [],
-      loading: false
+      list: [
+        { name: '洼地公司名称', value: '洼地公司名称' },
+        { name: '营业地址', value: '四川省成都市XX区XX路XX号' },
+        { name: '企业信用代码', value: '91330200MA2165144' },
+        { name: '法定代表人', value: '廖某某' },
+      ],
+      loading: false,
+      type: 'staff',
+      staffInfo: {
+        name: '廖某某',
+        num: 'ZC888',
+        location: '宁波总部'
+      }
     }
   },
   methods: {
@@ -88,6 +132,13 @@ export default {
           height: 60px;
           line-height: 60px;
         }
+        .el-loading-parent--relative{
+          pointer-events: none;
+          cursor: not-allowed;
+        }
+        .el-loading-spinner .path{
+          stroke: #5AA572;
+        }
         .search-btn{
           background: #5AA672;
           font-size: 18px;
@@ -98,6 +149,68 @@ export default {
         }
       }
       .result{
+        margin-top: 58px;
+        &-table{
+          width: 498px;
+          background: #fff;
+          margin: auto;
+          padding: 33px 50px 28px;
+          font-weight: 500;
+          line-height: 32px;
+          color: #333333;
+          box-sizing: border-box;
+          &-header{
+            display: flex;
+            font-size: 16px;
+            border-bottom: 1px solid #efefef;
+            padding-bottom: 22px;
+            margin-bottom: 22px;
+          }
+          &-row{
+            font-size: 14px;
+            margin-bottom: 20px;
+          }
+          &-header, &-row{
+            display: flex;
+            div:nth-child(1){
+              flex: 0 0 200px;
+              min-width: 0;
+              display: flex;
+              align-items: center;
+            }
+            div:nth-child(2){
+              flex: 1 1 200px;
+              text-align: left;
+            }
+
+          }
+          &-content{
+
+          }
+          &.staff{
+            width: 370px;
+            font-size: 18px;
+            .left{
+              width: 120px;
+              height: 120px;
+              background: #464854;
+            }
+            .right{
+              font-size: 14px;
+              margin-left: 20px;
+              padding-top: 11px;
+              span{
+                margin-bottom: 30px;
+                text-align: left;
+                line-height: 14px;
+                &:last-child{
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+
 
       }
       .empty{
