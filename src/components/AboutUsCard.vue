@@ -6,7 +6,7 @@
       </div>
       <div class="df flex-column-xs">
         <div class="syaboutpic">
-          <a href="/aboutus">
+          <a href="/about">
             <img src="http://www.bridgehr.com/template/default/images/zhu01.jpg">
             <div class="maskfadeUp wow animated" data-wow-delay="0.5s"></div>
           </a>
@@ -30,7 +30,7 @@
 
           </div>
           <div class="footer">
-            <a href="/#/aboutus" class="more">了解更多>></a>
+            <a href="/#/about" class="more">了解更多>></a>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
 <style lang="less">
   @import "@/styles/var.less";
   .symain {
-    padding: 0 75px;
+    padding: 0 100px;
     font-family: PingFang SC;
 
     .syabout {
@@ -65,17 +65,17 @@
       padding: 0 56px 60px 56px;
     }
     .syaboutpic {
-      /*height: 340px;*/
+      height: 453px;
       position: relative;
       overflow: hidden;
       img{
-        width: 589px;
+        width: 785px;
       }
     }
     .syaboutwen {
       position: relative;
       width: auto;
-      padding: 25px 0 15px 31px;
+      padding: 25px 0 15px 42px;
       box-sizing: border-box;
       .title{
         font-size: 15px;
@@ -86,15 +86,16 @@
       }
     }
     .syabouttxt {
-      width: 557px;
+      width: 742px;
       font-size: 11px;
       font-weight: 500;
       color: #333333;
-      line-height: 30px;
+      line-height: 40px;
+      letter-spacing: 2.5px;
       p{
         margin: 0;
         text-indent: 20px;
-        line-height: 27px;
+        line-height: 36px;
       }
     }
     .card-header{
@@ -103,7 +104,7 @@
       height: 122px;
     }
     .footer{
-      margin-top: 50px;
+      margin-top: 90px;
       .more{
         padding: 10px 15px;
         background: @primary-color;

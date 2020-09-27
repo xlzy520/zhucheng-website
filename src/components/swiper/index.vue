@@ -1,8 +1,8 @@
 <template>
   <div class="banner">
     <Swiper class="swiper" :options="swiperOption">
-      <swiper-slide v-for="banner in banners" :key="banner.url">
-        <div :style="getImageStyleText(banner.url)" class="bannerbj"></div>
+      <swiper-slide v-for="banner in banners" :key="banner.imgurl">
+        <div :style="getImageStyleText(banner.imgurl)" class="bannerbj"></div>
       </swiper-slide>
       <div class="swiper-pagination swiper-pagination-bullets" slot="pagination"></div>
       <div class="swiper-button-prev" slot="button-prev"></div>
@@ -15,6 +15,26 @@
   import service from "@/api/service";
   export default {
     name: 'swiper',
+    props: {
+      banners: {
+        type: Array,
+        required: true,
+        default: ()=> ([
+          {
+            imgurl: './assets/image/banner.png',
+          },
+          {
+            imgurl: 'http://www.bridgehr.com/template/default/images/banner05.jpg',
+          },
+          {
+            imgurl: 'http://www.bridgehr.com/template/default/images/banner06.jpg',
+          },
+          {
+            imgurl: 'http://www.bridgehr.com/template/default/images/banner04.jpg',
+          },
+        ])
+      },
+    },
     data() {
       return {
         swiperOption: {
@@ -37,21 +57,6 @@
             prevEl: '.swiper-button-prev'
           }
         },
-        banners: [
-          {
-            url: './assets/image/banner.png',
-          },
-          {
-            url: 'http://www.bridgehr.com/template/default/images/banner05.jpg',
-          },
-          {
-            url: 'http://www.bridgehr.com/template/default/images/banner06.jpg',
-          },
-          {
-            url: 'http://www.bridgehr.com/template/default/images/banner04.jpg',
-          },
-
-        ]
       }
     },
     methods: {

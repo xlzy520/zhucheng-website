@@ -1,7 +1,7 @@
 <template>
   <div class="query">
     <div class="header flex-column">
-      <img src="" alt="" class="logo">
+      <img src="assets/image/query-bg.png" alt="" class="logo">
       <div class="desc">{{desc}}</div>
     </div>
     <div class="content">
@@ -16,7 +16,7 @@
           </div>
         </el-input>
       </div>
-      <div v-if="type ==='company'" class="result">
+      <div v-if="hasResult && type ==='company'" class="result">
         <div class="result-table">
           <div class="result-table-header">
             <div>信息项</div>
@@ -29,14 +29,8 @@
             </div>
           </div>
         </div>
-<!--        <el-table :data="list" v-show="list.length">-->
-<!--          <el-table-column prop="id"></el-table-column>-->
-<!--        </el-table>-->
-        <div v-show="!list.length" class="empty">
-          未能查询到您需要的结果，请重新输入
-        </div>
       </div>
-      <div v-if="type ==='staff'" class="result">
+      <div v-if="hasResult && type ==='staff'" class="result">
         <div class="result-table staff">
           <div class="result-table-header">人员信息</div>
           <div class="df">
@@ -50,12 +44,9 @@
             </div>
           </div>
         </div>
-<!--        <el-table :data="list" v-show="list.length">-->
-<!--          <el-table-column prop="id"></el-table-column>-->
-<!--        </el-table>-->
-        <div v-show="!list.length" class="empty">
-          未能查询到您需要的结果，请重新输入
-        </div>
+      </div>
+      <div v-show="!list.length" class="empty">
+        未能查询到您需要的结果，请重新输入
       </div>
     </div>
   </div>
@@ -81,14 +72,37 @@ export default {
         name: '廖某某',
         num: 'ZC888',
         location: '宁波总部'
-      }
+      },
+      hasResult: false
     }
   },
   methods: {
+    isEmployee(){
+      const match = this.keyword.match(/([\u4e00-\u9fa5]*)(\d*)/)
+      const name = match[1]
+      const num = match[2]
+      return {
+        name,
+        num
+      };
+    },
     query() {
+      if (!this.keyword) {
+        this.$message.info('请输入查询内容')
+        return;
+      }
       this.loading = true
-      service.getList({key: this.keyword}).then(res => {
-        this.list = res || []
+      const queryData = this.isEmployee()
+      const myService = queryData.num ? service.getEmployeeList : service.getCompanyList
+      const data = queryData.num ? queryData : { companyName: this.keyword }
+      myService({
+        pageNo:1,
+        pageSize: 10,
+        orderByClause: 'id desc',
+        ...data
+      }).then(res => {
+        this.list = res.list || []
+        this.hasResult = res.list.length
       }).finally(() => {
         this.loading = false
       })

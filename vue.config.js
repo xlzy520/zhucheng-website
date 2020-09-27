@@ -13,6 +13,16 @@ module.exports = {
       warnings: false,
       errors: true
     },
+    proxy: {
+      [process.env.VUE_APP_BASE_API]: {
+        target: `http://zhucheng.api.qixianlv.cn/zhucheng`,
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API]: ''
+        }
+      }
+    }
+  
   },
   configureWebpack: {
     resolve: {

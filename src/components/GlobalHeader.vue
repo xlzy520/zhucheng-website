@@ -15,24 +15,29 @@
             <el-menu class="hidden-sm-and-down" default-active="1" mode="horizontal"
                      background-color="transparent"
                      text-color="#fff">
-              <template v-for="yylist in menuList">
-                <el-submenu v-if="yylist.ylist && yylist.ylist.length > 0"
-                            :index="yylist.yyid"
-                            background-color="#545c64"
-                            :key="yylist.yyid">
+              <template v-for="menuItem in menuList">
+                <el-submenu v-if="menuItem.children" :index="menuItem.id" background-color="#545c64"
+                            :key="menuItem.id">
                   <template slot="title">
-                    <router-link :data-hover="yylist.name" :to="{path:yylist.yrouterul,query: yylist.yid}">{{yylist.yname}}</router-link>
+                    <router-link :data-hover="menuItem.name" :to="{path:menuItem.url,query: menuItem.id}">
+                      {{menuItem.name}}
+                    </router-link>
                   </template>
-                  <div v-for="eelist in yylist.ylist" :key="eelist.eeid">
-                    <el-menu-item v-if="yylist.ylist && yylist.ylist.length > 0" :key="eelist.eid" :index="eelist.eeid">
-                      <router-link :to="{path:'/three',query:{id: eelist.eid}}">{{eelist.ename}}</router-link>
-                    </el-menu-item>
-                  </div>
+                  <el-menu-item v-for="subMenuItem in menuItem.children" :key="subMenuItem.id"
+                                :index="subMenuItem.id">
+                    <a :href="subMenuItem.url" v-if="subMenuItem.isExtra"></a>
+                    <router-link v-else :to="{path: subMenuItem.url, query:{id: subMenuItem.id}}">
+                      {{subMenuItem.name}}
+                    </router-link>
+                  </el-menu-item>
                 </el-submenu>
 
-                <el-menu-item v-else :key="yylist.yid" :index="yylist.yyid">
-                  <router-link :data-hover="yylist.yname" v-if="yylist.yid !== 1" :to="{path:yylist.yrouterul,query: yylist.yid}">{{yylist.yname}}</router-link>
-                  <router-link :data-hover="yylist.yname" v-else to="/">{{yylist.yname}}</router-link>
+                <el-menu-item v-else :key="menuItem.id" :index="menuItem.id">
+                  <router-link :data-hover="menuItem.name"
+                               :to="{path:menuItem.url}">
+                    {{menuItem.name}}
+                  </router-link>
+<!--                  <router-link :data-hover="menuItem.name" v-else to="/">{{menuItem.name}}</router-link>-->
                 </el-menu-item>
               </template>
             </el-menu>

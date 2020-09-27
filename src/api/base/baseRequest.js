@@ -18,10 +18,6 @@ baseRequest.interceptors.response.use(
         type: 'error',
         duration: 1.5 * 1000
       })
-      // token已过期
-      if (res.code === 1027) {
-        router.push('/login')
-      }
       return Promise.reject(res)
     } else {
       return res.data

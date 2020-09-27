@@ -1,7 +1,8 @@
 <template>
-  <div class="service-card">
+  <div class="service-card" @mouseenter.self="enter" @mouseleave.self="leave">
     <div class="icon">
-      <slot name="icon"></slot>
+      <img class="card-icon"
+           :src="`assets/icons/services/${img}${isHover? '': '-green'}.png`" />
     </div>
     <div class="title">{{title}}</div>
     <div class="desc">{{desc}}</div>
@@ -20,11 +21,25 @@ export default {
       type: String,
       default: 'About Us'
     },
+    img: {
+      type: String,
+      default: ''
+    }
   },
   data() {
     return {
+      isHover: false
     }
-  }
+  },
+  methods: {
+    enter() {
+      this.isHover = true
+    },
+    leave() {
+      this.isHover = false
+    },
+
+  },
 }
 </script>
 
@@ -36,34 +51,38 @@ export default {
     flex-direction: column;
     color: #333;
     background: #fff;
-    width: 203px;
-    height: 263px;
-    box-shadow: 0px 0px 19px 1px rgba(54, 78, 93, 0.08);
+    width: 270px;
+    height: 350px;
     border-radius: 8px;
-    margin-right: 40px;
-    padding: 40px 25px;
+    margin-right: 55px;
+    padding: 58px 28px;
     box-sizing: border-box;
     text-align: center;
     cursor: pointer;
+    opacity: 0.9;
     &:hover{
       background: @primary-color;
       color: #fff;
+      box-shadow: 0px 0px 26px 2px rgba(55, 78, 93, 0.08);
+      opacity: 1;
     }
     &:last-child{
       margin-right: 0;
     }
-    .icon{
+    .card-icon{
+      margin-bottom: 39px;
     }
     .title{
-      font-size: 17px;
+      font-size: 22px;
     }
     .desc{
-      margin-top: 50px;
-      width: 155px;
-      height: 31px;
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 500;
-      line-height: 21px;
+      line-height: 28px;
+      margin-top: 63px;
+      width: 207px;
+      height: 42px;
+      text-align: left;
     }
   }
 

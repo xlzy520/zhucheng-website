@@ -41,19 +41,19 @@
     &-header {
       display: flex;
       align-items: center;
-      font-size: 18px;
+      font-size: 24px;
       font-family: PingFang SC;
       font-weight: bold;
-      color: #333333;
-      margin-bottom: 8px;
+      color: #343434;
+      margin-bottom: 11px;
     }
 
     &-footer {
-      height: 10px;
-      font-size: 12px;
+      height: 13px;
+      font-size: 16px;
       font-family: Arial;
       font-weight: 400;
-      color: #999999;
+      color: #9A9A9A;
       padding-left: 30px;
     }
   }

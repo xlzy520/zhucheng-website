@@ -14,16 +14,16 @@
       <div class="news-content">
         <div class="news-item" v-for="news in newsList" :key="news.title">
           <div class="left">
-            <img :src="news.img" alt="">
+            <img :src="news.imgurl" alt="">
           </div>
           <div class="right flex-column">
             <div class="right-header">
               <div class="title">{{news.title}}</div>
               <div class="date">{{news.date}}</div>
             </div>
-            <div class="content">{{news.content}}</div>
+            <div class="content">{{news.subTitle}}</div>
             <div class="btn">
-              <a :href="'/#/news/'+'a'" class="more">了解更多>></a>
+              <a :href="'/#/news/'+news.id" class="more">了解更多>></a>
             </div>
           </div>
         </div>
@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import service from "@/api/service";
+
 export default {
   name: 'ContactUsCard',
   components: {
@@ -62,34 +64,42 @@ export default {
             '法定阿四发生发生法定发生发生发生 阿发阿萨德sadad阿斯蒂芬阿萨德发生大想，\n' +
             '核发开户的看法哈客户。\n' +
             '                            ',
-          img: 'https://i0.hdslb.com/bfs/album/cfe1320211a15030b704023c76380d1ca826187b.jpg@1036w_1e_1c.jpg',
+          imgurl: 'https://i0.hdslb.com/bfs/album/cfe1320211a15030b704023c76380d1ca826187b.jpg@1036w_1e_1c.jpg',
           date: '2020-09-04' },
         { title: '2', content: '1231231',
-          img: 'https://i0.hdslb.com/bfs/album/cfe1320211a15030b704023c76380d1ca826187b.jpg@1036w_1e_1c.jpg', date: 'dasdas' },
+          imgurl: 'https://i0.hdslb.com/bfs/album/cfe1320211a15030b704023c76380d1ca826187b.jpg@1036w_1e_1c.jpg', date: 'dasdas' },
         { title: '3', content: '1231231',
-          img: 'https://i0.hdslb.com/bfs/album/cfe1320211a15030b704023c76380d1ca826187b.jpg@1036w_1e_1c.jpg', date: 'dasdas' },
+          imgurl: 'https://i0.hdslb.com/bfs/album/cfe1320211a15030b704023c76380d1ca826187b.jpg@1036w_1e_1c.jpg', date: 'dasdas' },
       ]
     }
   },
   methods: {
     handleTab(tab) {
       this.activeTab = tab
+      this.getNewsList()
     },
     isActive(tab){
       return tab === this.activeTab ? 'active': ''
     },
-    getData(){
-
-
+    getNewsList() {
+      service.getNewsList({
+        pageNo: this.pageNo,
+        pageSize: 4,
+        orderByClause: 'id desc',
+        type: this.activeTab
+      }).then(res => {
+        this.newsList = res.list || []
+        this.total = res.total
+      })
     },
     changeCurrent(num){
       this.pageNo = num
-      this.getData()
+      this.getNewsList()
       console.log(num);
     }
   },
   mounted() {
-    this.getData()
+    this.getNewsList()
   },
 }
 </script>

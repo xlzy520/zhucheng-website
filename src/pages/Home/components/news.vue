@@ -4,27 +4,15 @@
       <lz-badge title="新闻资讯" title_en="NEWS AND INFORMATION" />
     </div>
     <div class="content">
-      <div class="left">
+      <div class="content-item" v-for="cardItem in splitNews">
         <div class="content-header">
           <div class="title">市场新闻</div>
-          <a class="more">了解更多>></a>
+          <a class="more" href="/#/news">了解更多>></a>
         </div>
         <div class="news-list">
-          <div class="news-list-item" v-for="item in leftNews" :key="item.url">
+          <div class="news-list-item" v-for="item in  cardItem" :key="item.url" @click="viewDetail(item)">
             <div class="news-title">{{item.title}}</div>
-            <div class="news-date">{{item.date}}</div>
-          </div>
-        </div>
-      </div>
-      <div class="right">
-        <div class="content-header">
-          <div class="title">市场新闻</div>
-          <a class="more">了解更多>></a>
-        </div>
-        <div class="news-list">
-          <div class="news-list-item" v-for="item in righttNews" :key="item.url">
-            <div class="news-title">{{item.title}}</div>
-            <div class="news-date">{{item.date}}</div>
+            <div class="news-date">{{parseTimeFilter(item.addTime)}}</div>
           </div>
         </div>
       </div>
@@ -33,8 +21,33 @@
 </template>
 
 <script>
+  import dayjs from 'dayjs'
 export default {
   name: 'news',
+  props: {
+    news: {
+      type: Array,
+      default: ()=>([])
+    },
+  },
+  computed: {
+    splitNews() {
+      let news = [[],[]]
+      const length = this.news.length
+      if (length<=5) {
+        return [this.news]
+      }
+      for (let i = 0; i < length; i++) {
+        if (i<=5) {
+          news[0].push(this.news[i])
+        } else {
+          news[1].push(this.news[i])
+        }
+      }
+      return news
+
+    }
+  },
   data() {
     return {
       leftNews: [
@@ -53,7 +66,15 @@ export default {
         {title: '北京9月开通电子社保卡申领 上线下均可使用', url: '2020-313109-04', date: '2020-09-04'},
       ],
     }
-  }
+  },
+  methods: {
+    viewDetail(item) {
+      this.$router.push('/news/'+ item.id)
+    },
+    parseTimeFilter(val){
+      return dayjs(val * 1000).format('YYYY-MM-DD')
+    }
+  },
 }
 </script>
 
@@ -71,26 +92,25 @@ export default {
     margin-top: 50px;
     padding: 0 160px;
     display: flex;
-    justify-content: space-between;
     .content-header{
       display: flex;
       justify-content: space-between;
-      margin-bottom: 20px;
+      margin-bottom: 26px;
       a{
         color: @primary-color;
-        width: 66px;
-        height: 12px;
-        font-size: 12px;
+        width: 88px;
+        height: 16px;
+        font-size: 16px;
         font-family: Microsoft YaHei;
-        line-height: 11px;
+        line-height: 15px;
+        cursor: pointer;
       }
       .title{
-        width: 56px;
-        height: 14px;
-        font-size: 14px;
+        width: 75px;
+        height: 18px;
+        font-size: 18px;
         font-weight: 500;
-        color: #333;
-        line-height: 1px;
+        color: #343434;
       }
     }
     .news-list{
@@ -98,25 +118,36 @@ export default {
         display: flex;
         margin-bottom: 17px;
         font-family: PingFang-SC-Medium;
+        cursor: pointer;
+        &:hover{
+          div{
+            color: #5AA672;
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
+  .content-item{
+    margin-right: 285px;
+  }
   .news-title{
-    width: 262px;
-    height: 12px;
-    font-size: 12px;
-    font-weight: 500;
-    color: #333;
-    line-height: 1px;
     margin-right: 31px;
-
+    width: 349px;
+    height: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #343434;
+    line-height: 1px;
   }
   .news-date{
-    width: 83px;
-    height: 10px;
-    font-size: 12px;
+    width: 110px;
+    height: 13px;
+    font-size: 16px;
+    font-family: PingFang SC;
     font-weight: 500;
-    color: #999;
+    color: #9A9A9A;
     line-height: 1px;
+
   }
 </style>

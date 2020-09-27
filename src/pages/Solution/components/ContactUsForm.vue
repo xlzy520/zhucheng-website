@@ -52,7 +52,7 @@ export default {
       let isTrue = this.check();
       if (isTrue) {
         this.loading = true
-        service.contactUs(this.formData).then(res => {
+        service.addFeedback(this.formData).then(res => {
           this.$message.success('提交成功')
           this.clear()
         }).finally(() => {

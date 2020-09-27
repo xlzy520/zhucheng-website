@@ -34,10 +34,10 @@ export default {
   data() {
     return {
       list: [
-        {text: '全国200+直营服务网点', url: 'assets/icons/strength/1.png'},
-        {text: '全国14家省级分公司', url: 'assets/icons/strength/2.png'},
-        {text: '70000+全职城市服务力', url: 'assets/icons/strength/3.png'},
-        {text: '400+TOP客户信赖', url: 'assets/icons/strength/4.png'},
+        {text: '全国200+直营服务网点', url: 'assets/icons/strength/1-green.png'},
+        {text: '全国14家省级分公司', url: 'assets/icons/strength/2-green.png'},
+        {text: '70000+全职城市服务力', url: 'assets/icons/strength/3-green.png'},
+        {text: '400+TOP客户信赖', url: 'assets/icons/strength/4-green.png'},
       ],
       descs: [
         {title: '竹成集团（宁波）总公司', address: '浙江省宁波市江北区前洋E商小镇1幢1号楼512', phone: '0574-888888888'},
@@ -54,7 +54,7 @@ export default {
 .our-strength{
   width: 100%;
   background: #fff;
-  height: 376px;
+  height: 501px;
   .left{
     padding: 48px 0 0 130px;
     width: calc(100% - 791px);
@@ -65,22 +65,19 @@ export default {
     .item{
       display: flex;
       align-items: center;
-      margin-bottom: 25px;
+      margin-bottom: 43px;
       cursor: pointer;
-      img{
-        width: 20px;
-        height: 20px;
-      }
       .desc{
-        font-size: 12px;
+        margin-left: 25px;
+        font-size: 16px;
         font-weight: 500;
-        color: #333;
-        margin-left: 20px;
+        color: #343434;
       }
     }
   }
   .right{
-
+    width: 1054px;
+    height: 501px;
   }
   .right-desc{
     position: absolute;
@@ -115,8 +112,8 @@ export default {
     }
   }
   .right, .right img, .right-desc{
-    width: 791px;
-    height: 376px;
+    width: 1054px;
+    height: 501px;
   }
 }
 </style>
