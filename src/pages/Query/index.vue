@@ -1,7 +1,7 @@
 <template>
   <div class="query">
     <div class="header flex-column">
-      <img src="assets/image/query-bg.png" alt="" class="logo">
+      <img src="assets/image/query_bg.png" alt="" class="logo">
       <div class="desc">{{desc}}</div>
     </div>
     <div class="content">

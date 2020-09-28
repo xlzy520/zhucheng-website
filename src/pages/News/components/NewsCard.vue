@@ -19,9 +19,9 @@
           <div class="right flex-column">
             <div class="right-header">
               <div class="title">{{news.title}}</div>
-              <div class="date">{{news.date}}</div>
+              <div class="date">{{parseTimeFilter(news.addTime)}}</div>
             </div>
-            <div class="content">{{news.subTitle}}</div>
+            <div class="content">{{news.subtitle}}</div>
             <div class="btn">
               <a :href="'/#/news/'+news.id" class="more">了解更多>></a>
             </div>
@@ -37,6 +37,7 @@
 
 <script>
 import service from "@/api/service";
+import dayjs from "dayjs";
 
 export default {
   name: 'ContactUsCard',
@@ -86,6 +87,9 @@ export default {
       this.pageNo = num
       this.getNewsList()
       console.log(num);
+    },
+    parseTimeFilter(val){
+      return dayjs(val * 1000).format('YYYY-MM-DD')
     }
   },
   mounted() {
