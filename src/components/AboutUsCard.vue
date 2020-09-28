@@ -60,7 +60,7 @@
     .syabout {
       margin-top: -182px;
       position: relative;
-      z-index: 99999;
+      z-index: 999;
       background-color: #fff;
       padding: 0 56px 60px 56px;
     }

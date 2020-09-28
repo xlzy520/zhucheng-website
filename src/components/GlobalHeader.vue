@@ -156,6 +156,8 @@ export default {
     const item = this.menuList.find(v=> v.url === path)
     if (item) {
       this.activeRoute = item.id
+    } else {
+      this.activeRoute = '0'
     }
     console.log(this.$route);
     window.addEventListener('scroll', this.handleScroll)
@@ -306,6 +308,9 @@ export default {
         background-color: #fff!important;
         a{
           color: #5AA672;
+          height: 36px;
+          display: block;
+          width: 100%;
         }
         &:hover{
           background-color: #F7FAFC!important;
