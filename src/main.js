@@ -4,7 +4,7 @@ import router from './router'
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
-import ElementUI from 'element-ui'
+import { Message, MessageBox, Input, Button, Icon, Menu, Submenu, MenuItem } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 /* 隐藏元素类 */
 import 'element-ui/lib/theme-chalk/display.css'
@@ -15,15 +15,22 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 
 import './styles/index.less'
-import '@/icons' // icon
 
 import LzBadge from "@/components/LzBadge";
-
 Vue.component('LzBadge', LzBadge)
 
 
 Vue.config.productionTip = false
-Vue.use(ElementUI)
+Vue.use(Message)
+Vue.use(Input)
+Vue.use(Icon)
+Vue.use(Message)
+Vue.use(Menu)
+Vue.use(MenuItem)
+Vue.use(Submenu)
+
+
+
 Vue.use(animate)
 Vue.use(VueAwesomeSwiper)
 
