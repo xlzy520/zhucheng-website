@@ -1,6 +1,8 @@
 <template>
 	<div class="about">
-    <div class="about-bg">
+    <PicAndBreadcrumb :data="data"/>
+
+    <div class="about-bg" v-if="false">
       <div class="bg-desc">
         <div class="title">走进竹成</div>
         <div class="slogan">你们的信任</div>
@@ -36,16 +38,41 @@
   import ourStrength from "@/pages/Home/components/ourStrength";
   import AboutUsCard from "@/components/AboutUsCard";
   import ChooseUs from "@/pages/About/components/ChooseUs";
+  import service from "@/api/service";
+  import PicAndBreadcrumb from "@/components/PicAndBreadcrumb";
 	export default {
     components: {
       ourStrength,
       AboutUsCard,
-      ChooseUs
+      ChooseUs,
+      PicAndBreadcrumb
     },
 		data() {
 			return {
+			  bgUrl: '',
+        data: {
+          title: '走进竹成', slogan: ['你们的信任', '都是我们前进的最大动力'],
+          img: 'assets/image/contact_us_bg.png', content: '首页>关于我们'
+        },
 			};
 		},
+    methods: {
+      getBg() {
+        service.getSchemeImgList({
+          pageNo: 1,
+          pageSize: 100,
+          orderByClause: 'id desc',
+          imgType: 2
+        }).then(res => {
+          if (res.list && res.list.length) {
+            this.data.img = res.list[0].imgurl
+          }
+        })
+      }
+    },
+    created(){
+      this.getBg()
+    }
 	}
 
 </script>

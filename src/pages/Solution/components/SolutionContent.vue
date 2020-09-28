@@ -22,7 +22,6 @@
       <div class="service-content" :class="activeTab === 4? 'low': ''">
         <div class="service-item" v-for="(card,index) in currentTabInfo.serviceContent" :key="card.name">
           <div class="service-item-img">
-<!--            <img src="https://i0.hdslb.com/bfs/album/cfe1320211a15030b704023c76380d1ca826187b.jpg@1036w_1e_1c.jpg" />-->
             <img :src="'assets/image/solution/serviceContent/'+currentTabInfo.img+'/'+(index+1)+'.png'" />
           </div>
           <div class="service-item-title">{{card.name}}</div>
@@ -114,20 +113,7 @@ export default {
       pageNo: 1,
       activeTab: 0,
       total: 100,
-      newsList: [
-        { title: '北京9月回单卡客户打卡卡打卡阿打算阿打算 ',
-          content: '\n' +
-            '                                浙江省宁波市江北区前洋E商小镇1号楼512客服经拉风拉设计费拉拉阿萨德阿萨德\n' +
-            '法定阿四发生发生法定发生发生发生 阿发阿萨德sadad阿斯蒂芬阿萨德发生大想，\n' +
-            '核发开户的看法哈客户。\n' +
-            '                            ',
-          img: 'https://i0.hdslb.com/bfs/album/cfe1320211a15030b704023c76380d1ca826187b.jpg@1036w_1e_1c.jpg',
-          date: '2020-09-04' },
-        { title: '2', content: '1231231',
-          img: 'https://i0.hdslb.com/bfs/album/cfe1320211a15030b704023c76380d1ca826187b.jpg@1036w_1e_1c.jpg', date: 'dasdas' },
-        { title: '3', content: '1231231',
-          img: 'https://i0.hdslb.com/bfs/album/cfe1320211a15030b704023c76380d1ca826187b.jpg@1036w_1e_1c.jpg', date: 'dasdas' },
-      ]
+      newsList: []
     }
   },
   methods: {
