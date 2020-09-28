@@ -4,7 +4,7 @@
       <el-row>
         <el-col :xs="8" :sm="6" :md="4" :lg="4" :xl="4">
           <div class="logo">
-            <img src="../assets/3917_jdbaq5ph(2).png" alt="">
+            <img src="assets/image/header-logo.png" alt="">
           </div>
         </el-col>
         <el-col :xs="16" :sm="18" :md="20" :lg="20" :xl="20">
@@ -12,21 +12,23 @@
             <div class="hidden-sm-and-down fr phone-number">
               <i class="el-icon-phone-outline">0574-88888888</i>
             </div>
-            <el-menu class="hidden-sm-and-down" default-active="1" mode="horizontal"
+            <el-menu class="hidden-sm-and-down" mode="horizontal"
                      background-color="transparent"
+                     :default-active="activeRoute"
+                     @select="handleSelect"
                      text-color="#fff">
               <template v-for="menuItem in menuList">
-                <el-submenu v-if="menuItem.children" :index="menuItem.id" background-color="#545c64"
+                <el-submenu v-if="menuItem.children" :index="menuItem.id"
                             :key="menuItem.id">
                   <template slot="title">
-                    <router-link :data-hover="menuItem.name" :to="{path:menuItem.url,query: menuItem.id}">
+                    <router-link :data-hover="menuItem.name" :to="{path:menuItem.url}">
                       {{menuItem.name}}
                     </router-link>
                   </template>
                   <el-menu-item v-for="subMenuItem in menuItem.children" :key="subMenuItem.id"
                                 :index="subMenuItem.id">
-                    <a :href="subMenuItem.url" v-if="subMenuItem.isExtra"></a>
-                    <router-link v-else :to="{path: subMenuItem.url, query:{id: subMenuItem.id}}">
+                    <a :href="subMenuItem.url" v-if="subMenuItem.isExtra" target="_blank">{{subMenuItem.name}}</a>
+                    <router-link v-else :to="{path: subMenuItem.url}">
                       {{subMenuItem.name}}
                     </router-link>
                   </el-menu-item>
@@ -120,9 +122,13 @@ export default {
       logo: '/static/img/3917_jdbaq5ph(2).png',
       isScrollToMain: false,
       backTopShow: false,
+      activeRoute: '1'
     }
   },
   methods: {
+    handleSelect(key, keyPath) {
+      this.activeRoute = key
+    },
     handleScroll() {
       const scrollY = window.scrollY
       const boolBackTop= scrollY > 100;
@@ -146,6 +152,12 @@ export default {
     },
   },
   mounted() {
+    const path = this.$route.path
+    const item = this.menuList.find(v=> v.url === path)
+    if (item) {
+      this.activeRoute = item.id
+    }
+    console.log(this.$route);
     window.addEventListener('scroll', this.handleScroll)
   },
   beforeDestroy(){
@@ -167,9 +179,18 @@ export default {
     padding: 0 100px;
     a{
       color: #fff;
+      height: 60px;
+      display: block;
     }
     &.deep-bg{
       background: #b22f6f;
+      color: #fff!important;
+      .el-menu-item, a{
+        color: #fff!important;
+      }
+      &.white .el-menu--horizontal .el-submenu .el-submenu__title a{
+        color: #fff!important;
+      }
     }
     .el-menu {
       padding-left: 50px;
@@ -210,7 +231,7 @@ export default {
           color: #fff!important;
           &>a{
             color: #fff;
-            transform: translate3d(0,-100%,0);
+            /*transform: translate3d(0,-100%,0);*/
           }
         }
       }
@@ -248,12 +269,6 @@ export default {
     }
   }
 
-  .logo,
-  .logo img {
-    width: 100%;
-    height: 100%;
-  }
-
   .logo img {
     vertical-align: middle;
   }
@@ -284,5 +299,18 @@ export default {
     position: fixed;
     right: 50px;
     bottom: 50px;
+  }
+  .el-menu--horizontal{
+    .el-menu--popup{
+      .el-menu-item{
+        background-color: #fff!important;
+        a{
+          color: #5AA672;
+        }
+        &:hover{
+          background-color: #F7FAFC!important;
+        }
+      }
+    }
   }
 </style>

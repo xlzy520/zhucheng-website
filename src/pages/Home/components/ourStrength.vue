@@ -40,9 +40,17 @@ export default {
         {text: '400+TOP客户信赖', url: 'assets/icons/strength/4-green.png'},
       ],
       descs: [
-        {title: '竹成集团（宁波）总公司', address: '浙江省宁波市江北区前洋E商小镇1幢1号楼512', phone: '0574-888888888'},
-        {title: '竹成集团（杭州）分公司', address: '浙江省杭州市XXXQ区XXX路XXX号', phone: '0574-888888888'},
-        {title: '竹成集团（上海）分公司', address: '上海市XXXQ区XXX路XXX号', phone: '0574-888888888'},
+        {
+          title: '宁波竹成信息科技（集团）有限公司',
+          address: '宁波市江北区洪塘街道长兴路与慈孝大道交叉口北400米路西前洋E商小镇1号楼512室',
+          phone: '15036086531(左先生）'
+        },
+        // {title: '竹成集团（杭州）分公司', address: '浙江省杭州市XXXQ区XXX路XXX号', phone: '0574-888888888'},
+        {
+          title: '宁波竹成信息科技（集团）有限公司-上海分公司',
+          address: '上海市闵行区吴中路1439号莱茵虹景中心A座1002',
+          phone: '15036086531(左先生）'
+        },
       ],
       hover: false
     }
@@ -76,7 +84,7 @@ export default {
     }
   }
   .right{
-    width: 1054px;
+    width: 1062px;
     height: 501px;
   }
   .right-desc{
@@ -84,7 +92,7 @@ export default {
     background: rgba(90, 165, 114, .92);
     opacity: 0.92;
     color: #fff;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     padding: 56px 0 51px 151px;
     box-sizing: border-box;
@@ -94,25 +102,28 @@ export default {
       margin-bottom: 36px;
     }
     .icon{
-      width: 10px;
-      height: 12px;
-      margin-right: 12px;
+      width: 13px;
+      height: 16px;
+      margin-right: 15px;
     }
     .title{
-      height: 13px;
-      font-size: 14px;
-      margin-bottom: 19px;
+      height: 17px;
+      font-size: 18px;
+      margin-bottom: 25px;
     }
     .address{
-      margin-bottom: 13px;
-      height: 12px;
+      margin-bottom: 17px;
+      height: 16px;
     }
     .phone{
-      height: 10px;
+      height: 13px;
+      img{
+        height: 17px;
+      }
     }
   }
-  .right, .right img, .right-desc{
-    width: 1054px;
+  .right, .right>img, .right-desc{
+    width: 1062px;
     height: 501px;
   }
 }

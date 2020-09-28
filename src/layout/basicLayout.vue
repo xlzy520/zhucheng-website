@@ -71,7 +71,9 @@
         }).then(res => {
           const index = this.menuList.findIndex(v=> v.id === '4')
           const data = res.list.map((v,index)=> {
-            v.id = '4-'+index
+            v.id = '4-'+( index + 1)
+            v.isExtra = true
+            return v
           })
           this.$set(this.menuList, index, {
               id: '4',

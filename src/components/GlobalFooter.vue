@@ -4,8 +4,8 @@
       <el-col :xs="12" :sm="12" :md="8" :lg="8" :xl="8">
         <div class="info">
           <div class="info-main">
-            <img src="" alt="" class="logo">
-            <div class="name">
+            <img src="assets/image/footer/logo.png" alt="" class="logo">
+            <div class="name" v-if="false">
               <div class="title">
                 <img src="" alt="">
               </div>
@@ -14,7 +14,7 @@
               </div>
             </div>
           </div>
-          <div class="slogan">服务外包让商业 更简单</div>
+<!--          <div class="slogan">服务外包让商业 更简单</div>-->
           <div class="lz"></div>
         </div>
      </el-col>
@@ -23,11 +23,11 @@
          <div class="header-title">联系我们</div>
          <div class="header-title-en">CONTACT US</div>
        </div>
-        <div class="divider"></div>
+        <div class="divider w380"></div>
        <div class="info-item flex-column">
          <span>浙江省宁波市江北区前洋E商小镇1幢1号楼512</span>
-         <span>联系电话：XXXXXXXXXXXXX</span>
-         <span>电子邮箱：XXXXXXX@zc-corp.cn</span>
+         <span>联系电话：15036086531(左先生）</span>
+         <span>电子邮箱：zuochangkun@zc-corp.cn</span>
        </div>
      </el-col>
       <el-col :xs="12" :sm="12" :md="8" :lg="8" :xl="8">
@@ -35,10 +35,10 @@
          <div class="header-title">关注我们</div>
          <div class="header-title-en">FOCUS ON US</div>
        </div>
-       <div class="divider w375"></div>
+       <div class="divider w500"></div>
        <div class="qrcodes">
          <div class="qrcodes-item flex-column" v-for="item in qrcodes" :key="item.name">
-           <img :src="item.url" alt="">
+           <img :src="'assets/image/qrcode/'+item.url" alt="">
            <span>{{item.name}}</span>
          </div>
        </div>
@@ -95,9 +95,9 @@ export default {
   data() {
     return {
       qrcodes: [
-        {url: '', name: '竹帮帮小程序'},
-        {url: '', name: '竹帮帮公众号'},
-        {url: '', name: '竹闲客小程序'},
+        {url: 'xcx.png', name: '竹帮帮小程序'},
+        {url: 'gzh.png', name: '竹帮帮公众号'},
+        {url: 'zxk_xcx.png', name: '竹闲客小程序'},
       ]
     }
   }
@@ -112,8 +112,6 @@ export default {
     padding: 120px 130px 23px;
     /*margin-top: 110px;*/
     .logo{
-      width: 45px;
-      height: 45px;
     }
   }
   .info{
@@ -142,11 +140,12 @@ export default {
       margin-top: 20px;
     }
     .lz{
-      width: 17px;
+      width: 22px;
       height: 2px;
       background: #FFFFFF;
       opacity: 0.56;
-      margin-top: 33px;
+      margin-top: 103px;
+      margin-left: 60px;
     }
   }
   .contact-us{
@@ -156,18 +155,18 @@ export default {
     display: flex;
 
     .header-title{
-      font-size: 14px;
+      font-size: 18px;
       font-weight: 500;
       color: #FFFFFF;
-      line-height: 18px;
+      line-height: 24px;
     }
     .header-title-en{
-      font-size: 9px;
+      font-size: 12px;
       font-weight: 500;
       color: #FFFFFF;
-      line-height: 18px;
+      line-height: 24px;
       opacity: 0.32;
-      margin-left: 5px;
+      margin-left: 8px;
 
     }
   }
@@ -176,46 +175,48 @@ export default {
     height: 1px;
     background: #FFFFFF;
     opacity: 0.32;
-    margin-top: 11px;
-    margin-bottom: 17px;
+    margin-top: 14px;
+    margin-bottom: 23px;
   }
-  .w375{
-    width: 375px;
+  .w380{
+    width: 380px;
+  }
+  .w500{
+    width: 500px;
   }
   .info-item{
-    font-size: 11px;
+    font-size: 14px;
     color: #FFFFFF;
-    line-height: 18px;
+    line-height: 24px;
     span{
-      margin-bottom: 18px;
+      margin-bottom: 23px;
     }
   }
   .qrcodes{
     display: flex;
     &-item{
       padding: 2px;
-      margin-right: 26px;
+      margin-right: 32px;
       img{
-        width: 78px;
-        height: 77px;
       }
       span{
-        font-size: 12px;
+        font-size: 16px;
         font-weight: 500;
         color: #FFFFFF;
-        line-height: 18px;
-        margin-top: 7px;
+        line-height: 24px;
+        margin-top: 9px;
+        text-align: center;
       }
     }
   }
 
   .footer-copyright{
     text-align: center;
-    height: 9px;
-    font-size: 9px;
+    height: 12px;
+    font-size: 12px;
     font-weight: 500;
     color: #FFFFFF;
-    line-height: 18px;
-    margin-top: 90px;
+    line-height: 24px;
+    margin-top: 120px;
   }
 </style>

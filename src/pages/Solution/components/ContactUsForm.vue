@@ -6,7 +6,7 @@
         <div class="left flex-column">
           <el-input placeholder="您的称呼" v-model="formData.name"/>
           <el-input placeholder="您的联系方式" v-model="formData.phone"/>
-          <el-input placeholder="你在哪里" v-model="formData.address"/>
+          <el-input placeholder="您在哪里" v-model="formData.address"/>
         </div>
         <div class="right">
           <el-input type="textarea" rows="4" placeholder="您的需求" v-model="formData.requirement"/>
@@ -39,7 +39,7 @@ export default {
       let allTrue = true
       for (const item in this.formData) {
         if (!this.formData[item]) {
-          this.$message.error('请检查必填项')
+          this.$message.warning('请检查必填项')
           allTrue = false
           break;
         }
@@ -47,8 +47,6 @@ export default {
       return allTrue
     },
     submit() {
-      this.loading = true
-
       let isTrue = this.check();
       if (isTrue) {
         this.loading = true
@@ -88,6 +86,7 @@ export default {
   }
   /deep/.left{
     .el-input, input{
+      color: #fff;
       width: 304px;
       height: 40px;
       margin-bottom: 6px;
@@ -98,6 +97,7 @@ export default {
   /deep/.right{
     margin-left: 14px;
     .el-textarea, textarea{
+      color: #fff;
       width: 667px;
       height: 132px;
       background-color: inherit;

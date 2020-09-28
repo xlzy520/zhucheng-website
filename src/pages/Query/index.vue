@@ -25,7 +25,7 @@
           <div class="result-table-content">
             <div class="result-table-row" v-for="item in list" :key="item.name">
               <div>{{item.name}}</div>
-              <div>{{item.value}}</div>
+              <div>{{companyInfo[item.value]}}</div>
             </div>
           </div>
         </div>
@@ -35,12 +35,12 @@
           <div class="result-table-header">人员信息</div>
           <div class="df">
             <div class="left">
-              <img src="" />
+              <img :src="staffInfo.imgurl" />
             </div>
             <div class="right flex-column">
               <span>员工姓名：{{staffInfo.name}}</span>
               <span>工号：{{staffInfo.num}}</span>
-              <span>所在机构：{{staffInfo.location}}</span>
+              <span>所在机构：{{staffInfo.area}}</span>
             </div>
           </div>
         </div>
@@ -61,24 +61,28 @@ export default {
       desc: '服务公司  竹成员工，一键验真假',
       keyword: '',
       list: [
-        { name: '洼地公司名称', value: '洼地公司名称' },
-        { name: '营业地址', value: '四川省成都市XX区XX路XX号' },
-        { name: '企业信用代码', value: '91330200MA2165144' },
-        { name: '法定代表人', value: '廖某某' },
+        { name: '洼地公司名称', value: 'companyName' },
+        { name: '营业地址', value: 'address' },
+        { name: '企业信用代码', value: 'num' },
+        { name: '法定代表人', value: 'legalRepresentative' },
       ],
       loading: false,
       type: 'staff',
       staffInfo: {
         name: '廖某某',
         num: 'ZC888',
-        location: '宁波总部'
+        area: '宁波总部',
+        imgurl: ''
       },
-      hasResult: false
+      companyInfo: {},
+      hasResult: false,
+      queryType: ''
     }
   },
   methods: {
     isEmployee(){
-      const match = this.keyword.match(/([\u4e00-\u9fa5]*)(\d*)/)
+      const key = this.keyword.replace(/\s+/, '')
+      const match = key.match(/([\u4e00-\u9fa5]*)(\d*)/)
       const name = match[1]
       const num = match[2]
       return {
@@ -93,7 +97,9 @@ export default {
       }
       this.loading = true
       const queryData = this.isEmployee()
+      console.log(queryData);
       const myService = queryData.num ? service.getEmployeeList : service.getCompanyList
+      this.type = queryData.num ? 'staff': 'company'
       const data = queryData.num ? queryData : { companyName: this.keyword }
       myService({
         pageNo:1,
@@ -101,8 +107,12 @@ export default {
         orderByClause: 'id desc',
         ...data
       }).then(res => {
-        this.list = res.list || []
         this.hasResult = res.list.length
+        if (this.type === 'company') {
+          this.companyInfo = res.list[0] || {}
+        } else {
+          this.staffInfo = res.list[0]
+        }
       }).finally(() => {
         this.loading = false
       })
@@ -207,7 +217,6 @@ export default {
             .left{
               width: 120px;
               height: 120px;
-              background: #464854;
             }
             .right{
               font-size: 14px;

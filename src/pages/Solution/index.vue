@@ -22,7 +22,7 @@
       return {
         data: {
           title: '解决方案', slogan: ['精益求精    合作共赢'],
-          img: 'assets/image/contact_us_bg.png', content: '首页>解决方案'
+          img: 'assets/image/solution_bg.png', content: '首页>解决方案'
         },
       }
     }

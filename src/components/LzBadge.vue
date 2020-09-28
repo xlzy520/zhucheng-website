@@ -32,9 +32,9 @@
 
   .lz-badge {
     &-icon {
-      width: 15px;
-      height: 3px;
-      background: @primary-color;
+      width: 20px;
+      height: 4px;
+      background: #25903A;
       margin-right: 15px;
     }
 

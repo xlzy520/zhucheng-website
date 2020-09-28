@@ -5,10 +5,10 @@
       <GlobalHeaderWhite :menu-list="menuList"  />
       <!-- 中部 -->
       <el-main>
-        <router-view />
+        <router-view/>
       </el-main>
       <!-- 底部 -->
-      <GlobalFooter :menu-list="menuList" />
+      <GlobalFooter :menu-list="menuList"/>
     </el-container>
     <!-- 返回顶部 -->
 
@@ -18,6 +18,8 @@
 <script>
   import GlobalHeaderWhite from "@/components/GlobalHeaderWhite";
   import GlobalFooter from "@/components/GlobalFooter";
+  import service from "@/api/service";
+
   export default {
     name: 'basicLayout',
     components: { GlobalHeaderWhite, GlobalFooter },
@@ -25,65 +27,76 @@
       return {
         menuList: [
           {
-          yid: 1,
-          yyid: '1',
-          yname: '首页',
-          ylist: [],
-          yrouterul: '/'
-        },
-          {
-            yid: 2,
-            yyid: '2',
-            yname: '走进竹成',
-            ylist: [],
-            yrouterul: '/about'
+            id: '1',
+            name: '首页',
+            url: '/'
           },
           {
-            yid: 3,
-            yyid: '3',
-            yname: '解决方案',
-            ylist: [],
-            yrouterul: '/solution',
+            id: '2',
+            name: '走进竹成',
+            url: '/about'
           },
           {
-            yid: 4,
-            yyid: '4',
-            yname: '产品中心',
-            ylist: [
-                {eid: 41, eeid: '4-1', ename: '灵活用工2.0', elist: [],},
-                {eid: 42, eeid: '4-2', ename: '竹成CRM', elist: [],},
+            id: '3',
+            name: '解决方案',
+            url: '/solution',
+          },
+          {
+            id: '4',
+            name: '产品中心',
+            children: [
+              {id: '4-1', name: '灵活用工2.0', url: 'http://baidu.com'},
+              {id: '4-2', name: '竹成CRM', url: 'http://baidu.com'},
             ],
-            yrouterul: '/customercase'
           },
           {
-            yid: 5,
-            yyid: '5',
-            yname: '信息验证',
-            ylist: [],
-            yrouterul: '/newsandinformation'
+            id: '5',
+            name: '信息验证',
+            url: '/query'
           },
           {
-            yid: 6,
-            yyid: '6',
-            yname: '联系我们',
-            ylist: [],
-            yrouterul: '/contactus'
+            id: '6',
+            name: '联系我们',
+            url: '/contactus'
           },
         ]
       }
     },
     methods: {
-
+      getProducts() {
+        service.getProductsList({
+          pageNo: 1,
+          pageSize: 2,
+          orderByClause: 'id desc'
+        }).then(res => {
+          const index = this.menuList.findIndex(v=> v.id === '4')
+          const data = res.list.map((v,index)=> {
+            v.id = '4-'+( index + 1)
+            v.isExtra = true
+            return v
+          })
+          this.$set(this.menuList, index, {
+            id: '4',
+            name: '产品中心',
+            children: data,
+          },)
+          console.log(res);
+        })
+      },
+    },
+    mounted() {
+      this.getProducts()
     },
   }
 </script>
 
 <style lang="less">
-  .container{
+  .container {
     .el-main {
       /*text-align: center;*/
       padding: 0;
       background: #F7FAFC;
+      overflow: hidden;
     }
   }
 </style>
