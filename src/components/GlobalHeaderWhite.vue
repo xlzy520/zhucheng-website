@@ -167,7 +167,7 @@ export default {
 <style lang="less">
   .el-header.header-main.white {
     position: fixed;
-    z-index: 9999;
+    z-index: 1999;
     width: 100%;
     color: #343434;
     text-align: center;

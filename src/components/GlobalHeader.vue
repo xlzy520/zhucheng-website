@@ -171,7 +171,7 @@ export default {
 <style lang="less">
   .el-header.header-main {
     position: fixed;
-    z-index: 9999;
+    z-index: 1999;
     width: 100%;
     color: #fff;
     text-align: center;
@@ -182,7 +182,7 @@ export default {
     a{
       color: #fff;
       height: 60px;
-      display: block;
+      display: inline-block;
     }
     &.deep-bg{
       background: #b22f6f;

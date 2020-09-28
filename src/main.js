@@ -4,7 +4,10 @@ import router from './router'
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
-import { Message, MessageBox, Input, Button, Icon, Menu, Submenu, MenuItem } from 'element-ui'
+import {
+  Message,  Row, Col, Input, Button, Icon, Menu,
+  Submenu, MenuItem, Header, Footer, Main, Container, Dropdown, Loading
+} from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 /* 隐藏元素类 */
 import 'element-ui/lib/theme-chalk/display.css'
@@ -21,14 +24,28 @@ Vue.component('LzBadge', LzBadge)
 
 
 Vue.config.productionTip = false
-Vue.use(Message)
+Message.install = function (Vue, options) {
+  Vue.prototype.$message = Message
+}
+// Vue.use(Message)
+// Vue.use(MessageBox)
+// Vue.use(Notification)
+// Vue.use(Popover)
+Vue.use(Loading)
 Vue.use(Input)
 Vue.use(Icon)
 Vue.use(Message)
 Vue.use(Menu)
 Vue.use(MenuItem)
 Vue.use(Submenu)
-
+Vue.use(Button)
+Vue.use(Header)
+Vue.use(Footer)
+Vue.use(Main)
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(Container)
+Vue.use(Dropdown)
 
 
 Vue.use(animate)
