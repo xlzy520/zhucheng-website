@@ -5,7 +5,7 @@ import router from './router'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import {
-  Message,  Row, Col, Input, Button, Icon, Menu,
+  Message,  Row, Col, Input, Button, Icon, Menu, Pagination,
   Submenu, MenuItem, Header, Footer, Main, Container, Dropdown, Loading
 } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -46,6 +46,7 @@ Vue.use(Row)
 Vue.use(Col)
 Vue.use(Container)
 Vue.use(Dropdown)
+Vue.use(Pagination)
 
 
 Vue.use(animate)
