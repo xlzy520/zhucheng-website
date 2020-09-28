@@ -13,15 +13,6 @@ import News from '@/pages/News'
 import NewsDetail from '@/pages/NewsDetail'
 import Solution from '@/pages/Solution'
 
-
-
-// import firstcompontents from '@/pages/firstcompontents'
-// import secondpage from '@/pages/secondpage'
-// import solution from '@/pages/solution1'
-// import customercase from '@/pages/customercase'
-// import newsandinformation from '@/pages/newsandinformation'
-// import three from '@/pages/three'
-
 // import TE from '@/pages/About/components/ChooseUs'
 
 
@@ -60,38 +51,11 @@ export default new Router({
           name: 'solution',
           component: Solution
         },
-        // {
-        //   path: '/customercase',
-        //   name: 'customercase',
-        //   component: customercase
-        // },
-        // {
-        //   path: '/newsandinformation',
-        //   name: 'newsandinformation',
-        //   component: newsandinformation
-        // },
         {
           path: '/contactus',
           name: 'contactus',
           component: ContactUs
         },
-        // {
-        //   path: '/three',
-        //   name: 'three',
-        //   component: three
-        // },
-        //
-        // {
-        //   path: '/test1',
-        //   name: 'test1',
-        //   component: firstcompontents
-        // },
-        //
-        // {
-        //   path: '/test2',
-        //   name: 'test2',
-        //   component: secondpage
-        // },
       ]
 		},
     {
