@@ -58,7 +58,7 @@
 		},
     methods: {
       getBg() {
-        service.getSchemeImgList({
+        service.getImgs({
           pageNo: 1,
           pageSize: 100,
           orderByClause: 'id desc',

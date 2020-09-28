@@ -29,11 +29,11 @@
     },
     methods: {
       getBg() {
-        service.getSchemeImgList({
+        service.getImgs({
           pageNo: 1,
           pageSize: 100,
           orderByClause: 'id desc',
-          imgType: 2
+          imgType: 4
         }).then(res => {
           if (res.list && res.list.length) {
             this.data.img = res.list[0].imgurl

@@ -63,14 +63,8 @@
       getImageStyleText(url) {
         return `background-image: url(${url})`
       },
-      getBanners (){
-        service.getBanners().then(res => {
-          this.banners = res || []
-        })
-      },
     },
     mounted() {
-      // this.getBanners()
     },
   }
 </script>

@@ -51,7 +51,7 @@
 		},
 		methods: {
       getBanners(){
-        service.getBanners({
+        service.getImgs({
           pageNo: 1,
           pageSize: 100,
           orderByClause: 'id desc',

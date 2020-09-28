@@ -2,7 +2,7 @@ import fetch from './base'
 // const fetch = (url, ...arg) => baseFetch('/car/' + url, ...arg)
 
 export default {
-  getBanners(data) {
+  getImgs(data) {
     return fetch('/index/img', data, 'get')
   },
   getCompanyList(data) {
