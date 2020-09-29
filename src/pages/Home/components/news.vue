@@ -134,20 +134,18 @@ export default {
   .news-title{
     margin-right: 31px;
     width: 349px;
-    height: 16px;
     font-size: 16px;
     font-weight: 500;
     color: #343434;
-    line-height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .news-date{
     width: 110px;
-    height: 13px;
     font-size: 16px;
-
     font-weight: 500;
     color: #9A9A9A;
-    line-height: 1px;
 
   }
 </style>
