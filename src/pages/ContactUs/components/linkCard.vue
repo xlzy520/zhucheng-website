@@ -50,7 +50,7 @@ export default {
     justify-content: space-between;
     .card-left{
       padding: 118px 0 0 74px;
-      font-family: PingFang SC;
+
       font-weight: bold;
       color: #343434;
       font-size: 20px;

@@ -42,7 +42,7 @@
       display: flex;
       align-items: center;
       font-size: 24px;
-      font-family: PingFang SC;
+
       font-weight: bold;
       color: #343434;
       margin-bottom: 11px;

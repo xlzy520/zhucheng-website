@@ -81,7 +81,7 @@ export default {
 <style lang="less" scoped>
   @import "@/styles/var.less";
   .news{
-    font-family: PingFang SC;
+
     margin-top: 100px;
     width: 100%;
   }
@@ -144,7 +144,7 @@ export default {
     width: 110px;
     height: 13px;
     font-size: 16px;
-    font-family: PingFang SC;
+
     font-weight: 500;
     color: #9A9A9A;
     line-height: 1px;

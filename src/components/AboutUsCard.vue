@@ -55,7 +55,7 @@
   @import "@/styles/var.less";
   .symain {
     padding: 0 100px;
-    font-family: PingFang SC;
+
 
     .syabout {
       margin-top: -182px;
