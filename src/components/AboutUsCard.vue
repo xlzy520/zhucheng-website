@@ -54,9 +54,7 @@
 <style lang="less">
   @import "@/styles/var.less";
   .symain {
-    padding: 0 100px;
-
-
+    padding: 0 200px;
     .syabout {
       margin-top: -182px;
       position: relative;
