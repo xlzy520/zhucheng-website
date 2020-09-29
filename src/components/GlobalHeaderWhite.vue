@@ -243,7 +243,7 @@ export default {
 
     .el-menu--horizontal>.el-menu-item,
     .el-menu--horizontal>.el-submenu {
-      margin: 0 30px;
+      margin: 0 48px;
       padding: 0;
     }
   }
