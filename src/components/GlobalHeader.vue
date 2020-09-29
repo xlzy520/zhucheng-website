@@ -185,7 +185,7 @@ export default {
       display: inline-block;
     }
     &.deep-bg{
-      background: #b22f6f;
+      background: #5AA572;
       color: #fff!important;
       .el-menu-item, a{
         color: #fff!important;

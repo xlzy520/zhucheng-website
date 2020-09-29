@@ -179,7 +179,7 @@ export default {
       color: #343434;
     }
     &.deep-bg{
-      background: #b22f6f;
+      background: #5AA572;
     }
     .el-menu {
       padding-left: 50px;
