@@ -9,9 +9,9 @@
         </el-col>
         <el-col :xs="16" :sm="18" :md="20" :lg="20" :xl="20">
           <div class="header_nav">
-            <div class="hidden-sm-and-down fr phone-number">
-              <i class="el-icon-phone-outline">0574-88888888</i>
-            </div>
+<!--            <div class="hidden-sm-and-down fr phone-number">-->
+<!--              <i class="el-icon-phone-outline">0574-88888888</i>-->
+<!--            </div>-->
             <el-menu class="hidden-sm-and-down" :default-active="activeRoute" mode="horizontal"
                      background-color="transparent"
                      text-color="#5AA572">
