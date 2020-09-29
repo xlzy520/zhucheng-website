@@ -75,7 +75,7 @@ export default {
 .contact-us-form-card{
   margin-top: 150px;
   padding: 125px 175px 105px;
-  background-color: #272121;
+  background-image: url("~assets/image/contact_us_form_bg.png");
   .contact-us-form{
     display: flex;
   }
