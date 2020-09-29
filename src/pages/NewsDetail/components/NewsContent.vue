@@ -74,7 +74,6 @@ export default {
       /deep/.content{
         width: 1338px;
         font-size: 20px;
-        font-weight: bold;
         color: #333333;
         line-height: 30px;
         img{
