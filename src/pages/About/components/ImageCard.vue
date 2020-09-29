@@ -41,25 +41,22 @@ export default {
   img{
     width: 100%;
     height: 171px;
-    margin-bottom: 10px;
+    margin-bottom: 22px;
     &:nth-child(3n){
       margin-right: 0;
     }
   }
   &-title{
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 20px;
     color: #343434;
-    line-height: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
   &-desc{
     width: 456px;
     font-size: 11px;
-    font-weight: 500;
     color: #343434;
-    line-height: 30px;
-    letter-spacing: 0;
+    letter-spacing: 1px;
+    margin-bottom: 60px;
   }
 }
 </style>
