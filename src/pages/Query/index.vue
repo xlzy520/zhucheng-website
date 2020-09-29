@@ -45,7 +45,7 @@
           </div>
         </div>
       </div>
-      <div v-show="!list.length" class="empty">
+      <div v-show="!hasResult" class="empty">
         未能查询到您需要的结果，请重新输入
       </div>
     </div>
