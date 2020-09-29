@@ -1,13 +1,13 @@
 <template>
   <div class="solution">
     <PicAndBreadcrumb :data="data" />
-    <NewsCard />
+    <SolutionContent />
     <ContactUsForm />
   </div>
 </template>
 
 <script>
-  import NewsCard from './components/SolutionContent'
+  import SolutionContent from './components/SolutionContent'
   import ContactUsForm from './components/ContactUsForm'
   import PicAndBreadcrumb from "@/components/PicAndBreadcrumb";
   import service from "@/api/service";
@@ -15,9 +15,9 @@
   export default {
     name: 'index',
     components: {
-      NewsCard,
+      SolutionContent,
       PicAndBreadcrumb,
-      ContactUsForm
+      ContactUsForm,
     },
     data() {
       return {

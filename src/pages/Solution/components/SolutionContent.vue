@@ -27,29 +27,20 @@
           <div class="service-item-title">{{card.name}}</div>
         </div>
       </div>
-      <div class="news-item" v-if="false" v-for="news in newsList" :key="news.title">
-        <div class="left">
-          <img :src="news.img" alt="">
-        </div>
-        <div class="right flex-column">
-          <div class="right-header">
-            <div class="title">{{news.title}}</div>
-            <div class="date">{{news.date}}</div>
-          </div>
-          <div class="content">{{news.content}}</div>
-          <div class="btn">
-            <a :href="'/#/news/'+'a'" class="more">了解更多>></a>
-          </div>
-        </div>
-      </div>
     </div>
+    <ServiceAdvances v-if="activeTab === 3" />
+    <TaxTeam v-if="activeTab === 3" />
   </div>
 </template>
 
 <script>
+  import ServiceAdvances from "./ServiceAdvances";
+  import TaxTeam from "@/pages/Solution/components/TaxTeam";
 export default {
   name: 'ContactUsCard',
   components: {
+    ServiceAdvances,
+    TaxTeam
   },
   data() {
     return {

@@ -9,7 +9,7 @@
 <!--      <img src="assets/icons/address.png" class="icon" />-->
 <!--      <span class="content">{{data.content}}</span>-->
 <!--    </div>-->
-    <img :src="data.img" alt="">
+    <img :src="data.img" alt="" class="bg-img">
   </div>
 </template>
 
@@ -41,6 +41,11 @@ export default {
     img{
       width: 100%;
     }
+  }
+  .bg-img{
+    width: 1920px;
+    height: 1080px;
+    background: #000;
   }
   .bg-desc{
     position: absolute;
