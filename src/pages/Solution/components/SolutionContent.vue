@@ -146,7 +146,7 @@ export default {
 
     .news-tabs{
       position: relative;
-      z-index: 99999;
+      z-index: 100;
       /*padding: 45px 75px 57px 75px;*/
       padding-top: 45px;
       box-sizing: border-box;
