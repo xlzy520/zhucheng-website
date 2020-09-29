@@ -38,12 +38,12 @@
           },
           {
             id: '3',
-            name: '解决方案',
+            name: '产品中心',
             url: '/solution',
           },
           {
             id: '4',
-            name: '产品中心',
+            name: '服务平台',
             children: [
               {id: '4-1', name: '灵活用工2.0', url: 'http://baidu.com'},
               {id: '4-2', name: '竹成CRM', url: 'http://baidu.com'},
