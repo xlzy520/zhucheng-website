@@ -17,7 +17,7 @@
     </div>
     <el-row>
       <el-col :xs="24">
-        <AboutUsCard />
+        <AboutUsCard :hasBtn="false" type="about"/>
       </el-col>
     </el-row>
     <el-row style="margin-top: 150px">
