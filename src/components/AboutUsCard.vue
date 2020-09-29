@@ -108,10 +108,10 @@
     }
     .syabouttxt {
       width: 742px;
-      font-size: 11px;
+      font-size: 14px;
       color: #333333;
       line-height: 40px;
-      letter-spacing: 2.5px;
+      letter-spacing: 1.5px;
       p{
         margin: 0;
         text-indent: 20px;
