@@ -47,7 +47,7 @@ export default {
     padding: 0 75px;
     .article-container{
       position: relative;
-      z-index: 99999;
+      z-index: 10;
       padding: 42px 75px 57px 75px;
       box-sizing: border-box;
       width: 1720px;
