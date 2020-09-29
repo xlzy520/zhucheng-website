@@ -77,7 +77,7 @@
           })
           this.$set(this.menuList, index, {
             id: '4',
-            name: '产品中心',
+            name: '服务平台',
             children: data,
           },)
           console.log(res);
