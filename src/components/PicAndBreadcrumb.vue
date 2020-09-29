@@ -5,10 +5,10 @@
       <div class="slogan" v-for="item in data.slogan" :key="item">{{item}}</div>
       <div class="lz"></div>
     </div>
-    <div class="main-breadcrumb">
-      <img src="assets/icons/address.png" class="icon" />
-      <span class="content">{{data.content}}</span>
-    </div>
+<!--    <div class="main-breadcrumb">-->
+<!--      <img src="assets/icons/address.png" class="icon" />-->
+<!--      <span class="content">{{data.content}}</span>-->
+<!--    </div>-->
     <img :src="data.img" alt="">
   </div>
 </template>
