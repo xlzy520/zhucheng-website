@@ -45,7 +45,7 @@
           </div>
         </div>
       </div>
-      <div v-show="!hasResult" class="empty">
+      <div v-show="!hasResult && hasQuery" class="empty">
         未能查询到您需要的结果，请重新输入
       </div>
     </div>
@@ -76,7 +76,8 @@ export default {
       },
       companyInfo: {},
       hasResult: false,
-      queryType: ''
+      queryType: '',
+      hasQuery: false
     }
   },
   methods: {
@@ -97,7 +98,6 @@ export default {
       }
       this.loading = true
       const queryData = this.isEmployee()
-      console.log(queryData);
       const myService = queryData.num ? service.getEmployeeList : service.getCompanyList
       this.type = queryData.num ? 'staff': 'company'
       const data = queryData.num ? queryData : { companyName: this.keyword }
@@ -107,6 +107,7 @@ export default {
         orderByClause: 'id desc',
         ...data
       }).then(res => {
+        this.hasQuery = true
         this.hasResult = res.list.length
         if (this.type === 'company') {
           this.companyInfo = res.list[0] || {}
