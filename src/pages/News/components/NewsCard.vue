@@ -18,7 +18,7 @@
           </div>
           <div class="right flex-column">
             <div class="right-header">
-              <div class="title">{{news.title}}</div>
+              <div class="title ellipsis" :title="news.title">{{news.title}}</div>
               <div class="date">{{parseTimeFilter(news.addTime)}}</div>
             </div>
             <div class="content">{{news.subtitle}}</div>

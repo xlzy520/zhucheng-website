@@ -11,7 +11,7 @@
         </div>
         <div class="news-list">
           <div class="news-list-item" v-for="item in  cardItem" :key="item.url" @click="viewDetail(item)">
-            <div class="news-title">{{item.title}}</div>
+            <div class="news-title ellipsis" :title="item.title">{{item.title}}</div>
             <div class="news-date">{{parseTimeFilter(item.addTime)}}</div>
           </div>
         </div>
@@ -137,9 +137,6 @@ export default {
     font-size: 16px;
     font-weight: 500;
     color: #343434;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
   }
   .news-date{
     width: 110px;
