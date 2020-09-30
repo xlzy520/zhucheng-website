@@ -1,10 +1,10 @@
 <template>
-  <el-header :class="['header-main white',isScrollToMain ? 'deep-bg': '']" style="height: auto">
+  <el-header :class="['header-main',isScrollToMain ? 'deep-bg': '', isScrollToMain ? '': 'white' ]" style="height: auto">
     <el-row>
       <el-row>
         <el-col :xs="4" :sm="4" :md="4" :lg="4" :xl="4">
           <div class="logo">
-            <img src="assets/image/header-logo.png" alt="">
+            <img :src="logo" width="135" height="38" alt="">
           </div>
         </el-col>
         <el-col :xs="20" :sm="20" :md="20" :lg="20" :xl="20">
@@ -14,35 +14,6 @@
 <!--            </div>-->
 <!--            <el-menu class="hidden-sm-and-down" :default-active="activeRoute" mode="horizontal"-->
             <el-menu class="" :default-active="activeRoute" mode="horizontal"
-                     background-color="transparent"
-                     text-color="#5AA572">
-              <template v-for="menuItem in menuList">
-                <el-submenu v-if="menuItem.children" :index="menuItem.id" background-color="#545c64"
-                            :key="menuItem.id">
-                  <template slot="title">
-                    <router-link :data-hover="menuItem.name" :to="{path:menuItem.url}">
-                      {{menuItem.name}}
-                    </router-link>
-                  </template>
-                  <el-menu-item v-for="subMenuItem in menuItem.children" :key="subMenuItem.id"
-                                :index="subMenuItem.id">
-                    <a :href="subMenuItem.url" v-if="subMenuItem.isExtra" target="_blank">{{subMenuItem.name}}</a>
-                    <router-link v-else :to="{path: subMenuItem.url}">
-                      {{subMenuItem.name}}
-                    </router-link>
-                  </el-menu-item>
-                </el-submenu>
-
-                <el-menu-item v-else :key="menuItem.id" :index="menuItem.id">
-                  <router-link :data-hover="menuItem.name"
-                               :to="{path:menuItem.url}">
-                    {{menuItem.name}}
-                  </router-link>
-                  <!--                  <router-link :data-hover="menuItem.name" v-else to="/">{{menuItem.name}}</router-link>-->
-                </el-menu-item>
-              </template>
-            </el-menu>
-            <el-menu class="hidden-sm-and-down" :default-active="activeRoute" mode="horizontal"
                      background-color="transparent"
                      text-color="#5AA572">
               <template v-for="menuItem in menuList">
@@ -147,7 +118,7 @@ export default {
   data() {
     return {
       navShow: false,
-      logo: '/static/img/3917_jdbaq5ph(2).png',
+      logo: 'assets/image/header-logo-green.png',
       isScrollToMain: false,
       backTopShow: false,
       activeRoute: '1'
@@ -166,6 +137,11 @@ export default {
       }
       if (bool !== this.isScrollToMain) {
         this.isScrollToMain = bool
+        if (bool) {
+          this.logo = 'assets/image/header-logo.png'
+        } else {
+          this.logo = 'assets/image/header-logo-green.png'
+        }
       }
     },
     backTop() {
@@ -182,7 +158,6 @@ export default {
   mounted() {
     const path = this.$route.path
     const item = this.menuList.find(v=> v.url === path)
-    console.log(item);
     if (item) {
       this.activeRoute = item.id
     }
@@ -258,46 +233,6 @@ export default {
             }
           }
         }
-      }
-
-    }
-
-    &.deep-bg{
-      .el-menu--horizontal{
-        .el-menu-item{
-          &.is-active{
-            font-size: 16px;
-            border-bottom: none;
-            border-top: 3px solid #fff!important;
-            &>a{
-              color: #fff;
-            }
-          }
-          &:hover{
-            /*background: transparent!important;*/
-            color: #39A54B!important;
-            &>a{
-              color: #39A54B!important;
-              /*transform: translate3d(0,-100%,0);*/
-            }
-          }
-        }
-        .el-submenu{
-          .el-submenu__title{
-            color: #343434;
-            margin-top: 2px;
-            i,a{
-              color: #343434!important;
-            }
-            &:hover{
-              color: #39A54B!important;
-              i,a{
-                color: #39A54B!important;
-              }
-            }
-          }
-        }
-
       }
 
     }
