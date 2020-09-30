@@ -35,6 +35,7 @@
 
 <script>
   import ServiceAdvances from "./ServiceAdvances";
+  import service from "@/api/service";
   import TaxTeam from "@/pages/Solution/components/TaxTeam";
 export default {
   name: 'ContactUsCard',
@@ -118,6 +119,16 @@ export default {
     getData(){
       this.handleTab(0)
     },
+    getTeam(){
+      service.getImgs({
+        pageNo: 1,
+        pageSize: 100,
+        orderByClause: 'id desc',
+        imgType: 6
+      }).then(res => {
+        console.log(res);
+      })
+    },
     changeCurrent(num){
       this.pageNo = num
       this.getData()
@@ -126,6 +137,7 @@ export default {
   },
   mounted() {
     this.getData()
+    this.getTeam();
   },
 }
 </script>

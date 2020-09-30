@@ -3,6 +3,7 @@
     <el-row>
       <el-row>
         <el-col :xs="8" :sm="6" :md="4" :lg="4" :xl="4">
+<!--        <el-col :xs="8" :sm="6" :md="4" :lg="4" :xl="4">-->
           <div class="logo">
             <img src="assets/image/header-logo.png" alt="">
           </div>
@@ -12,7 +13,8 @@
 <!--            <div class="hidden-sm-and-down fr phone-number">-->
 <!--              <i class="el-icon-phone-outline">0574-88888888</i>-->
 <!--            </div>-->
-            <el-menu class="hidden-sm-and-down" mode="horizontal"
+            <!--            <el-menu class="hidden-sm-and-down" mode="horizontal"-->
+            <el-menu class="" mode="horizontal"
                      background-color="transparent"
                      :default-active="activeRoute"
                      @select="handleSelect"
@@ -43,15 +45,15 @@
                 </el-menu-item>
               </template>
             </el-menu>
-            <el-menu class="hidden-md-and-up" mode="horizontal">
-              <el-menu-item index="1">
-                <i class="el-icon-menu" @click="navShow = !navShow"></i>
-              </el-menu-item>
-            </el-menu>
+<!--            <el-menu class="hidden-md-and-up" mode="horizontal">-->
+<!--              <el-menu-item index="1">-->
+<!--                <i class="el-icon-menu" @click="navShow = !navShow"></i>-->
+<!--              </el-menu-item>-->
+<!--            </el-menu>-->
           </div>
         </el-col>
       </el-row>
-      <transition name="el-zoom-in-top">
+      <transition name="el-zoom-in-top" v-if="false">
         <!-- 移动端 -->
         <el-row v-show="navShow" class="mobile hidden-md-and-up transition-box">
           <el-col :xs="24" class="transition-box">
