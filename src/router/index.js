@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import BasicLayout from '@/layout/basicLayout'
-import BasicLayoutWhite from '@/layout/basicLayoutWhite'
 
 
 import Home from '@/pages/Home'
@@ -52,22 +51,16 @@ export default new Router({
           component: Solution
         },
         {
+          path: '',
+          name: 'query',
+          component: Query
+        },
+        {
           path: '/contactus',
           name: 'contactus',
           component: ContactUs
         },
       ]
-		},
-    {
-      path: '/query',
-      component: BasicLayoutWhite,
-      children: [
-        {
-          path: '',
-          name: 'query',
-          component: Query
-        },
-      ]
-    }
+		}
 	]
 })

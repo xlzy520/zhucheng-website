@@ -1,26 +1,20 @@
 <template>
-  <el-header :class="['header-main',isScrollToMain ? 'deep-bg': '']">
+  <el-header class="header-main" :class="headerClass" style="height: auto">
     <el-row>
       <el-row>
-        <el-col :xs="8" :sm="6" :md="4" :lg="4" :xl="4">
-<!--        <el-col :xs="8" :sm="6" :md="4" :lg="4" :xl="4">-->
+        <el-col :xs="4" :sm="4" :md="4" :lg="4" :xl="4">
           <div class="logo">
-            <img src="assets/image/header-logo.png" alt="">
+            <img :src="logo" width="135" height="38" alt="">
           </div>
         </el-col>
-        <el-col :xs="16" :sm="18" :md="20" :lg="20" :xl="20">
+        <el-col :xs="20" :sm="20" :md="20" :lg="20" :xl="20">
           <div class="header_nav">
-<!--            <div class="hidden-sm-and-down fr phone-number">-->
-<!--              <i class="el-icon-phone-outline">0574-88888888</i>-->
-<!--            </div>-->
-            <!--            <el-menu class="hidden-sm-and-down" mode="horizontal"-->
-            <el-menu class="" mode="horizontal"
+            <el-menu class="" :default-active="activeRoute" mode="horizontal"
                      background-color="transparent"
-                     :default-active="activeRoute"
                      @select="handleSelect"
-                     text-color="#fff">
+                     text-color="#5AA572">
               <template v-for="menuItem in menuList">
-                <el-submenu v-if="menuItem.children" :index="menuItem.id"
+                <el-submenu v-if="menuItem.children" :index="menuItem.id" background-color="#545c64"
                             :key="menuItem.id">
                   <template slot="title">
                     <router-link :data-hover="menuItem.name" :to="{path:menuItem.url}">
@@ -41,64 +35,12 @@
                                :to="{path:menuItem.url}">
                     {{menuItem.name}}
                   </router-link>
-<!--                  <router-link :data-hover="menuItem.name" v-else to="/">{{menuItem.name}}</router-link>-->
                 </el-menu-item>
               </template>
             </el-menu>
-<!--            <el-menu class="hidden-md-and-up" mode="horizontal">-->
-<!--              <el-menu-item index="1">-->
-<!--                <i class="el-icon-menu" @click="navShow = !navShow"></i>-->
-<!--              </el-menu-item>-->
-<!--            </el-menu>-->
           </div>
         </el-col>
       </el-row>
-      <transition name="el-zoom-in-top" v-if="false">
-        <!-- 移动端 -->
-        <el-row v-show="navShow" class="mobile hidden-md-and-up transition-box">
-          <el-col :xs="24" class="transition-box">
-            <el-menu default-active="1" router class="el-menu-vertical-demo transition-box">
-              <template v-for="yylist in menuList">
-                <!-- 一级  有二级 -->
-                <el-submenu class="transition-box" v-if="yylist.ylist && yylist.ylist.length > 0" :index="yylist.yyid" :key="yylist.yyid">
-                  <template slot="title">
-                    <i class="el-icon-location"></i>
-                    <router-link :to="{path:yylist.yrouterul,query: yylist.yid}">{{yylist.yname}}</router-link>
-                  </template>
-                  <el-menu-item-group>
-                    <template v-for="eelist in yylist.ylist">
-                      <!-- 二级 有三级 -->
-                      <template v-if="eelist.elist.length > 0">
-                        <el-submenu :index="eelist.eeid">
-                          <template slot="title">{{eelist.ename}}</template>
-                          <el-menu-item v-for="sslist in eelist.elist" :index="sslist.ssid" :key="sslist.sid">
-                            <router-link :to="{path:'/three',query:{id: eelist.eid}}">{{sslist.sname}}</router-link>
-                          </el-menu-item>
-                        </el-submenu>
-                      </template>
-                      <!-- 二级 没有三级 -->
-                      <template v-if="eelist.elist.length == 0">
-                        <el-menu-item v-if="yylist.ylist && yylist.ylist.length > 0" :key="eelist.eid" :index="eelist.eeid">
-                          <router-link :to="{path:'/three',query:{id: eelist.eid}}">{{eelist.ename}}</router-link>
-                        </el-menu-item>
-                      </template>
-                    </template>
-                  </el-menu-item-group>
-                </el-submenu>
-                <!-- 一级 没有二级 -->
-                <el-menu-item class="transition-box" v-else="yylist.ylist && yylist.ylist.length ==  0" :key="yylist.yid"
-                              :index="yylist.yyid">
-                  <i class="el-icon-document"></i>
-                  <span slot="title">
-													<router-link v-if="yylist.yid != 1" :to="{path:yylist.yrouterul,query: yylist.yid}">{{yylist.yname}}</router-link>
-													<router-link v-if="yylist.yid == 1" to="/">{{yylist.yname}}</router-link>
-												</span>
-                </el-menu-item>
-              </template>
-            </el-menu>
-          </el-col>
-        </el-row>
-      </transition>
     </el-row>
     <el-button circle class="back-top" @click="backTop" v-show="backTopShow">
       <i class="el-icon-upload2"></i>
@@ -114,22 +56,38 @@ export default {
       type: Array,
       default: ()=> []
     },
+    isWhite1: {
+      type: Boolean,
+      default: false
+    }
   },
   computed: {
-
+    headerClass(){
+      if (!this.isWhite) {
+        return {
+          'deep-bg': this.isScrollToMain,
+        }
+      }
+      return {
+        'deep-bg': this.isScrollToMain,
+        'white': !this.isScrollToMain
+      }
+    }
   },
   data() {
     return {
       navShow: false,
-      logo: '/static/img/3917_jdbaq5ph(2).png',
+      logo: 'assets/image/header-logo-green.png',
       isScrollToMain: false,
       backTopShow: false,
-      activeRoute: '1'
+      activeRoute: '1',
+      isWhite: false
     }
   },
   methods: {
-    handleSelect(key, keyPath) {
-      this.activeRoute = key
+    handleSelect(key) {
+      this.isWhite = key === '5';
+      this.logo = this.isWhite ? 'assets/image/header-logo-green.png' : 'assets/image/header-logo.png'
     },
     handleScroll() {
       const scrollY = window.scrollY
@@ -140,6 +98,9 @@ export default {
       }
       if (bool !== this.isScrollToMain) {
         this.isScrollToMain = bool
+        if (this.isWhite) {
+          this.logo = !bool ? 'assets/image/header-logo-green.png' : 'assets/image/header-logo.png'
+        }
       }
     },
     backTop() {
@@ -158,10 +119,8 @@ export default {
     const item = this.menuList.find(v=> v.url === path)
     if (item) {
       this.activeRoute = item.id
-    } else {
-      this.activeRoute = '0'
+      this.isWhite = item.id === '5';
     }
-    console.log(this.$route);
     window.addEventListener('scroll', this.handleScroll)
   },
   beforeDestroy(){
@@ -187,7 +146,7 @@ export default {
       display: inline-block;
     }
     &.deep-bg{
-      background: #5AA572;
+      background: #39A54B;
       color: #fff!important;
       .el-menu-item, a{
         color: #fff!important;
@@ -273,8 +232,93 @@ export default {
     }
   }
 
-  .logo img {
-    vertical-align: middle;
+  .el-header.header-main.white {
+    position: fixed;
+    z-index: 1999;
+    width: 100%;
+    color: #343434;
+    text-align: center;
+    line-height: 60px;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 100px;
+    a{
+      color: #343434;
+    }
+    &.deep-bg{
+      background: #39A54B;
+    }
+    .el-menu {
+      padding-left: 50px;
+      /*background: transparent;*/
+    }
+    .el-menu-item{
+      font-size: 14px;
+      transition: none;
+      padding: 0 30px;
+    }
+    .el-menu--horizontal{
+      .el-menu-item{
+        border-top: 3px solid transparent;
+        &>a{
+          color: #343434;
+          transition: transform .5s;
+        }
+        &.is-active{
+          font-size: 16px;
+          border-bottom: none;
+          border-top: 3px solid #5AA572!important;
+          &>a{
+            color: #5AA572;
+          }
+        }
+        &:hover{
+          /*background: transparent!important;*/
+          color: #5AA572!important;
+          &>a{
+            color: #5AA572!important;
+            /*transform: translate3d(0,-100%,0);*/
+          }
+        }
+      }
+      .el-submenu{
+        .el-submenu__title{
+          color: #343434;
+          margin-top: 2px;
+          i,a{
+            color: #343434!important;
+          }
+          &:hover{
+            color: #5AA572!important;
+            i,a{
+              color: #5AA572!important;
+            }
+          }
+        }
+      }
+
+    }
+
+    .el-menu--horizontal>.el-menu-item,
+    .el-menu--horizontal>.el-submenu .el-submenu__title {
+      /*background: transparent!important;*/
+    }
+
+    .el-menu.el-menu--horizontal {
+      border-bottom: 0;
+    }
+
+    .el-menu--horizontal>.el-menu-item,
+    .el-menu--horizontal>.el-submenu {
+      margin: 0 48px;
+      padding: 0;
+    }
+  }
+
+  .logo{
+    img{
+      vertical-align: middle;
+    }
   }
 
   .header_nav {
@@ -303,21 +347,5 @@ export default {
     position: fixed;
     right: 50px;
     bottom: 50px;
-  }
-  .el-menu--horizontal{
-    .el-menu--popup{
-      .el-menu-item{
-        background-color: #fff!important;
-        a{
-          color: #5AA672;
-          height: 36px;
-          display: block;
-          width: 100%;
-        }
-        &:hover{
-          background-color: #F7FAFC!important;
-        }
-      }
-    }
   }
 </style>
