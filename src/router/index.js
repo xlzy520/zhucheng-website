@@ -51,7 +51,7 @@ export default new Router({
           component: Solution
         },
         {
-          path: '',
+          path: '/query',
           name: 'query',
           component: Query
         },

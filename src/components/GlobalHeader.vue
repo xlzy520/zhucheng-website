@@ -348,4 +348,21 @@ export default {
     right: 50px;
     bottom: 50px;
   }
+  .el-menu--horizontal{
+    .el-menu--popup{
+      .el-menu-item{
+        background-color: #fff!important;
+        a{
+          color: #5AA672;
+          height: 36px;
+          display: block;
+          width: 100%;
+        }
+        &:hover{
+          background-color: #F7FAFC!important;
+        }
+      }
+    }
+  }
+
 </style>
