@@ -2,12 +2,12 @@
   <div class="tax-team">
     <LzBadge title="税务团队" title_en="TAX TEAM"/>
     <div class="tax-team-content">
-      <div class="tax-team-item" v-for="(card,index) in list" :key="card.id">
+      <div class="tax-team-item" v-for="(member,index) in teamList" :key="member.id">
         <div class="tax-team-img">
-          <img :src="card.imgurl" />
+          <img :src="member.imgurl" />
         </div>
-        <div class="tax-team-item-name">{{card.name}}</div>
-        <div class="tax-team-item-content">{{card.content}}</div>
+        <div class="tax-team-item-name">{{member.imgname}}</div>
+        <div class="tax-team-item-content">{{member.remark}}</div>
       </div>
     </div>
   </div>
@@ -16,15 +16,15 @@
 <script>
   export default {
     name: 'ServiceAdvances',
+    props: {
+      teamList: {
+        type: Array,
+        default: ()=>([])
+      },
+    },
     data() {
       return {
-        list: [
-          {id: 1, name: '李某某', imgurl: '', content: '税务实战经验丰富，曾服务多家香港上市跨国集团。精通跨国集团对外投资、转让定价、税务风控、进出口、保税区税务处理等。'},
-          {id: 2, name: '李某某', imgurl: '', content: '税务实战经验丰富，曾服务多家香港上市跨国集团。精通跨国集团对外投资、转让定价、税务风控、进出口、保税区税务处理等。'},
-          {id: 3, name: '李某某', imgurl: '', content: '税务实战经验丰富，曾服务多家香港上市跨国集团。精通跨国集团对外投资、转让定价、税务风控、进出口、保税区税务处理等。'},
-          {id: 4, name: '李某某', imgurl: '', content: '税务实战经验丰富，曾服务多家香港上市跨国集团。精通跨国集团对外投资、转让定价、税务风控、进出口、保税区税务处理等。'},
-          {id: 5, name: '李某某', imgurl: '', content: '税务实战经验丰富，曾服务多家香港上市跨国集团。精通跨国集团对外投资、转让定价、税务风控、进出口、保税区税务处理等。'},
-        ],
+        list: [],
       }
     }
   }

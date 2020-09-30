@@ -29,7 +29,7 @@
       </div>
     </div>
     <ServiceAdvances v-if="activeTab === 3" />
-    <TaxTeam v-if="activeTab === 3" />
+    <TaxTeam v-if="activeTab === 3" :teamList="teamList" />
   </div>
 </template>
 
@@ -105,7 +105,8 @@ export default {
       pageNo: 1,
       activeTab: 0,
       total: 100,
-      newsList: []
+      newsList: [],
+      teamList: []
     }
   },
   methods: {
@@ -126,6 +127,7 @@ export default {
         orderByClause: 'id desc',
         imgType: 6
       }).then(res => {
+        this.teamList = res.list || []
         console.log(res);
       })
     },
