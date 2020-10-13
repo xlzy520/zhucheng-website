@@ -258,4 +258,15 @@ export default {
       }
     }
 }
+  @media (max-width: 1919px) {
+    .news-card .service-content{
+      .service-item{
+        margin-right: 100px;
+        &:nth-child(4n){
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
 </style>

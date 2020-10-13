@@ -132,4 +132,12 @@
       }
     }
   }
+  @media (max-width: 1919px) {
+    .symain {
+      padding: 0 100px;
+      .syabouttxt{
+        width: 557px;
+      }
+    }
+  }
 </style>

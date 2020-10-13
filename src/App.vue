@@ -15,7 +15,7 @@ export default {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-width: 1920px;
+  min-width: 1440px;
   background: #F7FAFC;
   /*text-align: center;*/
   /*color: #2c3e50;*/

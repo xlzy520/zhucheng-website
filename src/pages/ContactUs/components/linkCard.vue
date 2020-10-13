@@ -39,7 +39,7 @@ export default {
 
 <style lang="less" scoped>
   .link-card{
-    width: 1720px;
+    width: 90%;
     height: 480px;
     background: #FFFFFF;
     border-radius: 10px;
@@ -90,7 +90,12 @@ export default {
     .phone{
       margin-bottom: 42px;
     }
-
-
+  }
+  @media (max-width: 1919px) {
+    .link-card{
+      .card-left{
+        width: 50%;
+      }
+    }
   }
 </style>

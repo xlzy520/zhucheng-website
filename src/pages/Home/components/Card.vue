@@ -85,5 +85,11 @@ export default {
       text-align: left;
     }
   }
+  @media (max-width: 1919px) {
+    .service-card {
+      margin-bottom: 40px;
+      margin-right: 120px;
+    }
+  }
 
 </style>

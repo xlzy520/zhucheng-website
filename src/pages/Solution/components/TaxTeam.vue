@@ -70,6 +70,8 @@
       font-size: 14px;
       color: #343434;
       line-height: 24px;
+      height: 124px;
+      overflow: scroll;
     }
 
   }

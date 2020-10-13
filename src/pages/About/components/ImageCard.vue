@@ -59,4 +59,12 @@ export default {
     margin-bottom: 60px;
   }
 }
+@media (max-width: 1919px) {
+  .img-card{
+    margin-right: 235px;
+    &:nth-child(2n){
+      margin-right: 0;
+    }
+  }
+}
 </style>

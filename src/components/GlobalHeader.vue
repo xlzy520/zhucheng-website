@@ -115,18 +115,23 @@ export default {
         }
       });
     },
-  },
-  watch:{
-    $route(to,from){
+    handleRoute(to){
       const path = to.path
       const item = this.menuList.find(v=> v.url === path)
       if (item) {
         this.activeRoute = item.id
         this.isWhite = item.id === '5';
       }
-      this.logo = this.isWhite ? 'assets/image/header-logo-green.png' : 'assets/image/header-logo.png'    }
+      this.logo = this.isWhite ? 'assets/image/header-logo-green.png' : 'assets/image/header-logo.png'
+    }
+  },
+  watch:{
+    $route(to,from){
+      this.handleRoute(to)
+    }
   },
   mounted() {
+    this.handleRoute(this.$route)
     window.addEventListener('scroll', this.handleScroll)
   },
   beforeDestroy(){
