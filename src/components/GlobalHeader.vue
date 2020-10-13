@@ -100,6 +100,8 @@ export default {
         this.isScrollToMain = bool
         if (this.isWhite) {
           this.logo = !bool ? 'assets/image/header-logo-green.png' : 'assets/image/header-logo.png'
+        } else {
+          this.logo = 'assets/image/header-logo.png'
         }
       }
     },
@@ -114,13 +116,17 @@ export default {
       });
     },
   },
+  watch:{
+    $route(to,from){
+      const path = to.path
+      const item = this.menuList.find(v=> v.url === path)
+      if (item) {
+        this.activeRoute = item.id
+        this.isWhite = item.id === '5';
+      }
+      this.logo = this.isWhite ? 'assets/image/header-logo-green.png' : 'assets/image/header-logo.png'    }
+  },
   mounted() {
-    const path = this.$route.path
-    const item = this.menuList.find(v=> v.url === path)
-    if (item) {
-      this.activeRoute = item.id
-      this.isWhite = item.id === '5';
-    }
     window.addEventListener('scroll', this.handleScroll)
   },
   beforeDestroy(){
