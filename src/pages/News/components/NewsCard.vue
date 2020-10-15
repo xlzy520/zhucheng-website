@@ -95,7 +95,6 @@ export default {
       z-index: 100;
       padding: 42px 75px 57px 75px;
       box-sizing: border-box;
-      width: 1720px;
       background: #FFFFFF;
       border-radius: 10px;
       margin: auto;
@@ -177,11 +176,13 @@ export default {
     /deep/ .el-pagination{
       text-align: center;
       &.is-background .el-pager li:not(.disabled){
-        &.active{
-          background-color: #5AA572;
-        }
+
         &:hover{
           color: #5AA572;
+        }
+        &.active{
+          background-color: #5AA572;
+          color: #fff;
         }
       }
       .el-pager li.active{
