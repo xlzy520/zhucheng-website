@@ -2,7 +2,7 @@
   <div class="symain">
     <div class="syabout">
       <div class="card-header">
-        <lz-badge title="关于我们" title_en="About Us" />
+        <lz-badge title="关于我们" title_en="ABOUT US" />
       </div>
       <div class="df flex-column-xs">
         <div class="syaboutpic">
@@ -18,15 +18,15 @@
           </div>
           <div class="syabouttxt" v-if="type === 'index'">
             <p>
-              竹成集团始创于2013年，总部坐落于“书藏古今•港通天下”的浙江宁波。
-              在创始团队的引领下，全体竹成人秉承“让商业更简单、让幸福更简单”的愿景初心，
-              以汇滴成海的智慧与脚踏实地的勤奋，努力实现“打造即时物流供应链第一品牌”的愿景。
+
+              竹成集团始创于2013年，总部坐落于“书藏古今•港通天下”的浙江宁波。在创始团队的引领下，全体竹成人秉承“让商业更简单、让幸福更简单”的初心，以汇滴成海的智慧与脚踏实地的勤奋，努力实现“打造中国服务外包第一品牌”的愿景......
+
             </p>
-            <p>
-              2019年，集团各版块年产值突破50亿元人民币，全国现有管理团队400余人。
-              集团旗下：即时配送公司33家、控股供应链子公司5家、城市配送站点975个，
-              业务范围涵盖：即时物流、人力资源服务、产业园运营、税务筹划、竹成资本...
-            </p>
+<!--            <p>-->
+<!--              2019年，集团各版块年产值突破50亿元人民币，全国现有管理团队400余人。-->
+<!--              集团旗下：即时配送公司33家、控股供应链子公司5家、城市配送站点975个，-->
+<!--              业务范围涵盖：即时物流、人力资源服务、产业园运营、税务筹划、竹成资本...-->
+<!--            </p>-->
 
           </div>
           <div class="syabouttxt" v-if="type === 'about'">
@@ -73,24 +73,28 @@
 <style lang="less">
   @import "@/styles/var.less";
   .symain {
-    padding: 0 200px;
+    /*padding: 0 200px;*/
+    background: #fff;
     .syabout {
-      margin-top: -182px;
+      /*margin-top: -182px;*/
       position: relative;
       z-index: 999;
       background-color: #fff;
-      padding: 0 56px 60px 56px;
+      /*padding: 0 56px 60px 56px;*/
+      padding: 0 200px 92px;
     }
     .syaboutpic {
       height: 453px;
       position: relative;
       overflow: hidden;
+      width: 50%;
       img{
-        width: 785px;
+        width: 100%;
         height: 453px;
       }
     }
     .syaboutwen {
+      width: 50%;
       position: relative;
       width: auto;
       padding: 15px 0 15px 42px;
@@ -105,7 +109,7 @@
       }
     }
     .syabouttxt {
-      width: 742px;
+      /*width: 38%;*/
       font-size: 14px;
       color: #333333;
       line-height: 40px;
@@ -117,12 +121,14 @@
       }
     }
     .card-header{
-      display: flex;
-      align-items: center;
-      height: 122px;
+      /*display: flex;*/
+      /*align-items: center;*/
+      /*height: 122px;*/
+      padding-top: 90px;
+      padding-bottom: 44px;
     }
     .footer{
-      margin-top: 90px;
+      margin-top: 30%;
       .more{
         padding: 10px 15px;
         background: @primary-color;
