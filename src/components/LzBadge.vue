@@ -49,12 +49,12 @@
     }
 
     &-footer {
-      height: 13px;
+      /*height: 13px;*/
       font-size: 16px;
       font-family: Arial;
       font-weight: 400;
       color: #9A9A9A;
-      padding-left: 30px;
+      padding-left: 35px;
     }
   }
 </style>
