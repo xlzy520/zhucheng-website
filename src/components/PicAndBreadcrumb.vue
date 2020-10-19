@@ -1,10 +1,10 @@
 <template>
   <div class="main-bg">
-    <div class="bg-desc">
-      <div class="title">{{data.title}}</div>
-      <div class="slogan" v-for="item in data.slogan" :key="item">{{item}}</div>
-      <div class="lz"></div>
-    </div>
+<!--    <div class="bg-desc">-->
+<!--      <div class="title">{{data.title}}</div>-->
+<!--      <div class="slogan" v-for="item in data.slogan" :key="item">{{item}}</div>-->
+<!--      <div class="lz"></div>-->
+<!--    </div>-->
 <!--    <div class="main-breadcrumb">-->
 <!--      <img src="assets/icons/address.png" class="icon" />-->
 <!--      <span class="content">{{data.content}}</span>-->
@@ -36,23 +36,22 @@ export default {
 
 <style lang="less" scoped>
   .main-bg{
-    font-family: Microsoft YaHei;
     color: #fff;
     img{
       width: 100%;
     }
   }
   .bg-img{
-    width: 1920px;
-    height: 1080px;
+    width: 100%;
+    /*height: 100vh;*/
     background: #000;
   }
   .bg-desc{
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 175px;
-    bottom: 218px;
+    left: 10%;
+    bottom: 18%;
     .title{
       font-size: 24px;
       margin-bottom: 38px;
@@ -70,8 +69,8 @@ export default {
   }
   .main-breadcrumb{
     position: absolute;
-    right: 176px;
-    bottom: 219px;
+    right: 10%;
+    bottom: 18%;
     display: flex;
     font-size: 16px;
     .icon{
