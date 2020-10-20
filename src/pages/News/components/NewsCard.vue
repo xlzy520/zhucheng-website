@@ -88,7 +88,6 @@ export default {
 <style lang="less" scoped>
   @import "@/styles/var.less";
   .news-card{
-    padding: 0 75px;
 
     .news-tabs{
       position: relative;

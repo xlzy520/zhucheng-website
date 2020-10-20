@@ -44,13 +44,12 @@ export default {
 
 <style lang="less" scoped>
   .article{
-    padding: 0 75px;
+    /*padding: 0 75px;*/
     .article-container{
       position: relative;
       z-index: 10;
-      padding: 42px 75px 57px 75px;
+      padding: 42px 136px 68px 169px;
       box-sizing: border-box;
-      width: 1720px;
       background: #FFFFFF;
       border-radius: 10px;
       margin: auto;
@@ -72,7 +71,6 @@ export default {
         margin-bottom: 60px;
       }
       /deep/.content{
-        width: 1338px;
         font-size: 20px;
         color: #333333;
         line-height: 30px;

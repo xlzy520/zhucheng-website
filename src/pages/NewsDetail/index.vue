@@ -1,7 +1,7 @@
 <template>
   <div class="news-list">
     <PicAndBreadcrumb :data="data" />
-    <NewsContent :article="article" />
+    <NewsContent :article="article" class="lz-row" />
   </div>
 </template>
 
