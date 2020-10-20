@@ -1,17 +1,13 @@
 <template>
   <div class="symain">
-    <div class="syabout">
+    <div class="syabout lz-row">
       <div class="card-header">
         <lz-badge title="关于我们" title_en="ABOUT US" />
       </div>
       <div class="df flex-column-xs">
         <div class="syaboutpic">
-          <a href="/about">
-            <img src="http://www.bridgehr.com/template/default/images/zhu01.jpg">
-            <div class="maskfadeUp wow animated" data-wow-delay="0.5s"></div>
-          </a>
+          <img src="/assets/image/about-us.png">
         </div>
-
         <div class="syaboutwen">
           <div class="title">
             宁波竹成信息科技（集团）有限公司
@@ -73,28 +69,25 @@
 <style lang="less">
   @import "@/styles/var.less";
   .symain {
-    /*padding: 0 200px;*/
     background: #fff;
     .syabout {
-      /*margin-top: -182px;*/
       position: relative;
       z-index: 999;
-      background-color: #fff;
-      /*padding: 0 56px 60px 56px;*/
-      padding: 0 200px 92px;
+      padding: 0 260px 92px;
     }
     .syaboutpic {
-      height: 453px;
+      width: calc(100% - 650px);
+      /*height: 453px;*/
       position: relative;
       overflow: hidden;
-      width: 50%;
       img{
-        width: 100%;
-        height: 453px;
+        /*width: 785px;*/
+        /*height: 453px;*/
       }
     }
     .syaboutwen {
-      width: 50%;
+      display: flex;
+      flex-direction: column;
       position: relative;
       width: auto;
       padding: 15px 0 15px 42px;
@@ -109,11 +102,12 @@
       }
     }
     .syabouttxt {
-      /*width: 38%;*/
+      width: 650px;
       font-size: 14px;
       color: #333333;
       line-height: 40px;
       letter-spacing: 1.5px;
+      flex: 1;
       p{
         margin: 0;
         text-indent: 20px;
@@ -121,14 +115,11 @@
       }
     }
     .card-header{
-      /*display: flex;*/
-      /*align-items: center;*/
-      /*height: 122px;*/
       padding-top: 90px;
       padding-bottom: 44px;
     }
     .footer{
-      margin-top: 30%;
+      margin-bottom: 40px;
       .more{
         padding: 10px 15px;
         background: @primary-color;
@@ -140,7 +131,6 @@
   }
   @media (max-width: 1919px) {
     .symain {
-      padding: 0 100px;
       .syabouttxt{
         width: 557px;
       }

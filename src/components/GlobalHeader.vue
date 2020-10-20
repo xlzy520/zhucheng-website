@@ -1,12 +1,12 @@
 <template>
   <el-header class="header-main" :class="headerClass" style="height: auto">
     <el-row>
-      <el-col :xs="24" :sm="24" :md="4" :lg="4" :xl="4">
+      <el-col :xs="24" :sm="24" :md="3" :lg="3" :xl="3">
         <div class="logo">
           <img :src="logo" width="135" height="38" alt="">
         </div>
       </el-col>
-      <el-col :xs="16" :sm="18" :md="20" :lg="20" :xl="20">
+      <el-col :xs="16" :sm="18" :md="21" :lg="21" :xl="20">
         <div class="header_nav">
           <el-menu :default-active="activeRoute" mode="horizontal" background-color="transparent"
                    class="hidden-sm-and-down"

@@ -1,8 +1,9 @@
 <template>
-  <div class="df flex-column-xs our-strength">
+  <div class="df flex-column-xs our-strength lz-row">
     <div class="left">
-      <lz-badge title="我们的实力" title_en="OUR STRENGTH"/>
+      <lz-badge title="业务版图" title_en="BUSINESS MAP" black/>
       <div class="content" @mouseenter="hover = true" @mouseleave="hover = false">
+        <div class="content-extra">竹成人脚踏实地、日复一日，立足浙江，辐射全国</div>
         <div class="item" v-for="(item, index) in list" :key="item.text">
           <img :src="item.url"/>
           <span class="desc">{{item.text}}</span>
@@ -52,7 +53,7 @@ export default {
           phone: '15036086531(左先生）'
         },
       ],
-      hover: false
+      hover: true
     }
   }
 }
@@ -60,15 +61,20 @@ export default {
 
 <style lang="less" scoped>
 .our-strength{
-  width: 100%;
   background: #fff;
-  height: 501px;
+  padding: 10px 0;
   .left{
-    padding: 48px 0 0 130px;
-    width: calc(100% - 791px);
+    padding: 48px 0 0 0;
+    /*width: calc(100% - 791px);*/
     .content{
-      margin-top: 56px;
+      margin-top: 29px;
       margin-left: 25px;
+    }
+    .content-extra{
+      font-size: 18px;
+      font-weight: bold;
+      color: #343434;
+      margin-bottom: 27px;
     }
     .item{
       display: flex;
@@ -84,10 +90,12 @@ export default {
     }
   }
   .right{
-    width: 1062px;
-    height: 501px;
+    margin-left: 246px;
+    display: flex;
+    align-items: center;
   }
   .right-desc{
+    height: 472px;
     position: absolute;
     background: rgba(90, 165, 114, .92);
     opacity: 0.92;
@@ -122,9 +130,15 @@ export default {
       }
     }
   }
-  .right, .right>img, .right-desc{
-    width: 1062px;
-    height: 501px;
+}
+@media (max-width: 1600px) {
+.our-strength{
+  .right{
+    margin-left: 120px;
   }
+  .right-desc{
+    padding-left: 80px;
+  }
+}
 }
 </style>

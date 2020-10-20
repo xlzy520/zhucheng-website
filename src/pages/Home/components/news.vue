@@ -1,5 +1,5 @@
 <template>
-  <div class="news">
+  <div class="news lz-row">
     <div class="header">
       <lz-badge title="新闻资讯" title_en="NEWS AND INFORMATION" />
     </div>
@@ -81,17 +81,15 @@ export default {
 <style lang="less" scoped>
   @import "@/styles/var.less";
   .news{
-
-    margin-top: 100px;
-    width: 100%;
+    margin-top: 150px;
+    padding: 0 260px 92px;
   }
   .header{
-    margin-left: 131px;
   }
   .content{
     margin-top: 50px;
-    padding: 0 160px;
     display: flex;
+    justify-content: space-between;
     .content-header{
       display: flex;
       justify-content: space-between;
@@ -129,7 +127,7 @@ export default {
     }
   }
   .content-item{
-    margin-right: 285px;
+    margin-left: 35px;
   }
   .news-title{
     margin-right: 31px;

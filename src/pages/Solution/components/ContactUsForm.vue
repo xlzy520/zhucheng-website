@@ -132,4 +132,18 @@ export default {
     }
   }
 }
+
+@media (max-width: 1600px) {
+  .contact-us-form-card{
+    padding: 70px 175px 65px;
+    .contact-us-form{
+      flex-direction: column;
+      .content{
+        margin: auto;
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
 </style>

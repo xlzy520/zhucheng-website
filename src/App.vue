@@ -13,6 +13,7 @@ export default {
 
 <style lang="less">
 #app {
+  font-family: Microsoft YaHei;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-width: 1440px;

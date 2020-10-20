@@ -10,21 +10,10 @@
         <AboutUsCard />
       </el-col>
     </el-row>
-    <el-row>
-      <el-col :xs="24">
-        <our-service />
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :xs="24">
-        <our-strength />
-      </el-col>
-    </el-row>
-    <el-row class="last">
-      <el-col :xs="24">
-        <news :news="news" />
-      </el-col>
-    </el-row>
+    <our-service />
+    <our-strength />
+    <partner />
+    <news :news="news" />
 	</div>
 </template>
 
@@ -35,8 +24,10 @@
   import ourStrength from "./components/ourStrength";
   import news from "./components/news";
   import service from "@/api/service";
+  import Partner from "@/pages/Home/components/partner";
 	export default {
     components: {
+      Partner,
       Swiper,
       AboutUsCard,
       ourService,
@@ -57,6 +48,7 @@
           orderByClause: 'id desc',
           imgType: 1
         }).then(res => {
+          res.list[0].imgurl = '/assets/image/index_bg.png'
           this.banners = res.list || []
         })
       },

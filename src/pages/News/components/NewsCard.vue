@@ -47,13 +47,14 @@ export default {
     return {
       pageNo: 1,
       activeTab: 1,
-      total: 100,
+      total: 0,
       newsList: []
     }
   },
   methods: {
     handleTab(tab) {
       this.activeTab = tab
+      this.pageNo = 1
       this.getNewsList()
     },
     isActive(tab){
@@ -155,6 +156,7 @@ export default {
         justify-content: space-between;
       }
       .title{
+        max-width: 400px;
         font-weight: bold;
         font-size: 22px;
         margin-bottom: 45px;

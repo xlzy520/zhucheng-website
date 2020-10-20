@@ -51,15 +51,15 @@ export default {
     flex-direction: column;
     color: #333;
     background: #fff;
-    width: 270px;
-    height: 350px;
+    max-width: 240px;
+    height: 312px;
     border-radius: 8px;
-    margin-right: 55px;
-    padding: 58px 28px;
+    padding: 58px 20px;
     box-sizing: border-box;
     text-align: center;
     cursor: pointer;
     opacity: 0.9;
+    margin-bottom: 40px;
     &:hover{
       background: @primary-color;
       color: #fff;
@@ -70,7 +70,7 @@ export default {
       margin-right: 0;
     }
     .card-icon{
-      margin-bottom: 39px;
+      margin-bottom: 35px;
     }
     .title{
       font-size: 22px;
@@ -79,16 +79,14 @@ export default {
       font-size: 14px;
       font-weight: 500;
       line-height: 28px;
-      margin-top: 63px;
-      width: 207px;
-      height: 42px;
+      margin-top: 10%;
       text-align: left;
     }
   }
   @media (max-width: 1919px) {
     .service-card {
       margin-bottom: 40px;
-      margin-right: 120px;
+      /*margin-right: 120px;*/
     }
   }
 

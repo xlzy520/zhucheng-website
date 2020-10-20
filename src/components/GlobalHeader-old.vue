@@ -278,6 +278,7 @@ export default {
   }
 
   .header_nav {
+    position: fixed;
     .phone-number{
       margin-top: 3px;
       margin-left: 20px;

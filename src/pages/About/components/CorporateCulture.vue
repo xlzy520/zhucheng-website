@@ -1,5 +1,5 @@
 <template>
-  <div class="choose-us">
+  <div class="culture lz-row">
     <div class="header">
       <lz-badge title="企业文化" title_en="CORPORATE CULTURE" />
     </div>
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.choose-us{
+.culture{
   padding: 10px 0 111px 260px;
   color: #fff;
   margin-top: 100px;

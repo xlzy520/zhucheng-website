@@ -196,9 +196,9 @@ export default {
   }
   .qrcodes{
     display: flex;
+    justify-content: space-between;
     &-item{
       padding: 2px;
-      margin-right: 32px;
       img{
       }
       span{

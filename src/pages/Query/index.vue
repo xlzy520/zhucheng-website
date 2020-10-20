@@ -1,12 +1,14 @@
 <template>
   <div class="query">
+    <PicAndBreadcrumb :data="data"/>
     <div class="header flex-column">
-      <img src="assets/image/query_bg.png" alt="" class="logo">
+      <img src="assets/image/query/2.png" alt="" class="logo">
+      <img src="assets/image/query/3.png" alt="" class="logo children-img">
       <div class="desc">{{desc}}</div>
     </div>
     <div class="content">
       <div class="search df">
-        <el-input placeholder="服务公司直接输入公司名称，员工请输入姓名+工号（李某某 008）"
+        <el-input placeholder="集团机构查询请输入工商注册全称 ；集团员工身份查询请输入姓名+工号"
                   v-model="keyword">
           <div slot="suffix" class="search-btn">
             <div class="btn" @click="query" v-loading="loading">
@@ -18,6 +20,16 @@
       </div>
       <div v-if="hasResult && type ==='company'" class="result">
         <div class="result-table">
+          <div class="result-header">
+            <div class="result-header-logo">
+              <img src="" alt="">
+            </div>
+            <div class="result-header-right">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
+          </div>
           <div class="result-table-header">
             <div>信息项</div>
             <div>信息内容</div>
@@ -35,7 +47,7 @@
           <div class="result-table-header">人员信息</div>
           <div class="df">
             <div class="left">
-              <img :src="staffInfo.imgurl" />
+              <img :src="staffInfo.imgurl"/>
             </div>
             <div class="right flex-column">
               <span>员工姓名：{{staffInfo.name}}</span>
@@ -54,117 +66,147 @@
 
 <script>
   import service from "@/api/service";
-export default {
-  name: 'index',
-  data() {
-    return {
-      desc: '服务公司  竹成员工，一键验真假',
-      keyword: '',
-      list: [
-        { name: '洼地公司名称', value: 'companyName' },
-        { name: '营业地址', value: 'address' },
-        { name: '企业信用代码', value: 'num' },
-        { name: '法定代表人', value: 'legalRepresentative' },
-      ],
-      loading: false,
-      type: 'staff',
-      staffInfo: {
-        name: '廖某某',
-        num: 'ZC888',
-        area: '宁波总部',
-        imgurl: ''
-      },
-      companyInfo: {},
-      hasResult: false,
-      queryType: '',
-      hasQuery: false
-    }
-  },
-  methods: {
-    isEmployee(){
-      const key = this.keyword.replace(/\s+/, '')
-      const match = key.match(/([\u4e00-\u9fa5]*)(\d*)/)
-      const name = match[1]
-      const num = match[2]
-      return {
-        name,
-        num
-      };
+  import PicAndBreadcrumb from "@/components/PicAndBreadcrumb";
+
+  export default {
+    name: 'index',
+    components: {
+      PicAndBreadcrumb
     },
-    query() {
-      if (!this.keyword) {
-        this.$message.info('请输入查询内容')
-        return;
+    data() {
+      return {
+        data: {
+          title: '解决方案', slogan: ['精益求精    合作共赢'],
+          img: 'assets/image/query_bg.png', content: '首页>解决方案'
+        },
+        desc: '集团机构信息验证   集团员工身份查询',
+        keyword: '',
+        list: [
+          {name: '洼地公司名称', value: 'companyName'},
+          {name: '营业地址', value: 'address'},
+          {name: '企业信用代码', value: 'num'},
+          {name: '法定代表人', value: 'legalRepresentative'},
+        ],
+        loading: false,
+        type: 'company',
+        staffInfo: {
+          name: '廖某某',
+          num: 'ZC888',
+          area: '宁波总部',
+          imgurl: ''
+        },
+        companyInfo: {},
+        hasResult: true,
+        queryType: '',
+        hasQuery: true
       }
-      this.loading = true
-      const queryData = this.isEmployee()
-      const myService = queryData.num ? service.getEmployeeList : service.getCompanyList
-      this.type = queryData.num ? 'staff': 'company'
-      const data = queryData.num ? queryData : { companyName: this.keyword }
-      myService({
-        pageNo:1,
-        pageSize: 10,
-        orderByClause: 'id desc',
-        ...data
-      }).then(res => {
-        this.hasQuery = true
-        this.hasResult = res.list.length
-        if (this.type === 'company') {
-          this.companyInfo = res.list[0] || {}
-        } else {
-          this.staffInfo = res.list[0]
+    },
+    methods: {
+      isEmployee() {
+        const key = this.keyword.replace(/\s+/, '')
+        const match = key.match(/([\u4e00-\u9fa5]*)(\d*)/)
+        const name = match[1]
+        const num = match[2]
+        return {
+          name,
+          num
+        };
+      },
+      query() {
+        if (!this.keyword) {
+          this.$message.info('请输入查询内容')
+          return;
         }
-      }).finally(() => {
-        this.loading = false
-      })
-    }
-  },
-}
+        this.loading = true
+        const queryData = this.isEmployee()
+        const myService = queryData.num ? service.getEmployeeList : service.getCompanyList
+        this.type = queryData.num ? 'staff' : 'company'
+        const data = queryData.num ? queryData : {companyName: this.keyword}
+        myService({
+          pageNo: 1,
+          pageSize: 10,
+          orderByClause: 'id desc',
+          ...data
+        }).then(res => {
+          this.hasQuery = true
+          this.hasResult = res.list.length
+          if (this.type === 'company') {
+            this.companyInfo = res.list[0] || {}
+          } else {
+            this.staffInfo = res.list[0]
+          }
+        }).finally(() => {
+          this.loading = false
+        })
+      }
+    },
+  }
 </script>
 
 <style lang="less" scoped>
   @import "@/styles/var.less";
-  .query{
+
+  .query {
     text-align: center;
     margin-top: 60px;
-    padding: 100px;
     margin: auto;
     background: #F7FAFC;
-    .header{
-      .logo{
-        width: 300px;
+
+    .header {
+      position: absolute;
+      width: 100%;
+      margin: auto;
+      top: 100px;
+      text-align: center;
+      .logo {
         height: 410px;
         margin: auto;
+        &.children-img{
+          position: relative;
+          bottom: 400px;
+        }
       }
-      .desc{
+
+      .desc {
         font-size: 24px;
         font-weight: 500;
-        color: #9A9A9A;
+        color: #fff;
         line-height: 32px;
         margin-top: 36px;
         margin-bottom: 50px;
 
       }
     }
-    .content{
-      width: 1068px;
+
+    .content {
+      position: absolute;
+      width: 55.6%;
+      padding: 0 22%;
+      top: 600px;
       margin: auto;
-      /deep/ .search{
+
+      /deep/ .search {
         /*border: 1px solid #D9D9D9;*/
         display: flex;
         margin-bottom: 17px;
-        input{
+
+        input {
           height: 60px;
           line-height: 60px;
+          background: transparent;
+          color: #fff;
         }
-        .el-loading-parent--relative{
+
+        .el-loading-parent--relative {
           pointer-events: none;
           cursor: not-allowed;
         }
-        .el-loading-spinner .path{
+
+        .el-loading-spinner .path {
           stroke: #5AA572;
         }
-        .search-btn{
+
+        .search-btn {
           background: #5AA672;
           font-size: 18px;
           color: #fff;
@@ -173,61 +215,97 @@ export default {
           margin-right: 10px;
         }
       }
-      .result{
+
+      .result {
         margin-top: 58px;
-        &-table{
+
+        &-header{
+          padding: 5px 30px;
+          height: 51px;
+          line-height: 51px;
+          background: #5AA572;
+          display: flex;
+          justify-content: space-between;
+          &-right{
+            display: flex;
+            align-items: center;
+
+          }
+          .circle{
+            width: 16px;
+            height: 16px;
+            background: #5AA572;
+            border-radius: 50%;
+            margin-left: 30px;
+          }
+        }
+
+        &-table {
           width: 498px;
           background: #fff;
           margin: auto;
-          padding: 33px 50px 28px;
           font-weight: 500;
           line-height: 32px;
           color: #333333;
           box-sizing: border-box;
-          &-header{
+
+          &-header {
+            padding: 20px 50px;
             display: flex;
             font-size: 16px;
             border-bottom: 1px solid #efefef;
             padding-bottom: 22px;
             margin-bottom: 22px;
           }
-          &-row{
+
+          &-row {
             font-size: 14px;
             margin-bottom: 20px;
           }
-          &-header, &-row{
+
+          &-header, &-row {
             display: flex;
-            div:nth-child(1){
+            width: 100%;
+
+            div:nth-child(1) {
               flex: 0 0 200px;
               min-width: 0;
               display: flex;
               align-items: center;
             }
-            div:nth-child(2){
+
+            div:nth-child(2) {
               flex: 1 1 200px;
               text-align: left;
             }
 
           }
-          &-content{
+
+          &-content {
+            padding: 0px 50px;
 
           }
-          &.staff{
+
+          &.staff {
             width: 370px;
             font-size: 18px;
-            .left{
+
+            .left {
               width: 120px;
               height: 120px;
             }
-            .right{
+
+            .right {
               font-size: 14px;
               margin-left: 20px;
               padding-top: 11px;
-              span{
+
+              span {
                 margin-bottom: 30px;
                 text-align: left;
                 line-height: 14px;
-                &:last-child{
+
+                &:last-child {
                   margin-bottom: 0;
                 }
               }
@@ -237,23 +315,25 @@ export default {
 
 
       }
-      .empty{
+
+      .empty {
         color: #ff0001;
         font-size: 16px;
         line-height: 32px;
         text-align: left;
       }
     }
-    .btn{
+
+    .btn {
       cursor: pointer;
       width: 104px;
       height: 48px;
       background: #5AA672;
-      span{
+
+      span {
         width: 34px;
         height: 17px;
         font-size: 18px;
-
         font-weight: 500;
         color: #FFFEFE;
         line-height: 32px;
