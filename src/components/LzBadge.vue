@@ -4,7 +4,7 @@
       <div class="lz-badge-icon"></div>
       <div>{{title}}</div>
     </div>
-    <div class="lz-badge-footer">{{title_en}}</div>
+    <div class="lz-badge-footer" :class="black ? 'black' : ''">{{title_en}}</div>
   </div>
 </template>
 
@@ -19,6 +19,10 @@
       title_en: {
         type: String,
         default: 'About Us'
+      },
+      black: {
+        type: Boolean,
+        default: false
       },
     },
     data() {
@@ -55,6 +59,9 @@
       font-weight: 400;
       color: #9A9A9A;
       padding-left: 35px;
+      &.black{
+        color: #343434;
+      }
     }
   }
 </style>
