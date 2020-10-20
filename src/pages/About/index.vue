@@ -1,33 +1,14 @@
 <template>
 	<div class="about">
     <PicAndBreadcrumb :data="data"/>
-
-    <div class="about-bg" v-if="false">
-      <div class="bg-desc">
-        <div class="title">走进竹成</div>
-        <div class="slogan">你们的信任</div>
-        <div class="slogan">都是我们前进的最大动力</div>
-        <div class="lz"></div>
-      </div>
-      <div class="about-breadcrumb">
-        <img src="assets/icons/address.png" class="icon" />
-        <span class="content">首页>关于我们</span>
-      </div>
-      <img src="assets/image/about.png" alt="">
-    </div>
     <el-row>
       <el-col :xs="24">
         <AboutUsCard :hasBtn="false" type="about"/>
       </el-col>
     </el-row>
-    <el-row style="margin-top: 150px">
-      <el-col :xs="24">
-        <our-strength />
-      </el-col>
-    </el-row>
     <el-row>
       <el-col :xs="24">
-        <choose-us />
+        <CorporateCulture />
       </el-col>
     </el-row>
 
@@ -38,13 +19,14 @@
   import ourStrength from "@/pages/Home/components/ourStrength";
   import AboutUsCard from "@/components/AboutUsCard";
   import ChooseUs from "@/pages/About/components/ChooseUs";
+  import CorporateCulture from "@/pages/About/components/CorporateCulture";
   import service from "@/api/service";
   import PicAndBreadcrumb from "@/components/PicAndBreadcrumb";
 	export default {
     components: {
       ourStrength,
       AboutUsCard,
-      ChooseUs,
+      CorporateCulture,
       PicAndBreadcrumb
     },
 		data() {
