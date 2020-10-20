@@ -8,6 +8,9 @@
         </div>
         <div class="tax-team-item-name">{{member.imgname}}</div>
         <div class="tax-team-item-content">{{member.remark}}</div>
+        <div class="desc-detail">
+          税务实战经验丰富，曾服务多家香港上市跨国集团。精通跨国集团对外投资、转让定价、税务风控、进出口、保税区税务处理等。税务实战经验丰富，曾服务多家香港上市跨国集团。精通跨国集团对外投资、转让定价、税务风控、进出口、保税区税务处理等。
+        </div>
       </div>
     </div>
   </div>
@@ -49,6 +52,22 @@
       margin-right: 62px;
       box-sizing: border-box;
       text-align: center;
+      .desc-detail{
+        display: none;
+      }
+      &:hover{
+        background: #5AA672;
+        color: #fff;
+        .tax-team-item-name{
+          /*color: #fff;*/
+        }
+        .desc-detail{
+          display: block;
+        }
+        .tax-team-img, .tax-team-item-content{
+          display: none;
+        }
+      }
     }
     .tax-team-img{
       margin-bottom: 15px;
@@ -61,7 +80,6 @@
     }
     .tax-team-item-name{
       font-size: 34px;
-      color: #343434;
       margin-bottom: 20px;
 
     }

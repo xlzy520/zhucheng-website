@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-us-form-card flex-column">
+  <div class="contact-us-form-card flex-column lz-row">
     <div class="contact-us-form">
       <lz-badge title="联系我们" title_en="CONTACT US" />
       <div class="content">
@@ -73,8 +73,8 @@ export default {
 
 <style lang="less" scoped>
 .contact-us-form-card{
-  margin-top: 150px;
-  padding: 125px 175px 105px;
+  margin-top: 50px;
+  padding: 125px 175px 95px;
   background-image: url("~assets/image/contact_us_form_bg.png");
   .contact-us-form{
     display: flex;
@@ -109,7 +109,7 @@ export default {
     display: flex;
   }
   /deep/.footer{
-    padding: 30px 0;
+    padding-top: 30px;
     text-align: center;
     .submit{
       display: inline-block;
