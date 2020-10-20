@@ -1,6 +1,6 @@
 <template>
   <div class="contact-us-card">
-    <link-card v-for="item in list" :key="item.title" :item="item"></link-card>
+    <link-card v-for="item in list" :key="item.title" :item="item" class="lz-row-m"></link-card>
   </div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
           address: '上海市闵行区吴中路1439号莱茵虹景中心A座1002',
           phone: '15036086531(左先生）',
           email: 'zuochangkun@zc-corp.cn',
-          url: '3'
+          url: '2'
         },
       ],
     }

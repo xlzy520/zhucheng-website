@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="card-right">
-      <img src="assets/image/about-us.png" alt="">
+      <img :src="'assets/image/contactus/'+item.url+'.png'" alt="">
     </div>
   </div>
 </template>
@@ -39,27 +39,28 @@ export default {
 
 <style lang="less" scoped>
   .link-card{
-    width: 90%;
     height: 480px;
     background: #FFFFFF;
     border-radius: 10px;
     margin: auto;
-    margin-bottom: 200px;
-    margin-top: -122px;
+    margin-bottom: 125px;
+    margin-top: -65px;
     display: flex;
     justify-content: space-between;
     .card-left{
-      padding: 118px 0 0 74px;
-
+      /*padding: 118px 0 0 74px;*/
+      padding-top: 121px;
+      padding-left: 90px;
+      width: calc(100% - 950px);
       font-weight: bold;
       color: #343434;
       font-size: 20px;
 
     }
     .card-right{
-      padding: 69px 75px 75px 0;
+      padding: 69px 68px 71px 0;
       img{
-        width: 783px;
+        width: 784px;
         height: 340px;
       }
     }
