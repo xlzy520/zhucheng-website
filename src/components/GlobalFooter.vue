@@ -14,7 +14,8 @@
               </div>
             </div>
           </div>
-<!--          <div class="slogan">服务外包让商业 更简单</div>-->
+          <div class="slogan">让商业更简单</div>
+          <div class="slogan">让生活更简单</div>
           <div class="lz"></div>
         </div>
      </el-col>
@@ -119,6 +120,8 @@ export default {
     flex-direction: column;
     &-main{
       display: flex;
+      margin-bottom: 25px;
+
     }
     .title img{
       width: 96px;
@@ -130,22 +133,21 @@ export default {
 
     }
     .slogan{
-      width: 109px;
-      height: 29px;
-      font-size: 14px;
+      width: 125px;
+      margin-left: 70px;
+      font-size: 18px;
       font-family: SimHei;
-      font-weight: 400;
       color: #FFFFFF;
+      line-height: 32px;
       opacity: 0.56;
-      margin-top: 20px;
     }
     .lz{
       width: 22px;
       height: 2px;
       background: #FFFFFF;
       opacity: 0.56;
-      margin-top: 103px;
-      margin-left: 60px;
+      margin-top: 34px;
+      margin-left: 70px;
     }
   }
   .contact-us{
