@@ -9,7 +9,8 @@
 <!--      <img src="assets/icons/address.png" class="icon" />-->
 <!--      <span class="content">{{data.content}}</span>-->
 <!--    </div>-->
-    <img :src="data.img" alt="" class="bg-img">
+    <div class="bg-img" :style="style" v-if="data.useStyle"></div>
+    <img :src="data.img" alt="" class="bg-img" v-else>
   </div>
 </template>
 
@@ -26,6 +27,15 @@ export default {
         img: ''
       })
     },
+  },
+  computed: {
+    style() {
+      return {
+        background: `url(${this.data.img})`,
+        backgroundSize: window.innerWidth+'px',
+      }
+
+    }
   },
   data() {
     return {
@@ -44,6 +54,8 @@ export default {
   .bg-img{
     width: 100%;
     height: 100vh;
+    background-size: 1440px;
+    background-position: center;
     background: #000;
   }
   .bg-desc{

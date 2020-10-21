@@ -1,9 +1,7 @@
 <template>
-  <div class="query">
-    <PicAndBreadcrumb :data="data"/>
+  <div class="query" :style="style">
+<!--    <PicAndBreadcrumb :data="data"/>-->
     <div class="header flex-column">
-      <img src="assets/image/query/2.png" alt="" class="logo">
-      <img src="assets/image/query/3.png" alt="" class="logo children-img">
       <div class="desc">{{desc}}</div>
     </div>
     <div class="content">
@@ -21,9 +19,9 @@
       <div v-if="hasResult && type ==='company'" class="result">
         <div class="result-table">
           <div class="result-header">
-            <div class="result-header-logo">
-              <img src="" alt="">
-            </div>
+            <img src="/assets/image/zc-logo.png" alt="">
+
+<!--            <div class="result-header-logo"></div>-->
             <div class="result-header-right">
               <div class="circle"></div>
               <div class="circle"></div>
@@ -73,11 +71,22 @@
     components: {
       PicAndBreadcrumb
     },
+    computed: {
+      style() {
+        return {
+          background: `url(${this.data.img})`,
+          backgroundSize: window.innerWidth+'px',
+          height: 1320*(window.innerWidth / 1920) +'px'
+        }
+
+      }
+    },
     data() {
       return {
         data: {
           title: '解决方案', slogan: ['精益求精    合作共赢'],
-          img: 'assets/image/query_bg.png', content: '首页>解决方案'
+          img: 'assets/image/query_bg.png', content: '首页>解决方案',
+          useStyle: true
         },
         desc: '集团机构信息验证   集团员工身份查询',
         keyword: '',
@@ -88,7 +97,7 @@
           {name: '法定代表人', value: 'legalRepresentative'},
         ],
         loading: false,
-        type: 'company',
+        type: 'staff',
         staffInfo: {
           name: '廖某某',
           num: 'ZC888',
@@ -96,9 +105,9 @@
           imgurl: ''
         },
         companyInfo: {},
-        hasResult: true,
+        hasResult: false,
         queryType: '',
-        hasQuery: true
+        hasQuery: false
       }
     },
     methods: {
@@ -150,14 +159,15 @@
     text-align: center;
     margin-top: 60px;
     margin: auto;
+    max-height: 1320px;
     background: #F7FAFC;
 
     .header {
-      position: absolute;
       width: 100%;
       margin: auto;
-      top: 100px;
       text-align: center;
+      position: relative;
+      top: 50%;
       .logo {
         height: 410px;
         margin: auto;
@@ -179,10 +189,10 @@
     }
 
     .content {
-      position: absolute;
+      position: relative;
+      top: 48%;
       width: 55.6%;
       padding: 0 22%;
-      top: 600px;
       margin: auto;
 
       /deep/ .search {
@@ -226,6 +236,7 @@
           background: #5AA572;
           display: flex;
           justify-content: space-between;
+          align-items: center;
           &-right{
             display: flex;
             align-items: center;
@@ -234,7 +245,7 @@
           .circle{
             width: 16px;
             height: 16px;
-            background: #5AA572;
+            background: rgba(18, 99, 44, .5);
             border-radius: 50%;
             margin-left: 30px;
           }
@@ -265,7 +276,6 @@
 
           &-header, &-row {
             display: flex;
-            width: 100%;
 
             div:nth-child(1) {
               flex: 0 0 200px;
@@ -282,7 +292,7 @@
           }
 
           &-content {
-            padding: 0px 50px;
+            padding: 10px 50px;
 
           }
 
@@ -337,6 +347,27 @@
         font-weight: 500;
         color: #FFFEFE;
         line-height: 32px;
+      }
+    }
+  }
+  @media (max-width: 1600px) {
+    .query{
+      .header{
+        top: 45%;
+      }
+      .content{
+        top: 43%;
+        .result-header{
+          height: 38px;
+          line-height: 38px;
+        }
+        .result-table-header{
+          padding: 10px 50px;
+          margin-bottom: 11px;
+        }
+        .result-table-row{
+          margin-bottom: 10px;
+        }
       }
     }
   }

@@ -48,7 +48,6 @@
           orderByClause: 'id desc',
           imgType: 1
         }).then(res => {
-          res.list[0].imgurl = '/assets/image/index_bg.png'
           this.banners = res.list || []
         })
       },
