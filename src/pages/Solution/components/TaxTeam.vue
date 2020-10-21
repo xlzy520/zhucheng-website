@@ -7,10 +7,9 @@
           <img :src="member.imgurl" />
         </div>
         <div class="tax-team-item-name">{{member.imgname}}</div>
-        <div class="tax-team-item-content">{{member.remark}}</div>
-        <div class="desc-detail">
-          税务实战经验丰富，曾服务多家香港上市跨国集团。精通跨国集团对外投资、转让定价、税务风控、进出口、保税区税务处理等。税务实战经验丰富，曾服务多家香港上市跨国集团。精通跨国集团对外投资、转让定价、税务风控、进出口、保税区税务处理等。
-        </div>
+<!--        <div class="tax-team-item-name"></div>-->
+        <div class="tax-team-item-content">{{member.ext1}}</div>
+        <div class="desc-detail">{{member.remark}}</div>
       </div>
     </div>
   </div>
@@ -39,19 +38,28 @@
   }
   .tax-team-content{
     display: flex;
+    flex-wrap: wrap;
     margin-top: 38px;
     margin-left: 75px;
     .tax-team-item{
       padding: 40px 33px 60px;
       width: 280px;
-      height: 393px;
       background: #FFFFFF;
       box-shadow: 0px 0px 26px 2px rgba(65, 65, 65, 0.1);
       opacity: 0.9;
       border-radius: 10px;
       margin-right: 62px;
+      margin-bottom: 30px;
       box-sizing: border-box;
       text-align: center;
+      .tax-team-item-content{
+        font-size: 15px;
+        font-family: Adobe Heiti Std;
+        color: #333333;
+        line-height: 15px;
+        text-align: center;
+
+      }
       .desc-detail{
         display: none;
       }
@@ -88,7 +96,6 @@
       font-size: 14px;
       color: #343434;
       line-height: 24px;
-      height: 124px;
       overflow: scroll;
     }
 
