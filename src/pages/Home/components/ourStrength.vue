@@ -2,7 +2,7 @@
   <div class="df flex-column-xs our-strength lz-row">
     <div class="left">
       <lz-badge title="业务版图" title_en="BUSINESS MAP" black/>
-      <div class="content" @mouseenter="hover = true" @mouseleave="hover = false">
+      <div class="content">
         <div class="content-extra">竹成人脚踏实地、日复一日，立足浙江，辐射全国</div>
         <div class="item" v-for="(item, index) in list" :key="item.text">
           <img :src="item.url"/>

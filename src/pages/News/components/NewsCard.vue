@@ -74,13 +74,14 @@ export default {
     changeCurrent(num){
       this.pageNo = num
       this.getNewsList()
-      console.log(num);
     },
     parseTimeFilter(val){
       return dayjs(val * 1000).format('YYYY-MM-DD')
     }
   },
   mounted() {
+    const activeTab = this.$route.query.tab
+    this.activeTab = activeTab ? Number(activeTab) : 1
     this.getNewsList()
   },
 }

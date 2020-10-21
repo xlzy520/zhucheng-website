@@ -4,10 +4,10 @@
       <lz-badge title="新闻资讯" title_en="NEWS AND INFORMATION" />
     </div>
     <div class="content">
-      <div class="content-item" v-for="cardItem in splitNews">
+      <div class="content-item" v-for="(cardItem, index) in splitNews">
         <div class="content-header">
-          <div class="title">市场新闻</div>
-          <a class="more" href="/#/news">了解更多>></a>
+          <div class="title">{{index?'竹成动态': '市场新闻'}}</div>
+          <a class="more" :href="'/#/news?tab='+(index+1)">了解更多>></a>
         </div>
         <div class="news-list">
           <div class="news-list-item" v-for="item in  cardItem" :key="item.url" @click="viewDetail(item)">
@@ -29,42 +29,20 @@ export default {
       type: Array,
       default: ()=>([])
     },
+    news1: {
+      type: Array,
+      default: ()=>([])
+    },
   },
   computed: {
     splitNews() {
-      let news = [[],[]]
-      const length = this.news.length
-      if (length<=5) {
-        return [this.news]
-      }
-      for (let i = 0; i < length; i++) {
-        if (i<=5) {
-          news[0].push(this.news[i])
-        } else {
-          news[1].push(this.news[i])
-        }
-      }
-      return news
+      return [this.news, this.news1]
 
     }
   },
   data() {
     return {
-      leftNews: [
-        {title: '北京9月开通电子社保卡申领 上线下均可使用', url: '2020-312309-04', date: '2020-09-04'},
-        {title: '北京9月开通电子社保卡申领 上线下均可使用', url: '2023120-09-04', date: '2020-09-04'},
-        {title: '北京9月开通电子社保卡申领 上线下均可使用', url: '2020-3121309-04', date: '2020-09-04'},
-        {title: '北京9月开通电子社保卡申领 上线下均可使用', url: '202310-09-04', date: '2020-09-04'},
-        {title: '北京9月开通电子社保卡申领 上线下均可使用', url: '2020-312209-04', date: '2020-09-04'},
-      ],
 
-      righttNews: [
-        {title: '北京9月开通电子社保卡申领 上线下均可使用', url: '2020131-09-04', date: '2020-09-04'},
-        {title: '北京9月开通电子社保卡申领 上线下均可使用', url: '2020312-09-04', date: '2020-09-04'},
-        {title: '北京9月开通电子社保卡申领 上线下均可使用', url: '20203109-04', date: '2020-09-04'},
-        {title: '北京9月开通电子社保卡申领 上线下均可使用', url: '2020-3109-04', date: '2020-09-04'},
-        {title: '北京9月开通电子社保卡申领 上线下均可使用', url: '2020-313109-04', date: '2020-09-04'},
-      ],
     }
   },
   methods: {

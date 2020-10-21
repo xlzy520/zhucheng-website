@@ -13,7 +13,7 @@
     <our-service />
     <our-strength />
     <partner />
-    <news :news="news" />
+    <news :news="news" :news1="news1" />
 	</div>
 </template>
 
@@ -37,7 +37,8 @@
 		data() {
 			return {
 			  banners: [],
-        news: []
+        news: [],
+        news1: [],
 			}
 		},
 		methods: {
@@ -51,20 +52,32 @@
           this.banners = res.list || []
         })
       },
-      getNews(){
+      getNews1(){
         service.getNewsList({
           pageNo: 1,
-          pageSize: 10,
+          pageSize: 5,
           orderByClause: 'id desc',
           type: 1
         }).then(res => {
           this.news = res.list || []
         })
+      },
+      getNews2(){
+        service.getNewsList({
+          pageNo: 1,
+          pageSize: 5,
+          orderByClause: 'id desc',
+          type: 2
+        }).then(res => {
+          this.news1 = res.list || []
+        })
       }
+
     },
     mounted() {
       this.getBanners();
-      this.getNews();
+      this.getNews1();
+      this.getNews2();
     },
   }
 
