@@ -47,5 +47,14 @@ export default {
       margin-bottom: 25px;
     }
   }
+  @media (max-width: 768px) {
+    .content{
+      justify-content: center;
+      /deep/ .img-card{
+        width: auto;
+      }
+    }
+  }
 }
+
 </style>

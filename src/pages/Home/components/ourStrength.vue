@@ -35,9 +35,9 @@ export default {
   data() {
     return {
       list: [
-        {text: '全国200+直营服务网点', url: 'assets/icons/strength/1-green.png'},
+        {text: '全国395+直营服务网点', url: 'assets/icons/strength/1-green.png'},
         {text: '全国14家省级分公司', url: 'assets/icons/strength/2-green.png'},
-        {text: '70000+全职城市服务力', url: 'assets/icons/strength/3-green.png'},
+        {text: '10万+全职城市服务力', url: 'assets/icons/strength/3-green.png'},
         {text: '400+TOP客户信赖', url: 'assets/icons/strength/4-green.png'},
       ],
       descs: [
@@ -140,5 +140,13 @@ export default {
     padding-left: 80px;
   }
 }
+}
+@media (max-width: 768px) {
+  .our-strength{
+    flex-wrap: wrap;
+    .right{
+      margin-left: 0;
+    }
+  }
 }
 </style>

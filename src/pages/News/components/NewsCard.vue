@@ -12,16 +12,16 @@
         </div>
       </div>
       <div class="news-content">
-        <div class="news-item" v-for="news in newsList" :key="news.title">
+        <div class="news-item flex-column-xs" v-for="news in newsList" :key="news.title">
           <div class="left">
             <img :src="news.imgurl" alt="">
           </div>
-          <div class="right flex-column">
-            <div class="right-header">
+          <div class="right flex-column ">
+            <div class="right-header flex-column-xs">
               <div class="title ellipsis" :title="news.title">{{news.title}}</div>
               <div class="date">{{parseTimeFilter(news.addTime)}}</div>
             </div>
-            <div class="content">{{news.subtitle}}</div>
+            <div class="content ellipsis">{{news.subtitle}}</div>
             <div class="btn">
               <a :href="'/#/news/'+news.id" class="more">了解更多>></a>
             </div>
@@ -207,4 +207,42 @@ export default {
       font-weight: 400;
   }
 }
+  @media (max-width: 1280px) {
+    .news-card .right{
+      .right-header{
+        flex-direction: column;
+      }
+      .title{
+        margin-bottom: 10px;
+      }
+    }
+  }
+  @media (max-width: 960px) {
+    .news-card{
+      .news-tabs{
+        margin-top: -40px;
+      }
+      .right{
+        width: auto;
+        .right-header{
+          flex-direction: column;
+        }
+        .title{
+          margin-bottom: 10px;
+          max-width: unset;
+        }
+      }
+      .left{
+        width: auto;
+        margin-right: 0;
+      }
+    }
+    .news-content{
+      text-align: center!important;
+      .news-item{
+        align-items: center!important;
+      }
+    }
+
+  }
 </style>

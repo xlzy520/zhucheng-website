@@ -3,7 +3,7 @@
     <div class="header">
       <lz-badge title="新闻资讯" title_en="NEWS AND INFORMATION" />
     </div>
-    <div class="content">
+    <div class="content flex-column-xs">
       <div class="content-item" v-for="(cardItem, index) in splitNews">
         <div class="content-header">
           <div class="title">{{index?'竹成动态': '市场新闻'}}</div>
@@ -65,7 +65,7 @@ export default {
   .header{
   }
   .content{
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     justify-content: space-between;
     .content-header{
@@ -106,6 +106,7 @@ export default {
   }
   .content-item{
     margin-left: 35px;
+    margin-top: 20px;
   }
   .news-title{
     margin-right: 31px;

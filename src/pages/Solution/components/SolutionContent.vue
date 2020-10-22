@@ -180,7 +180,7 @@ export default {
         margin-bottom: 33px;
       }
       .desc{
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 500;
         min-height: 60px;
         color: #333333;

@@ -1,7 +1,7 @@
 <template>
-  <el-footer class="footer" style="height: auto">
+  <el-footer class="footer lz-row" style="height: auto">
     <el-row>
-      <el-col :xs="12" :sm="12" :md="8" :lg="8" :xl="8">
+      <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
         <div class="info">
           <div class="info-main">
             <img src="assets/image/footer/logo.png" alt="" class="logo">
@@ -19,7 +19,7 @@
           <div class="lz"></div>
         </div>
      </el-col>
-      <el-col :xs="12" :sm="12" :md="8" :lg="8" :xl="8" class="contact-us">
+      <el-col :xs="24" :sm="12" :md="12" :lg="8" :xl="8" class="contact-us">
        <div class="header">
          <div class="header-title">联系我们</div>
          <div class="header-title-en">CONTACT US</div>
@@ -31,7 +31,7 @@
          <span>电子邮箱：zuochangkun@zc-corp.cn</span>
        </div>
      </el-col>
-      <el-col :xs="12" :sm="12" :md="8" :lg="8" :xl="8">
+      <el-col :xs="24" :sm="12" :md="12" :lg="8" :xl="8">
        <div class="header">
          <div class="header-title">关注我们</div>
          <div class="header-title-en">FOCUS ON US</div>
@@ -116,8 +116,9 @@ export default {
     }
   }
   .info{
-    display: flex;
-    flex-direction: column;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*text-align: center;*/
     &-main{
       display: flex;
       margin-bottom: 25px;
@@ -181,10 +182,10 @@ export default {
     margin-bottom: 23px;
   }
   .w380{
-    width: 380px;
+    /*width: 380px;*/
   }
   .w500{
-    width: 500px;
+    /*width: 500px;*/
   }
   .info-item{
     font-size: 14px;
@@ -220,5 +221,20 @@ export default {
     color: #FFFFFF;
     line-height: 24px;
     margin-top: 120px;
+  }
+  @media (max-width: 1200px) {
+    .info{
+      text-align: center;
+      &-main{
+        display: block;
+      }
+      .slogan{
+        width: auto;
+      }
+      .lz{
+        width: auto;
+        margin-bottom: 20px;
+      }
+    }
   }
 </style>

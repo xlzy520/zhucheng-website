@@ -96,8 +96,6 @@
       box-sizing: border-box;
       .title{
         font-size: 20px;
-        height: 20px;
-        line-height: 15px;
         font-weight: bold;
         color: #333;
         margin-bottom: 33px;
@@ -135,6 +133,24 @@
     .symain {
       .syabouttxt{
         width: 557px;
+      }
+    }
+  }
+  @media (max-width: 960px) {
+    .symain {
+      text-align: center;
+      .syaboutpic{
+        width: 100%;
+      }
+      .syabouttxt{
+        width: auto;
+      }
+      .syaboutwen{
+        padding-left: 0;
+      }
+      .footer{
+        margin-bottom: 0;
+        margin-top: 30px;
       }
     }
   }

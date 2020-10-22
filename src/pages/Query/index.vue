@@ -123,7 +123,7 @@
     methods: {
       isEmployee() {
         const key = this.keyword.replace(/\s+/, '')
-        const match = key.match(/([\u4e00-\u9fa5]*)(\d*)/)
+        const match = key.match(/([\u4e00-\u9fa5]*)(\d|\w*)/)
         const name = match[1]
         const num = match[2]
         return {

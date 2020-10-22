@@ -59,6 +59,7 @@
       font-weight: 400;
       color: #9A9A9A;
       padding-left: 35px;
+      text-align: left;
       &.black{
         color: #343434;
       }

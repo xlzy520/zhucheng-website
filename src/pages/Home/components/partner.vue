@@ -71,4 +71,14 @@
       padding: 10px 130px 50px;
     }
   }
+  @media (max-width: 960px) {
+    .partner {
+      .content{
+        justify-content: space-around;
+      }
+      .who-using{
+        margin-right: 0;
+      }
+    }
+  }
 </style>

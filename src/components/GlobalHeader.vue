@@ -500,4 +500,11 @@ export default {
     }
   }
 
+  @media (max-width: 1280px) {
+    .el-header.header-main a{
+      width: 100%;
+    }
+  }
+
+
 </style>
