@@ -141,12 +141,12 @@ export default {
   }
 }
 }
-@media (max-width: 768px) {
-  .our-strength{
-    flex-wrap: wrap;
-    .right{
-      margin-left: 0;
-    }
-  }
-}
+/*@media (max-width: 768px) {*/
+/*  .our-strength{*/
+/*    flex-wrap: wrap;*/
+/*    .right{*/
+/*      margin-left: 0;*/
+/*    }*/
+/*  }*/
+/*}*/
 </style>

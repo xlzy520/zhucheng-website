@@ -100,6 +100,7 @@ export default {
     }
     .content{
       display: flex;
+      justify-content: center;
       /*justify-content: space-between;*/
       padding-top: 50px;
     }
@@ -111,7 +112,7 @@ export default {
       color: #fff;
       font-size: 24px;
       /*font-weight: 500;*/
-      >div{
+      >div:first-child{
         max-width: 500px;
       }
 
@@ -135,6 +136,7 @@ export default {
     }
   }
   .center{
+    width: 120px;
     margin-top: 35px;
   }
   @media (max-width: 1600px) {
@@ -143,9 +145,42 @@ export default {
       .content{
         padding-left: 138px;
       }
+      .left{
+        .year-item{
+          margin-right: 60px;
+        }
+      }
+      .right{
+        .year-item{
+          margin-left: 60px;
+        }
+      }
       .year-item{
-        >div{
+        >div:first-child{
           max-width: 300px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1400px) {
+    .DevelopmentHistory{
+      padding-left: 0;
+      .content{
+        padding-left: 138px;
+      }
+      .left{
+        .year-item{
+          margin-right: 60px;
+        }
+      }
+      .right{
+        .year-item{
+          margin-left: 60px;
+        }
+      }
+      .year-item{
+        >div:first-child{
+          max-width: 240px!important;
         }
       }
     }

@@ -60,10 +60,10 @@ export default {
       /*justify-content: space-between;*/
     }
   }
-  @media (max-width: 768px) {
-    .content{
-      justify-content: center;
-    }
-  }
+  /*@media (max-width: 768px) {*/
+  /*  .content{*/
+  /*    justify-content: center;*/
+  /*  }*/
+  /*}*/
 }
 </style>

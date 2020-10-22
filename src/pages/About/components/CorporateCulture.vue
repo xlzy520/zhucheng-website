@@ -46,15 +46,20 @@ export default {
       height: 62px;
       margin-bottom: 25px;
     }
-  }
-  @media (max-width: 768px) {
-    .content{
-      justify-content: center;
-      /deep/ .img-card{
-        width: auto;
-      }
+    /deep/ .img-card{
+      max-width: 419px;
+      width: 30%;
+      margin-right: 0;
     }
   }
+  /*@media (max-width: 768px) {*/
+  /*  .content{*/
+  /*    justify-content: center;*/
+  /*    /deep/ .img-card{*/
+  /*      width: auto;*/
+  /*    }*/
+  /*  }*/
+  /*}*/
 }
 
 </style>

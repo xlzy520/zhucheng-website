@@ -182,6 +182,7 @@ export default {
         line-height: 30px;
         letter-spacing: 1px;
         margin-top: 46px;
+        text-indent: 40px;
       }
     }
 }

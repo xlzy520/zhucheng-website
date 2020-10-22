@@ -83,7 +83,7 @@
     },
     computed: {
       style() {
-        const width = window.innerWidth <1440 ? 1440 : window.innerWidth
+        const width = window.innerWidth <1280 ? 1280 : window.innerWidth
         return {
           background: `url(${this.data.img})`,
           backgroundSize: width+'px',
