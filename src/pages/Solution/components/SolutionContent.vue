@@ -1,7 +1,7 @@
 <template>
   <div class="news-card">
     <div class="news-tabs">
-      <div class="header">
+      <div class="header lz-row">
         <div :class="['news-tab', isActive(index)]"
              @click="handleTab(index)"
              v-for="(tab,index) in tabs" :key="tab.title">
@@ -70,8 +70,8 @@ export default {
           serviceContent: [
             {name: '个人薪酬优化', },
             {name: '企业税务优化', },
-            {name: '企业得税筹划', },
-            {name: '股东分红所得税 ', },
+            // {name: '企业得税筹划', },
+            // {name: '股东分红所得税 ', },
           ]
         },
         {
@@ -159,17 +159,12 @@ export default {
 <style lang="less" scoped>
   @import "@/styles/var.less";
   .news-card{
-    /*padding: 0 100px;*/
 
     .news-tabs{
       position: relative;
       z-index: 100;
-      /*padding-top: 45px;*/
       box-sizing: border-box;
-      /*background: #FFFFFF;*/
       margin: auto;
-      /*margin-top: -122px;*/
-      /*margin-bottom: 134px;*/
     }
     .solution-desc{
       padding: 40px 82px 75px 50px;
@@ -193,37 +188,36 @@ export default {
   .service-content{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin-top: 65px;
     &.zczb{
-      flex-wrap: nowrap;
       justify-content: space-around;
       .service-item{
-        margin-right: 0;
       }
+    }
+    &.jswl{
+      justify-content: space-around;
+      .service-item{
+        width: 22%;
+        display: flex;
+        align-items: center;
+      }
+    }
+    &.swch{
+      justify-content: space-around;
     }
     &.rlzyps{
       .service-item{
-        margin-right: 136px;
         &-img, img{
           width: 171px;
           height: 171px;
-        }
-        &:nth-child(4n){
-          margin-right: 136px;
-        }
-        &:nth-child(5n){
-          margin-right: 0;
         }
       }
     }
     .service-item{
       display: flex;
       flex-direction: column;
-      margin-right: 200px;
       margin-bottom: 74px;
-      &:nth-child(4n){
-        margin-right: 0;
-      }
       &-img, img{
         width: 200px;
         height: 200px;
@@ -279,17 +273,6 @@ export default {
     }
   }
 
-  @media (max-width: 1919px) {
-    .news-card .service-content{
-      .service-item{
-        margin-right: 100px;
-        &:nth-child(4n){
-          margin-right: 0;
-        }
-      }
-    }
-
-  }
   @media (max-width: 1600px) {
     .header{
       height: 80px;
@@ -304,17 +287,51 @@ export default {
       &.rlzyps{
         .service-item{
           margin-right: 60px;
-          &:nth-child(4n){
-            margin-right: 60px;
-          }
         }
       }
-      &.jswl{
-        .service-item{
-          margin-right: 80px;
-          &:nth-child(4n){
-            margin-right: 80px;
-          }
+    }
+  }
+  @media (max-width: 1200px) {
+    .header{
+      padding: 0 12px;
+      line-height: 60px;
+      height: 60px;
+      .news-tab{
+        font-size: 14px;
+        span{
+          padding: 0 20px;
+        }
+      }
+    }
+  }
+  @media (max-width: 875px) {
+    .header{
+      padding: 0;
+      height: 50px;
+      line-height: 50px;
+      .news-tab{
+        font-size: 12px;
+        span{
+          padding: 0 15px;
+        }
+      }
+    }
+    .news-card .service-content{
+      justify-content: center;
+      .service-item{
+        margin-right: 0px;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .header{
+      padding: 0!important;
+      line-height: 40px;
+      height: 40px;
+      .news-tab{
+        font-size: 10px;
+        span{
+          padding: 0 5px;
         }
       }
     }
