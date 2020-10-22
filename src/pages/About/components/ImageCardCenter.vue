@@ -70,10 +70,8 @@ export default {
 }
 @media (max-width: 1919px) {
   .img-card{
-    margin-right: 235px;
-    &:nth-child(2n){
-      margin-right: 0;
-    }
+    width: 350px;
+    margin-right: 0;
   }
 }
 </style>

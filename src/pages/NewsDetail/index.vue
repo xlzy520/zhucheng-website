@@ -20,7 +20,7 @@
       return {
         data: {
           title: '联系我们', slogan: ['我们将看得更高更远'],
-          img: 'assets/image/contact_us_bg.png', content: '首页>新闻列表>详情'
+          img: '', content: '首页>新闻列表>详情'
         },
         id: '',
         article: {}
@@ -32,7 +32,22 @@
           this.article = res
           console.log(res);
         })
+      },
+      getBg() {
+        service.getImgs({
+          pageNo: 1,
+          pageSize: 100,
+          orderByClause: 'id desc',
+          imgType: 5
+        }).then(res => {
+          if (res.list && res.list.length) {
+            this.data.img = res.list[0].imgurl
+          }
+        })
       }
+    },
+    created(){
+      this.getBg()
     },
     mounted() {
       const id = this.$route.params.id;

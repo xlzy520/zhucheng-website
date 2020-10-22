@@ -38,6 +38,7 @@ export default {
   }
   .content{
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 30px;
     .card-icon{
