@@ -51,7 +51,7 @@ export default {
     flex-direction: column;
     color: #333;
     background: #fff;
-    max-width: 240px;
+    max-width: 18%;
     height: 312px;
     border-radius: 8px;
     padding: 58px 20px;
@@ -81,12 +81,6 @@ export default {
       line-height: 28px;
       margin-top: 10%;
       text-align: left;
-    }
-  }
-  @media (max-width: 1919px) {
-    .service-card {
-      margin-bottom: 40px;
-      /*margin-right: 120px;*/
     }
   }
 
