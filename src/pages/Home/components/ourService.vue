@@ -4,8 +4,8 @@
       <lz-badge title="集团业务" title_en="GROUP BUSINESS" />
     </div>
     <div class="content">
-      <OurServicesCard v-for="item in list" :key="item.id" :title="item.title"
-                       :desc="item.desc" :img="item.img" @click.native="handleClick(item)" />
+      <OurServicesCard v-for="(item,index) in list" :key="item.id" :title="item.title"
+                       :desc="item.desc" :img="item.img" @click.native="handleClick(index)" />
     </div>
 
   </div>
@@ -33,8 +33,8 @@ export default {
     }
   },
   methods: {
-    handleClick(item) {
-      console.log(item);
+    handleClick(index) {
+      this.$router.push('/solution?tab='+index)
     }
   },
 }

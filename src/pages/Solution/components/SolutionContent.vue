@@ -126,32 +126,31 @@ export default {
     handleTab(tab) {
       this.activeTab = tab
       this.currentTabInfo = this.tabs[tab]
+      this.getTeam()
     },
     isActive(tab){
       return tab === this.activeTab ? 'active': ''
     },
-    getData(){
-      this.handleTab(0)
-    },
     getTeam(){
-      service.getImgs({
-        pageNo: 1,
-        pageSize: 100,
-        orderByClause: 'id desc',
-        imgType: 6
-      }).then(res => {
-        this.teamList = res.list || []
-        console.log(res);
-      })
+      if (this.activeTab === 1) {
+        service.getImgs({
+          pageNo: 1,
+          pageSize: 100,
+          orderByClause: 'id desc',
+          imgType: 6
+        }).then(res => {
+          this.teamList = res.list || []
+        })
+      }
     },
     changeCurrent(num){
       this.pageNo = num
       this.getData()
-      console.log(num);
     }
   },
   mounted() {
-    this.getData()
+    const activeTab = this.$route.query.tab || 0
+    this.handleTab(Number(activeTab))
     this.getTeam();
   },
 }

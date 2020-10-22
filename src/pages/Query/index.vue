@@ -42,6 +42,16 @@
       </div>
       <div v-if="hasResult && type ==='staff'" class="result">
         <div class="result-table staff">
+          <div class="result-header">
+            <img src="/assets/image/zc-logo.png" alt="">
+
+            <!--            <div class="result-header-logo"></div>-->
+            <div class="result-header-right">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
+          </div>
           <div class="result-table-header">人员信息</div>
           <div class="df">
             <div class="left">
@@ -91,7 +101,7 @@
         desc: '集团机构信息验证   集团员工身份查询',
         keyword: '',
         list: [
-          {name: '洼地公司名称', value: 'companyName'},
+          {name: '服务商', value: 'companyName'},
           {name: '营业地址', value: 'address'},
           {name: '企业信用代码', value: 'num'},
           {name: '法定代表人', value: 'legalRepresentative'},
@@ -371,4 +381,42 @@
       }
     }
   }
+  @media (min-width: 2159px) {
+    .query{
+      .header{
+        top: 55%;
+      }
+      .content{
+        top: 56%;
+        .result-table-row{
+          margin-bottom: 5px;
+        }
+        .result-table.staff{
+          width: 498px;
+        }
+        .result-table-header{
+          padding: 10px 50px;
+          margin-bottom: 0;
+          /*text-align: center;*/
+        }
+        .df{
+          padding: 20px 50px;
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+  @media (min-width: 2400px) {
+    .query{
+      max-height: 1600px;
+      .header{
+        top: 60%;
+      }
+      .content{
+        top: 60%;
+      }
+    }
+  }
+
+
 </style>

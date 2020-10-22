@@ -1,6 +1,6 @@
 <template>
   <div class="tax-team">
-    <LzBadge title="税务团队" title_en="TAX TEAM"/>
+    <LzBadge title="税筹团队" title_en="TAX TEAM"/>
     <div class="tax-team-content">
       <div class="tax-team-item" v-for="(member,index) in teamList" :key="member.id">
         <div class="tax-team-img">
@@ -43,7 +43,8 @@
     margin-left: 75px;
     .tax-team-item{
       padding: 40px 33px 60px;
-      width: 280px;
+      width: 232px;
+      cursor: pointer;
       background: #FFFFFF;
       box-shadow: 0px 0px 26px 2px rgba(65, 65, 65, 0.1);
       opacity: 0.9;

@@ -53,7 +53,7 @@ export default {
           phone: '15036086531(左先生）'
         },
       ],
-      hover: true
+      hover: false
     }
   }
 }

@@ -36,15 +36,15 @@ export default {
   flex-direction: column;
   color: #333;
   box-sizing: border-box;
-  width: 419px;
+  width: 418px;
   margin-right: 73px;
+  &:nth-child(3n){
+    margin-right: 0;
+  }
   img{
     width: 100%;
     height: 174px;
     margin-bottom: 22px;
-    &:nth-child(3n){
-      margin-right: 0;
-    }
   }
   &-title{
     font-size: 20px;

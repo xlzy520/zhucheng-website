@@ -77,7 +77,7 @@
     </el-row>
     <el-row class="footer-copyright">
       <el-col :xs="24">
-        COPYRIGHT © 2013-2020 ZC GROUP浙ICP备:100000000号-1
+        COPYRIGHT © 2013-2020 ZC GROUP浙ICP备2020037031号
       </el-col>
     </el-row>
   </el-footer>

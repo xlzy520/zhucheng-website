@@ -11,6 +11,11 @@
         <CorporateCulture />
       </el-col>
     </el-row>
+    <el-row>
+      <el-col :xs="24">
+        <DevelopmentHistory />
+      </el-col>
+    </el-row>
 
 	</div>
 </template>
@@ -19,6 +24,7 @@
   import ourStrength from "@/pages/Home/components/ourStrength";
   import AboutUsCard from "@/components/AboutUsCard";
   import ChooseUs from "@/pages/About/components/ChooseUs";
+  import DevelopmentHistory from "@/pages/About/components/DevelopmentHistory";
   import CorporateCulture from "@/pages/About/components/CorporateCulture";
   import service from "@/api/service";
   import PicAndBreadcrumb from "@/components/PicAndBreadcrumb";
@@ -27,7 +33,8 @@
       ourStrength,
       AboutUsCard,
       CorporateCulture,
-      PicAndBreadcrumb
+      PicAndBreadcrumb,
+      DevelopmentHistory
     },
 		data() {
 			return {
