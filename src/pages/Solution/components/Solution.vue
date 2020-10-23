@@ -53,13 +53,7 @@
             </div>
           </div>
         </div>
-
-
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="400" height="200">
-          <rect width="4" x="296" y="10" height="150" style="fill:#5AA572;"/>
-          <rect width="280" x="20" y="160" height="4" style="fill:#5AA572;"/>
-          <polygon points="20,151 20,173 0,162" style="fill:#5AA572;"/>
-        </svg>
+        <Arrow type="wai"/>
       </div>
 
     </div>
@@ -161,6 +155,50 @@
   .ys {
     margin-top: 90px;
     align-items: baseline;
+  }
+  @media (max-width: 1400px) {
+    .solution-process-content{
+      transform: scale(0.8) translateX(-20px);
+    }
+  }
+  @media (max-width: 1200px) {
+    .solution-process-content{
+      transform: scale(0.6) translateX(-60px);
+    }
+  }
+  @media (max-width: 875px) {
+    .solution-process-content{
+      transform: scale(0.5) translateX(-120px);
+      margin: -90px 0;
+    }
+    .tax-team-content{
+      margin-left: 0;
+      .tax-team-item{
+        width: 100%;
+        height: 300px;
+        margin-right: 0;
+      }
+    }
+  }
+  @media (max-width: 745px) {
+    .solution-process-content{
+      transform: scale(0.4) translateX(-270px);
+    }
+  }
+  @media (max-width: 600px) {
+    .solution-process-content{
+      transform: scale(0.3) translateX(-240px);
+    }
+  }
+  @media (max-width: 500px) {
+    .solution-process-content{
+      transform: scale(0.3) translateX(-320px);
+    }
+  }
+  @media (max-width: 400px) {
+    .solution-process-content{
+      transform: scale(0.3) translateX(-395px);
+    }
   }
 
 </style>

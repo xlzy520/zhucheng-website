@@ -52,14 +52,14 @@ export default {
       margin-right: 0;
     }
   }
-  /*@media (max-width: 768px) {*/
-  /*  .content{*/
-  /*    justify-content: center;*/
-  /*    /deep/ .img-card{*/
-  /*      width: auto;*/
-  /*    }*/
-  /*  }*/
-  /*}*/
+  @media (max-width: 768px) {
+    .content{
+      justify-content: center;
+      /deep/ .img-card{
+        width: auto;
+      }
+    }
+  }
 }
 
 </style>

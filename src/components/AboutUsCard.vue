@@ -92,7 +92,7 @@
       flex-direction: column;
       position: relative;
       width: auto;
-      padding: 15px 0 15px 42px;
+      padding: 0 0 15px 42px;
       box-sizing: border-box;
       .title{
         font-size: 20px;
@@ -133,6 +133,49 @@
     .symain {
       .syabouttxt{
         width: 557px;
+        p{
+          line-height: 29px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1440px) {
+    .symain {
+      .syaboutpic{
+        width: auto;
+      }
+      .syabouttxt{
+        /*width: 650px;*/
+        p{
+          line-height: 25px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1320px) {
+    .symain {
+      .syaboutpic{
+        width: auto;
+      }
+      .syabouttxt{
+        /*width: 650px;*/
+        p{
+          line-height: 20px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1200px) {
+    .symain {
+      .syaboutpic{
+        width: auto;
+      }
+      .syabouttxt{
+        width: 480px;
+        p{
+          line-height: 15px;
+          font-size: 11px;
+        }
       }
     }
   }
@@ -144,6 +187,11 @@
       }
       .syabouttxt{
         width: auto;
+        p{
+          line-height: 36px;
+          font-size: 14px;
+          text-align: left;
+        }
       }
       .syaboutwen{
         padding-left: 0;

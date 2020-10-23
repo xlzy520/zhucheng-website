@@ -2,14 +2,14 @@
   <div class="contact-us-form-card flex-column lz-row">
     <div class="contact-us-form">
       <lz-badge title="联系我们" title_en="CONTACT US" />
-      <div class="content">
+      <div class="content flex-column-xs">
         <div class="left flex-column">
           <el-input placeholder="您的称呼" v-model="formData.name"/>
-          <el-input placeholder="您的联系方式" v-model="formData.phone"/>
-          <el-input placeholder="您在哪里" v-model="formData.address"/>
+          <el-input placeholder="您的联系方式" v-model="formData.telephone"/>
+          <el-input placeholder="您在哪里" v-model="formData.area"/>
         </div>
         <div class="right">
-          <el-input type="textarea" rows="4" placeholder="您的需求" v-model="formData.requirement"/>
+          <el-input class="textarea" type="textarea" rows="4" placeholder="您的需求" v-model="formData.remark"/>
         </div>
       </div>
     </div>
@@ -27,9 +27,9 @@ export default {
     return {
       formData: {
         name: '',
-        phone: '',
-        address: '',
-        requirement: ''
+        telephone: '',
+        area: '',
+        remark: ''
       },
       loading: false
     }
@@ -62,9 +62,9 @@ export default {
     clear(){
       this.formData = {
         name: '',
-        phone: '',
-        address: '',
-        requirement: ''
+        telephone: '',
+        area: '',
+        remark: ''
       }
     }
   },
@@ -141,6 +141,25 @@ export default {
       .content{
         margin: auto;
         margin-top: 30px;
+      }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .contact-us-form-card{
+    padding: 60px 20px 60px;
+    .contact-us-form{
+      .content{
+        .textarea, textarea{
+          width: 100%;
+        }
+        /deep/.right{
+          margin-left: 0;
+          .el-textarea, textarea{
+            width: 100%;
+          }
+
+        }
       }
     }
   }

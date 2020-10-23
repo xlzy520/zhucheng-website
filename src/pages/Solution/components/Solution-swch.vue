@@ -2,7 +2,7 @@
   <div class="solution-swch lz-row">
     <LzBadge title="解决方案" title_en="SOLUTION"/>
     <div class="solution-swch-content">
-      <div class="swch-lhyg solution-row">
+      <div class="swch-lhyg solution-row flex-column-xs">
         <div class="text-content">
           <div class="title">1.灵活用工解决方案</div>
           <div class="sub-title">灵活用工-个体工商户/委托代征</div>
@@ -12,7 +12,7 @@
           <img src="assets/image/solution/swch/1.png" alt="">
         </div>
       </div>
-      <div class="swch-lhyg solution-row">
+      <div class="swch-lhyg solution-row flex-column-xs">
         <div class="text-content">
           <div class="title">2.自然人代开业务方案</div>
           <div class="sub-title">应用场景</div>
@@ -36,7 +36,7 @@
           <img src="assets/image/solution/swch/2.png" alt="">
         </div>
       </div>
-      <div class="swch-lhyg solution-row">
+      <div class="swch-lhyg solution-row flex-column-xs">
         <div class="text-content">
           <div class="title">3.供应链成本优化解决方案</div>
           <div class="sub-title">供应链成本优化原理</div>
@@ -93,6 +93,9 @@
   .w76{
     width: 76%;
   }
+  .solution-row{
+
+  }
   .swch-lhyg{
     display: flex;
     justify-content: space-between;
@@ -124,6 +127,24 @@
 
     }
 
+  }
+  @media (max-width: 1280px) {
+    .swch-lhyg{
+      .text-content{
+        width: 100%;
+      }
+    }
+    .w76{
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 875px) {
+    .swch-lhyg{
+      .text-content{
+        width: 100%;
+      }
+    }
   }
 
 

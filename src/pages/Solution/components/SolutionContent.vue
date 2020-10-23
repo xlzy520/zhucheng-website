@@ -200,6 +200,7 @@ export default {
       justify-content: space-around;
       .service-item{
         width: 22%;
+        min-width: 200px;
         display: flex;
         align-items: center;
       }
@@ -321,10 +322,12 @@ export default {
       justify-content: center;
       .service-item{
         margin-right: 0px;
+        width: 45%;
+        align-items: center;
       }
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 545px) {
     .header{
       padding: 0!important;
       line-height: 40px;
@@ -334,6 +337,14 @@ export default {
         span{
           padding: 0 5px;
         }
+      }
+    }
+    .news-card .service-content{
+      justify-content: center;
+      .service-item{
+        margin-right: 0px;
+        width: 100%;
+        align-items: center;
       }
     }
   }

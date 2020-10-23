@@ -15,7 +15,7 @@
             </div>
           </div>
           <div class="slogan">让商业更简单</div>
-          <div class="slogan">让生活更简单</div>
+          <div class="slogan">让幸福更简单</div>
           <div class="lz"></div>
         </div>
      </el-col>

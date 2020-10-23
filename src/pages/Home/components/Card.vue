@@ -66,9 +66,6 @@ export default {
       box-shadow: 0px 0px 26px 2px rgba(55, 78, 93, 0.08);
       opacity: 1;
     }
-    &:last-child{
-      margin-right: 0;
-    }
     .card-icon{
       margin-bottom: 35px;
     }
@@ -81,6 +78,24 @@ export default {
       line-height: 28px;
       margin-top: 10%;
       text-align: left;
+    }
+  }
+
+  @media (max-width: 875px) {
+    .service-card{
+      max-width: 25%;
+      margin-right: 25px;
+    }
+  }
+  @media (max-width: 675px) {
+    .service-card{
+      max-width: 30%;
+      margin-right: 25px;
+    }
+  }
+  @media (max-width: 575px) {
+    .service-card{
+      max-width: 80%;
     }
   }
 

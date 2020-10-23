@@ -15,16 +15,13 @@
         </div>
         <div class="year-item" style="margin-top: 215px">
           <div style="width: 439px">
-            受益于中国城市新经济/新服务业的快速
-            增长，加速布局全国分支机构，并着力
-            发展城市灵活用工新业态
+            受益于中国城市新经济/新服务业的快速增长，加速布局全国分支机构，并着力发展城市灵活用工新业态
           </div>
           <div class="circle-num">2017</div>
         </div>
         <div class="year-item" style="margin-top: 210px">
           <div style="width: 508px">
-            产值破50亿人民币，正式组建竹成集团，成立
-            竹成商学院
+            产值破50亿人民币，正式组建竹成集团，成立竹成商学院
           </div>
           <div class="circle-num">2019</div>
         </div>
@@ -40,18 +37,13 @@
         </div>
         <div class="year-item" style="margin-top: 205px">
           <div style="width: 387px;">
-            加速布局北京、上海、广东、深圳、
-            浙江、江苏、安徽、福建、辽宁、
-            吉林、湖北、河南、陕西、黑龙江、
-            四川、山西、河北市场
+            加速布局北京、上海、广东、深圳、浙江、江苏、安徽、福建、辽宁、吉林、湖北、河南、陕西、黑龙江、四川、山西、河北市场
           </div>
           <div class="circle-num">2016</div>
         </div>
         <div class="year-item" style="margin-top: 205px;">
           <div style="width: 426px">
-            布局产业园新赛道：产业园运营、税务
-            筹划、人力资源外包、即刻物流、产业
-            投资
+            布局产业园新赛道：产业园运营、税务筹划、人力资源服务、即时物流、产业投资
           </div>
           <div class="circle-num">2018</div>
         </div>
@@ -84,7 +76,6 @@ export default {
     font-weight: bold;
   }
   .DevelopmentHistory{
-    padding-left: 138px;
     height: 1390px;
     background-image: url("/assets/image/development-history.png");
     .header{
@@ -108,7 +99,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      margin-right: 93px;
+      /*margin-right: 93px;*/
       color: #fff;
       font-size: 24px;
       /*font-weight: 500;*/
@@ -120,6 +111,7 @@ export default {
     .left{
       .circle-num{
         margin-left: 32px;
+        margin-right: 32px;
       }
       .year-item{
 
@@ -141,7 +133,6 @@ export default {
   }
   @media (max-width: 1600px) {
     .DevelopmentHistory{
-      padding-left: 0;
       .content{
         padding-left: 138px;
       }
@@ -164,7 +155,6 @@ export default {
   }
   @media (max-width: 1400px) {
     .DevelopmentHistory{
-      padding-left: 0;
       .content{
         padding-left: 138px;
       }
@@ -181,6 +171,65 @@ export default {
       .year-item{
         >div:first-child{
           max-width: 240px!important;
+        }
+      }
+    }
+  }
+  @media (max-width: 1200px) {
+    .DevelopmentHistory{
+      height: 790px;
+      .content{
+        transform: scale(0.6) translateY(-350px);
+      }
+      .left{
+        .year-item{
+          /*margin-right: 60px;*/
+          margin-bottom: -10px;
+        }
+      }
+      .right{
+        .year-item{
+          margin-bottom: -30px;
+          /*margin-left: 60px;*/
+        }
+      }
+      .center{
+        position: absolute;
+        /*left: 150px;*/
+      }
+      .year-item{
+        >div:first-child{
+          /*max-width: 240px!important;*/
+        }
+      }
+    }
+  }
+
+  @media (max-width: 875px) {
+    .DevelopmentHistory{
+      height: 690px;
+      .content{
+        transform: scale(0.4) translateY(-650px);
+      }
+      .left{
+        .year-item{
+          /*margin-right: 60px;*/
+          margin-bottom: -10px;
+        }
+      }
+      .right{
+        .year-item{
+          margin-bottom: -30px;
+          /*margin-left: 60px;*/
+        }
+      }
+      .center{
+        position: absolute;
+        /*left: 150px;*/
+      }
+      .year-item{
+        >div:first-child{
+          /*max-width: 240px!important;*/
         }
       }
     }

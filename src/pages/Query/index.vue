@@ -8,13 +8,21 @@
       <div class="search df">
         <el-input placeholder="集团机构查询请输入工商注册全称 ；集团员工身份查询请输入姓名+工号"
                   v-model="keyword">
-          <div slot="suffix" class="search-btn">
+          <div slot="suffix" class="search-btn" v-if="!isLess875">
             <div class="btn" @click="query" v-loading="loading">
               <span>搜索</span>
             </div>
 
           </div>
         </el-input>
+        <div class="tips" v-if="isLess875">集团机构查询请输入工商注册全称</div>
+        <div class="tips" v-if="isLess875">集团员工身份查询请输入姓名+工号</div>
+        <div class="search-btn" v-if="isLess875">
+          <div class="btn" @click="query" v-loading="loading">
+            <span>搜索</span>
+          </div>
+
+        </div>
       </div>
       <div v-if="hasResult && type ==='company'" class="result">
         <div class="result-table">
@@ -53,7 +61,7 @@
             </div>
           </div>
           <div class="result-table-header">人员信息</div>
-          <div class="df">
+          <div class="df staff-content">
             <div class="left">
               <img :src="staffInfo.imgurl"/>
             </div>
@@ -83,13 +91,16 @@
     },
     computed: {
       style() {
-        const width = window.innerWidth <1280 ? 1280 : window.innerWidth
+        const width = window.innerWidth
         return {
-          background: `url(${this.data.img})`,
+          background: `url(${this.data.img}) no-repeat`,
           backgroundSize: width+'px',
-          height: 1320*(width / 1920) +'px'
+          height: 1320*(width / 1920) +'px',
+          backgroundColor: '#012b43'
         }
-
+      },
+      isLess875(){
+        return window.innerWidth < 875
       }
     },
     data() {
@@ -124,7 +135,7 @@
     methods: {
       isEmployee() {
         const key = this.keyword.replace(/\s+/, '')
-        const match = key.match(/([\u4e00-\u9fa5]*)(\d|\w*)/)
+        const match = key.match(/([\u4e00-\u9fa5]*)(\w+)/)
         const name = match[1]
         const num = match[2]
         return {
@@ -242,8 +253,8 @@
 
         &-header{
           padding: 5px 30px;
-          height: 51px;
-          line-height: 51px;
+          height: 45px;
+          line-height: 45px;
           background: #5AA572;
           display: flex;
           justify-content: space-between;
@@ -272,11 +283,11 @@
           box-sizing: border-box;
 
           &-header {
-            padding: 20px 50px;
+            padding: 5px 30px;
             display: flex;
             font-size: 16px;
             border-bottom: 1px solid #efefef;
-            padding-bottom: 22px;
+            /*padding-bottom: 22px;*/
             margin-bottom: 22px;
           }
 
@@ -314,6 +325,8 @@
             .left {
               width: 120px;
               height: 120px;
+              margin-bottom: 5px;
+              margin-left: 5px;
             }
 
             .right {
@@ -361,6 +374,14 @@
       }
     }
   }
+  .isLess875{
+    display: none;
+  }
+  .staff-content{
+    justify-content: space-between;
+    width: 90%;
+  }
+
   @media (max-width: 1600px) {
     .query{
       .header{
@@ -373,7 +394,7 @@
           line-height: 38px;
         }
         .result-table-header{
-          padding: 10px 50px;
+          padding: 5px 30px;
           margin-bottom: 11px;
         }
         .result-table-row{
@@ -382,6 +403,65 @@
       }
     }
   }
+  @media (max-width: 875px) {
+    .query{
+      height: auto!important;
+      background-position-y: 55px !important;
+      .header{
+        padding-top: 50%;
+        .desc{
+          font-size: 16px;
+          margin-bottom: 0;
+        }
+      }
+      .content{
+        top: 35%;
+        padding: 0 5%;
+        width: auto;
+        /*margin-top: 35%;*/
+        .result{
+          height: auto;
+          padding-bottom: 20px;
+        }
+        .result-table, .result-table.staff{
+          width: 100%;
+        }
+        .result-header{
+          height: 38px;
+          line-height: 38px;
+        }
+        .result-table-header{
+          padding: 10px 27px;
+          margin-bottom: 11px;
+          div:first-child{
+            flex: 0 0 155px;
+          }
+        }
+        .result-table-row{
+          margin-bottom: 10px;
+          div:first-child{
+            flex: 0 0 155px;
+          }
+        }
+        .search{
+          flex-direction: column;
+          padding-bottom: 20px;
+          .tips{
+            color: #fff;
+            font-size: 12px;
+            padding: 5px 0;
+          }
+        }
+      }
+      .btn{
+        width: auto;
+      }
+    }
+    .isLess875{
+      display: block;
+    }
+  }
+
   @media (min-width: 2159px) {
     .query{
       .header{
@@ -396,7 +476,7 @@
           width: 498px;
         }
         .result-table-header{
-          padding: 10px 50px;
+          padding: 5px 30px;
           margin-bottom: 0;
           /*text-align: center;*/
         }

@@ -39,17 +39,19 @@
   .tax-team-content{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin-top: 38px;
-    margin-left: 75px;
+    /*margin-left: 75px;*/
     .tax-team-item{
       padding: 40px 33px 60px;
-      width: 232px;
+      min-width: 200px;
+      width: 20%;
       cursor: pointer;
       background: #FFFFFF;
       box-shadow: 0px 0px 26px 2px rgba(65, 65, 65, 0.1);
       opacity: 0.9;
+      height: 320px;
       border-radius: 10px;
-      margin-right: 62px;
       margin-bottom: 30px;
       box-sizing: border-box;
       text-align: center;
@@ -100,6 +102,23 @@
       overflow: scroll;
     }
 
+  }
+  @media (max-width: 1400px) {
+    .tax-team-content{
+      .tax-team-item{
+        padding: 40px 0;
+      }
+    }
+  }
+  @media (max-width: 875px) {
+    .tax-team-content{
+      margin-left: 0;
+      .tax-team-item{
+        width: 100%;
+        height: 300px;
+        margin-right: 0;
+      }
+    }
   }
 
 </style>

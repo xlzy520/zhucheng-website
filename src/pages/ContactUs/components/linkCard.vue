@@ -99,4 +99,29 @@ export default {
       }
     }
   }
+  @media (max-width: 1200px) {
+    .link-card{
+      flex-direction: column;
+      height: auto;
+      .card-left{
+        width: 90%;
+        margin: auto;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        .title{
+          font-size: 18px;
+        }
+      }
+      .card-right{
+        padding: 0;
+        text-align: center;
+        img{
+          width: 90%;
+          height: 100%;
+        }
+      }
+    }
+  }
 </style>
