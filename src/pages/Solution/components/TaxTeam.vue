@@ -1,6 +1,6 @@
 <template>
   <div class="tax-team">
-    <LzBadge title="税筹服务专家o团队" title_en="TAX TEAM"/>
+    <LzBadge title="税筹服务专家团队" title_en="TAX TEAM"/>
     <div class="tax-team-content">
       <div class="tax-team-item" v-for="(member,index) in teamList" :key="member.id">
         <div class="tax-team-img">
@@ -64,6 +64,9 @@
 
       }
       .desc-detail{
+        font-size: 14px;
+        line-height: 1.3;
+        text-align: left;
         display: none;
       }
       &:hover{
