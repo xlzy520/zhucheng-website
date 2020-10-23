@@ -190,7 +190,7 @@ export default {
     /*text-align: center;*/
     line-height: 60px;
     box-sizing: border-box;
-    overflow: hidden;
+    /*overflow: hidden;*/
     padding: 0 5.2%;
     /*background: #39A54B;*/
     a{

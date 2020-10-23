@@ -66,6 +66,9 @@ export default {
       box-shadow: 0px 0px 26px 2px rgba(55, 78, 93, 0.08);
       opacity: 1;
     }
+    .icon{
+      height: 110px;
+    }
     .card-icon{
       margin-bottom: 35px;
     }

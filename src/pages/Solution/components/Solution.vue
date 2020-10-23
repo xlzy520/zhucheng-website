@@ -1,6 +1,6 @@
 <template>
   <div class="solution-process lz-row">
-    <LzBadge title="解决方案" title_en="SOLUTION"/>
+    <LzBadge title="投资流程" title_en="SOLUTION"/>
     <div class="solution-process-content">
       <div class="so-row">
         <div class="solution-process-item">
@@ -49,13 +49,15 @@
           <div class="solution-process-item">
             <img src="assets/image/solution/process/7.png"/>
             <div class="solution-process-item-text">
-              尽快调查
+              尽职调查
             </div>
           </div>
         </div>
         <Arrow type="wai"/>
       </div>
-
+      <div>
+        在线提交邮箱：zcyunying@zc-corp.cn
+      </div>
     </div>
   </div>
 </template>

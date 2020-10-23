@@ -106,7 +106,7 @@ export default {
           desc: '集团秉承产融结合的经营理念，以产业为基础、以资本为纽带，实现可持续发展。',
           img: 'zczb',
           serviceContent: [
-            {name: '物流产业基金', },
+            {name: '竹成产业基金', },
             {name: '竹成天使基金', },
             {name: '竹成创投基金', },
           ]
@@ -175,7 +175,7 @@ export default {
         margin-bottom: 33px;
       }
       .desc{
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 500;
         min-height: 60px;
         color: #333333;

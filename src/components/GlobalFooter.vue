@@ -27,8 +27,8 @@
         <div class="divider w380"></div>
        <div class="info-item flex-column">
          <span>浙江省宁波市江北区前洋E商小镇1幢1号楼512</span>
-         <span>联系电话：15036086531(左先生）</span>
-         <span>电子邮箱：zuochangkun@zc-corp.cn</span>
+         <span>联系电话：13958319323</span>
+         <span>电子邮箱：zcyunying@zc-corp.cn</span>
        </div>
      </el-col>
       <el-col :xs="24" :sm="12" :md="12" :lg="8" :xl="8">
