@@ -1,7 +1,7 @@
 <template>
   <div class="lz-badge">
     <div class="lz-badge-header">
-      <div class="lz-badge-icon"></div>
+<!--      <div class="lz-badge-icon"></div>-->
       <div>{{title}}</div>
     </div>
     <div class="lz-badge-footer" :class="black ? 'black' : ''">{{title_en}}</div>
@@ -58,7 +58,7 @@
       font-family: Arial;
       font-weight: 400;
       color: #9A9A9A;
-      padding-left: 35px;
+      /*padding-left: 35px;*/
       text-align: left;
       &.black{
         color: #343434;
