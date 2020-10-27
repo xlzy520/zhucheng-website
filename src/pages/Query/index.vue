@@ -113,10 +113,10 @@
         desc: '集团机构信息验证   集团员工身份查询',
         keyword: '',
         list: [
-          {name: '服务商', value: 'companyName'},
-          {name: '营业地址', value: 'address'},
+          {name: '机构名称', value: 'companyName'},
+          // {name: '营业地址', value: 'address'},
           {name: '企业信用代码', value: 'num'},
-          {name: '法定代表人', value: 'legalRepresentative'},
+          // {name: '法定代表人', value: 'legalRepresentative'},
         ],
         loading: false,
         type: 'staff',
@@ -320,7 +320,7 @@
           }
 
           &-content {
-            padding: 10px 50px;
+            padding: 5px 30px;
 
           }
 
