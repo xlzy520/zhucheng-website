@@ -37,9 +37,24 @@ export default {
   methods: {
     check(){
       let allTrue = true
+      const map = {
+        name: '称呼',
+        telephone: '联系方式',
+        area: '地址',
+        remark: '需求'
+      }
       for (const item in this.formData) {
+        if (item === 'telephone') {
+          const telephone = this.formData[item]
+          const reg = /^([1]\d{10}|([\(（]?0[0-9]{2,3}[）\)]?[-]?)?([2-9][0-9]{6,7})+(\-[0-9]{1,4})?)$/
+          if ( telephone && !reg.test(telephone)) {
+            allTrue = false
+            this.$message.error('手机号或电话号码格式不正确')
+            break
+          }
+        }
         if (!this.formData[item]) {
-          this.$message.warning('请检查必填项')
+          this.$message.warning('请检查您的'+map[item])
           allTrue = false
           break;
         }
