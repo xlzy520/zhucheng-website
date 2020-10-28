@@ -283,7 +283,7 @@ export default {
       margin: 0 48px;
       padding: 0;
     }
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1300px) {
       .el-menu--horizontal > .el-menu-item,
       .el-menu--horizontal > .el-submenu {
         margin: 0 24px;

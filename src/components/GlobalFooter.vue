@@ -4,7 +4,7 @@
       <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
         <div class="info">
           <div class="info-main">
-            <img src="assets/image/footer/logo.png" alt="" class="logo">
+            <img width="201" src="assets/image/footer/logo.png" alt="" class="logo">
             <div class="name" v-if="false">
               <div class="title">
                 <img src="" alt="">
@@ -13,10 +13,10 @@
                 <img src="" alt="">
               </div>
             </div>
+            <div class="slogan">让商业更简单</div>
+            <div class="slogan">让幸福更简单</div>
+            <div class="lz"></div>
           </div>
-          <div class="slogan">让商业更简单</div>
-          <div class="slogan">让幸福更简单</div>
-          <div class="lz"></div>
         </div>
      </el-col>
       <el-col :xs="24" :sm="12" :md="12" :lg="8" :xl="8" class="contact-us">
@@ -122,7 +122,7 @@ export default {
     &-main{
       display: flex;
       margin-bottom: 25px;
-
+      flex-direction: column;
     }
     .title img{
       width: 96px;
@@ -226,15 +226,45 @@ export default {
     .info{
       text-align: center;
       &-main{
-        display: block;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 20px;
+        img{
+          margin-bottom: 40px;
+        }
       }
       .slogan{
         width: auto;
       }
       .lz{
+        display: none;
         width: auto;
         margin-bottom: 20px;
       }
     }
   }
+  @media (max-width: 685px) {
+    .info{
+      text-align: left;
+      &-main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        img{
+          margin-bottom: 40px;
+        }
+      }
+      .slogan{
+        width: auto;
+      }
+      .lz{
+        display: none;
+        width: auto;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
 </style>

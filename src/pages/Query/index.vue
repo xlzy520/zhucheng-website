@@ -8,23 +8,27 @@
       <div class="search df">
         <el-input placeholder="集团机构查询请输入工商注册全称 ；集团员工身份查询请输入姓名+工号"
                   v-model="keyword">
-          <div slot="suffix" class="search-btn" v-if="!isLess875">
+          <el-select v-model="select" slot="prepend" placeholder="请选择" @change="changType">
+            <el-option label="机构" value="company"></el-option>
+            <el-option label="员工" value="staff"></el-option>
+          </el-select>
+          <div slot="suffix" class="search-btn max-screen">
             <div class="btn" @click="query" v-loading="loading">
               <span>搜索</span>
             </div>
 
           </div>
         </el-input>
-        <div class="tips" v-if="isLess875">集团机构查询请输入工商注册全称</div>
-        <div class="tips" v-if="isLess875">集团员工身份查询请输入姓名+工号</div>
-        <div class="search-btn" v-if="isLess875">
+        <div class="tips">集团机构查询请输入工商注册全称</div>
+        <div class="tips">集团员工身份查询请输入姓名+工号</div>
+        <div class="search-btn min-screen">
           <div class="btn" @click="query" v-loading="loading">
             <span>搜索</span>
           </div>
 
         </div>
       </div>
-      <div v-if="hasResult && type ==='company'" class="result">
+      <div v-if="hasResult && select ==='company'" class="result">
         <div class="result-table">
           <div class="result-header">
             <img src="/assets/image/zc-logo.png" alt="">
@@ -48,7 +52,7 @@
           </div>
         </div>
       </div>
-      <div v-if="hasResult && type ==='staff'" class="result">
+      <div v-if="hasResult && select ==='staff'" class="result">
         <div class="result-table staff">
           <div class="result-header">
             <img src="/assets/image/zc-logo.png" alt="">
@@ -105,6 +109,7 @@
     },
     data() {
       return {
+        select: 'company',
         data: {
           title: '解决方案', slogan: ['精益求精    合作共赢'],
           img: 'assets/image/query_bg.png', content: '首页>解决方案',
@@ -119,11 +124,11 @@
           // {name: '法定代表人', value: 'legalRepresentative'},
         ],
         loading: false,
-        type: 'staff',
+        // type: 'staff',
         staffInfo: {
-          name: '廖某某',
-          num: 'ZC888',
-          area: '宁波总部',
+          name: '',
+          num: '',
+          area: '',
           imgurl: ''
         },
         companyInfo: {},
@@ -133,20 +138,24 @@
       }
     },
     methods: {
+      changType(){
+        this.hasQuery = false
+        this.hasResult = false
+      },
       isEmployee() {
-        const key = this.keyword.replace(/\s+/, '')
-        const match = key.match(/([\u4e00-\u9fa5]*)(\w+)/)
-        if (!match) {
+        const match = this.keyword.trim().split(/\s+/)
+        console.log(match);
+        // const match = key.match(/([\u4e00-\u9fa5]*)(\w+)/)
+        if (match.length === 1) {
+          this.$message.info('请输入员工姓名和编号，用空格分开')
           return {
-            name: key
+            name: match[0],
+            num: ''
           }
         }
-        console.log(match);
-        const name = match[1]
-        const num = match[2]
         return {
-          name,
-          num
+          name: match[0],
+          num: match[1]
         };
       },
       query() {
@@ -155,19 +164,20 @@
           return;
         }
         this.loading = true
-        const queryData = this.isEmployee()
-        const myService = queryData.num ? service.getEmployeeList : service.getCompanyList
-        this.type = queryData.num ? 'staff' : 'company'
-        const data = queryData.num ? queryData : {companyName: this.keyword}
+        const queryData = this.select === 'staff' ? this.isEmployee() : {companyName: this.keyword}
+        const myService = this.select === 'staff' ? service.getEmployeeList : service.getCompanyList
+        // this.type = this.select
+        // const data = queryData.num ? queryData :
+        console.log(queryData);
         myService({
           pageNo: 1,
           pageSize: 10,
           orderByClause: 'id desc',
-          ...data
+          ...queryData
         }).then(res => {
           this.hasQuery = true
           this.hasResult = res.list.length
-          if (this.type === 'company') {
+          if (this.select === 'company') {
             this.companyInfo = res.list[0] || {}
           } else {
             this.staffInfo = res.list[0]
@@ -362,6 +372,13 @@
         line-height: 32px;
         text-align: left;
       }
+
+      .tips, .min-screen{
+        display: none;
+      }
+      .max-screen{
+        display: block;
+      }
     }
 
     .btn {
@@ -379,6 +396,10 @@
         line-height: 32px;
       }
     }
+  }
+  /deep/ .el-input-group__prepend{
+    background: transparent;
+    width: 40px;
   }
   .isLess875{
     display: none;
@@ -453,10 +474,17 @@
           flex-direction: column;
           padding-bottom: 20px;
           .tips{
+            display: block;
             color: #fff;
             font-size: 12px;
             padding: 5px 0;
           }
+        }
+        .min-screen{
+          display: block;
+        }
+        .max-screen{
+          display: none;
         }
       }
       .btn{

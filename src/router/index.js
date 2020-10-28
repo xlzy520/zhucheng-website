@@ -12,7 +12,7 @@ import News from '@/pages/News'
 import NewsDetail from '@/pages/NewsDetail'
 import Solution from '@/pages/Solution'
 
-// import TE from '@/pages/About/components/ChooseUs'
+import MyTable from '@/pages/MyTable'
 
 
 Vue.use(Router)

@@ -179,7 +179,7 @@
       }
     }
   }
-  @media (max-width: 960px) {
+  @media (max-width: 1120px) {
     .symain {
       text-align: center;
       .syaboutpic{

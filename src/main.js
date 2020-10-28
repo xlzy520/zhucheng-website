@@ -6,7 +6,7 @@ import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import {
   Message,  Row, Col, Input, Button, Icon, Menu, Pagination,
-  Submenu, MenuItem, Header, Footer, Main, Container, Dropdown, Loading
+  Submenu, MenuItem, Header, Footer, Main, Container, Dropdown, Loading, Select, Option
 } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 /* 隐藏元素类 */
@@ -47,6 +47,8 @@ Vue.use(Col)
 Vue.use(Container)
 Vue.use(Dropdown)
 Vue.use(Pagination)
+Vue.use(Select)
+Vue.use(Option)
 
 
 Vue.use(animate)

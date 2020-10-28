@@ -84,6 +84,13 @@ export default {
     }
   }
 
+  @media (max-width: 1024px) {
+    .service-card{
+      max-width: 20%;
+      margin-right: 25px;
+    }
+  }
+
   @media (max-width: 875px) {
     .service-card{
       max-width: 25%;
