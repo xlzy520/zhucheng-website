@@ -147,7 +147,7 @@
         console.log(match);
         // const match = key.match(/([\u4e00-\u9fa5]*)(\w+)/)
         if (match.length === 1) {
-          this.$message.info('请输入员工姓名和编号，用空格分开')
+          this.$message.info('请输入员工姓名和工号，用空格分开')
           return {
             name: match[0],
             num: ''
