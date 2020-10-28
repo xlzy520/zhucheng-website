@@ -72,6 +72,7 @@
             <div class="right flex-column">
               <span>员工姓名：{{staffInfo.name}}</span>
               <span>工号：{{staffInfo.num}}</span>
+              <span>职位信息：{{staffInfo.position}}</span>
               <span>所在机构：{{staffInfo.area}}</span>
             </div>
           </div>
@@ -351,12 +352,12 @@
               padding-top: 11px;
 
               span {
-                margin-bottom: 30px;
+                margin-bottom: 20px;
                 text-align: left;
                 line-height: 14px;
 
                 &:last-child {
-                  margin-bottom: 0;
+                  /*margin-bottom: 0;*/
                 }
               }
             }
