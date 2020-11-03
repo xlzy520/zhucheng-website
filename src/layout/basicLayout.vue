@@ -66,7 +66,7 @@
       getProducts() {
         service.getProductsList({
           pageNo: 1,
-          pageSize: 2,
+          pageSize: 10,
           orderByClause: 'id desc'
         }).then(res => {
           const index = this.menuList.findIndex(v=> v.id === '4')
