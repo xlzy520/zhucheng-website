@@ -56,7 +56,7 @@ export default {
       bottom: 15px;
     }
     .rect{
-      width: 200px;
+      width: 300px;
       height: 4px;
       background: #5aa672;
     }
@@ -65,7 +65,7 @@ export default {
     width: 4px;
     height: 160px;
     background: #5aa672;
-    margin-left: 196px;
+    margin-left: 296px;
   }
   .rect{
     width: 200px;

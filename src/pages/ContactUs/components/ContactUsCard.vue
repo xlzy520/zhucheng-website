@@ -17,7 +17,7 @@ export default {
         {
           title: '宁波竹成信息科技（集团）有限公司',
           address: '宁波市江北区洪塘街道长兴路与慈孝大道交叉口北400米路西前洋E商小镇1号楼512室',
-          phone: '15957864887(李先生）',
+          phone: '18957847358(李先生）',
           email: 'zcyunying@zc-corp.cn',
           url: '1'
         },
