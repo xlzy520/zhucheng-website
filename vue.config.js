@@ -1,9 +1,5 @@
 const path = require('path')
 
-function resolve(dir) {
-  return path.join(__dirname, dir)
-}
-
 module.exports = {
   lintOnSave: false,
   publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
@@ -27,8 +23,8 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        '@': resolve('src'),
-        'assets': resolve('public/assets'),
+        '@': path.resolve('src'),
+        'assets': path.resolve('public/assets'),
       }
     }
   },
