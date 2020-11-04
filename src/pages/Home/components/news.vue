@@ -6,7 +6,7 @@
     <div class="content flex-column-xs">
       <div class="content-item" v-for="(cardItem, index) in splitNews">
         <div class="content-header">
-          <div class="title">{{index?'市场新闻': '市场资讯'}}</div>
+          <div class="title">{{index?'市场新闻': '竹成资讯'}}</div>
           <a class="more" :href="'/#/news?tab='+(index+1)">了解更多>></a>
         </div>
         <div class="news-list">
